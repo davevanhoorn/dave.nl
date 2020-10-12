@@ -45,6 +45,12 @@ module.exports = {
         'tsx': 'never'
       }
     ],
-    semi: [2, "never"],
+    semi: [2, 'never'],
+    'react/prop-types': [2, { ignore: ['children'] }],
+    "jsx-a11y/anchor-is-valid": ["error", {
+      "components": ["Link"],
+      "specialLink": ["hrefLeft", "hrefRight"],
+      "aspects": ["invalidHref", "preferButton"]
+    }]
   },
 };
