@@ -1,0 +1,38 @@
+#logos {
+  opacity: 0.25;
+}
+
+.logo_capgemini {
+  position: relative;
+  top: 0.25rem;
+  width: 160px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.logo_noten {
+  width: 120px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.logo_schiphol {
+  position: relative;
+  top: 0.125rem;
+  width: 130px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.logo_orange_tribes,
+.logo_reisreport {
+  width: 60px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.logo_vteam {
+  width: 60px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

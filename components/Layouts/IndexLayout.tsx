@@ -5,10 +5,12 @@ import React, { FunctionComponent } from 'react'
 import Header from '~/components/Header/Header'
 
 const IndexLayout: FunctionComponent = ({ children }) => (
-  <div className="container mx-auto p-4">
+  <>
     <Header />
-    {children}
-  </div>
+    <div className="max-w-screen-xl mx-auto p-4">
+      {children}
+    </div>
+  </>
 )
 
 export default IndexLayout

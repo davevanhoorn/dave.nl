@@ -1,35 +1,44 @@
+// EXTERNAL
 import Link from 'next/link'
 import React from 'react'
 
+// INTERNAL
+import styles from './header.module.css'
+
 const Header = () => (
   <>
-    <div className="bg-yellow-200 p-4 mb-4 text-center font-medium">Deze site is in ontwikkeling</div>
-    <header className="py-4 flex justify-between items-center text-lg text-black font-medium leading-none">
-      <div>
-        <Link href="/">
-          <a className="p-1 px-2 bg-black text-white">
-            Dave.nl
-          </a>
-        </Link>
-      </div>
-      <nav>
-        <Link href="/wordpress-websites">
-          <a className="mr-2 p-1 px-2 hover:bg-black hover:text-white">WordPress optimalisatie</a>
-        </Link>
-        <Link href="/wordpress-plugins">
-          <a className="mr-2 p-1 px-2 hover:bg-black hover:text-white">WooCommerce plugins</a>
-        </Link>
-        <Link href="/react-typescript-werk">
-          <a className="mr-2 p-1 px-2 hover:bg-black hover:text-white">React & TypeScript</a>
-        </Link>
-        <Link href="/over-mij">
-          <a className="mr-2 p-1 px-2 hover:bg-black hover:text-white">Over mij</a>
-        </Link>
-        <Link href="/contact">
-          <a className="p-1 px-2 hover:bg-black hover:text-white">Contact</a>
-        </Link>
-      </nav>
-    </header>
+    <div className={styles.headerWrapper}>
+      <header className="py-4 lg:py-8 flex justify-between items-center text-lg text-black font-medium leading-none px-3 max-w-screen-xl mx-auto p-4">
+        <div>
+          <Link href="/">
+            <a className="p-2 px-3 text-black font-bold">
+              Dave.nl
+            </a>
+          </Link>
+        </div>
+        <nav className="hidden lg:block">
+          <Link href="/wordpress-websites">
+            <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">WordPress optimalisatie</a>
+          </Link>
+          <Link href="/wordpress-plugins">
+            <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">WooCommerce plugins</a>
+          </Link>
+          <Link href="/react-typescript-werk">
+            <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">React & TypeScript</a>
+          </Link>
+          <Link href="/over-mij">
+            <a className="mr-4 xl:mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">Over mij</a>
+          </Link>
+          <Link href="/contact">
+            <a className="hidden xl:inline-block mr-4 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">Contact</a>
+          </Link>
+          <Link href="/samenwerken">
+            <a className="p-2 px-3 bg-transparent hover:bg-orange-500 text-orange-500 hover:text-white border border-orange-500 hover:border-transparent rounded">Samenwerken</a>
+          </Link>
+        </nav>
+        <button type="button" className="block lg:hidden p-2 px-3 bg-black text-white rounded">Menu</button>
+      </header>
+    </div>
   </>
 )
 
