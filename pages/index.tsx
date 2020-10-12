@@ -9,7 +9,7 @@ const Index: FunctionComponent = () => (
     <main className="px-1 mt-24">
       <div className="w-4/6 flex items-center mx-auto">
         <div className="w-3/6 pr-12">
-          <h1 className="text-3xl font-bold">Ola, ik ben Dave</h1>
+          <h1 className="text-4xl font-bold">Hi, ik ben Dave</h1>
           <p className="text-xl mt-6">
             Vanuit Portugal werk ik als developer voor bedrijven als Noten.nl,
             Capgemini, Schiphol en ReisReport.nl.
@@ -23,7 +23,7 @@ const Index: FunctionComponent = () => (
             Samenwerken? Stuur een WhatsApp of een email en ik kom snel bij je terug.
           </p>
           <p className="text-xl mt-6">
-            <i>Tenha um bom dia</i>
+            Tenha um bom dia (fijne dag)
             {' '}
             <span role="img" aria-label="peace sign">✌️</span>
           </p>
