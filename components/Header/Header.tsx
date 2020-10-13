@@ -20,9 +20,6 @@ const Header = () => (
           <Link href="/wordpress-websites">
             <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">WordPress optimalisatie</a>
           </Link>
-          {/* <Link href="/wordpress-plugins">
-            <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">WooCommerce plugins</a>
-          </Link> */}
           <Link href="/react-typescript-werk">
             <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">React & TypeScript</a>
           </Link>
