@@ -7,7 +7,7 @@ import Header from '~/components/Header/Header'
 const IndexLayout: FunctionComponent = ({ children }) => (
   <>
     <Header />
-    <div className="max-w-screen-xl mx-auto p-4">
+    <div className="max-w-screen-lg mx-auto p-4">
       {children}
     </div>
   </>

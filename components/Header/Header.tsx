@@ -8,7 +8,7 @@ import styles from './header.module.css'
 const Header = () => (
   <>
     <div className={styles.headerWrapper}>
-      <header className="py-4 lg:py-8 flex justify-between items-center text-lg text-black font-medium leading-none px-3 max-w-screen-xl mx-auto p-4">
+      <header className="py-4 lg:py-8 flex justify-between items-center text-lg text-black font-medium leading-none px-3 max-w-screen-lg mx-auto p-4">
         <div>
           <Link href="/">
             <a className="p-2 px-3 text-black font-bold">
@@ -20,9 +20,9 @@ const Header = () => (
           <Link href="/wordpress-websites">
             <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">WordPress optimalisatie</a>
           </Link>
-          <Link href="/wordpress-plugins">
+          {/* <Link href="/wordpress-plugins">
             <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">WooCommerce plugins</a>
-          </Link>
+          </Link> */}
           <Link href="/react-typescript-werk">
             <a className="mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">React & TypeScript</a>
           </Link>

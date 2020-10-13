@@ -6,33 +6,63 @@
   position: relative;
   top: 0.25rem;
   width: 160px;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .logo_noten {
   width: 120px;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .logo_schiphol {
   position: relative;
   top: 0.125rem;
   width: 130px;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .logo_orange_tribes,
 .logo_reisreport {
   width: 60px;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .logo_vteam {
   width: 60px;
-  margin-left: 2rem;
-  margin-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  #logos a {
+    width: 50%;
+    text-align: center;
+  }
+
+  #logos a {
+    margin-bottom: 1rem;
+  }
+
+  #logos a img,
+  #logos a svg {
+    margin: 0 auto;
+  }
+
+  .logo_orange_tribes {
+    width: 30%;
+  }
+
+  .logo_capgemini {
+    width: 70%;
+  }
+
+  .logo_noten {
+    width: 45%;
+  }
+
+  .logo_schiphol {
+    width: 50%;
+  }
+
+  .logo_reisreport {
+    width: 30%;
+  }
+
+  .logo_vteam {
+    width: 30%;
+  }
 }
