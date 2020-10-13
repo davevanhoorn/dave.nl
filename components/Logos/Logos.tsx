@@ -5,7 +5,7 @@ import React from 'react'
 import styles from './logo.module.css'
 
 const Logos = () => (
-  <div id={styles.logos} className="flex flex-wrap md:flex-no-wrap items-center justify-between mt-10 sm:mt-20 sm:px-4 max-w-screen-lg mx-auto">
+  <div id={styles.logos} className="flex flex-wrap md:flex-no-wrap items-center justify-between mt-10 sm:px-4 max-w-screen-lg mx-auto">
     <a href="https://orangetribes.com/" title="Orange Tribes" rel="noopener noreferrer" target="_blank">
       <img className={styles.logo_orange_tribes} src="/company_orange-tribes.png" alt="Logo Orange Tribes" />
     </a>

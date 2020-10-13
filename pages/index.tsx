@@ -7,10 +7,10 @@ import Logos from '~/components/Logos/Logos'
 
 const Index: FunctionComponent = () => (
   <IndexLayout>
-    <main className="sm:px-1 sm:mt-12">
+    <main className="sm:px-1 sm:mt-6">
       <div className="relative w-12/12 md:w-10/12 lg:w-11/12 flex flex-col-reverse sm:flex-row items-center mx-auto">
         <div className="w-12/12 sm:w-3/6 pr-6 xl:pr-12">
-          <h1 className="text-4xl font-bold">Hi, ik ben Dave</h1>
+          <h1 className="text-4xl font-bold leading-none">Hi, ik ben Dave</h1>
           <p className="text-xl mt-6">
             Vanuit Portugal werk ik als freelance developer voor bedrijven als Noten.nl,
             Capgemini, Schiphol en ReisReport.nl.
