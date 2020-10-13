@@ -1,0 +1,8 @@
+.projectBackground {
+  background: rgb(210, 222, 252);
+  background: linear-gradient(
+    142deg,
+    rgba(210, 222, 252, 1) 0%,
+    rgba(213, 247, 254, 1) 100%
+  );
+}

@@ -1,42 +1,68 @@
 // EXTERNAL
+import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
 
 // INTERNAL
 import IndexLayout from '~/components/Layouts/IndexLayout'
 import Logos from '~/components/Logos/Logos'
+import Project from '~/components/Project/Project'
 
 const Index: FunctionComponent = () => (
-  <IndexLayout>
-    <main className="sm:px-1 sm:mt-6">
-      <div className="relative w-12/12 md:w-10/12 lg:w-11/12 flex flex-col-reverse sm:flex-row items-center mx-auto">
-        <div className="w-12/12 sm:w-3/6 pr-6 xl:pr-12">
-          <h1 className="text-4xl font-bold leading-none">Hi, ik ben Dave</h1>
-          <p className="text-xl mt-6">
-            Vanuit Portugal werk ik als freelance developer voor bedrijven als Noten.nl,
-            Capgemini, Schiphol en ReisReport.nl.
-          </p>
-          <p className="text-xl mt-6">
-            Ik help opdrachtgevers met het optimaliseren van WordPress,
-            het maken van WooCommerce plugins of het schrijven van full-stack
-            apps in React en TypeScript.
-          </p>
-          <p className="text-xl mt-6">
-            Samenwerken? Stuur een WhatsApp of een email en ik kom snel bij je terug.
-          </p>
-          <p className="text-xl mt-6">
-            Tenha um bom dia (fijne dag)
-            {' '}
-            <span role="img" aria-label="peace sign">✌️</span>
-            <span role="img" aria-label="Portugese vlag">🇵🇹</span>
-          </p>
+  <>
+    <IndexLayout>
+      <main className="sm:px-1 sm:mt-6">
+        <div className="relative w-12/12 md:w-10/12 lg:w-11/12 flex flex-col-reverse sm:flex-row items-center mx-auto">
+          <div className="w-12/12 sm:w-3/6 pr-6 xl:pr-12 text-xl">
+            <h1 className="text-4xl font-bold leading-none">
+              <span role="img" aria-label="Zwaaiende hand">👋</span>
+              {' '}
+              Hallo, Dave hier!
+              {' '}
+            </h1>
+            <p className="mt-6">
+              Vanuit Portugal werk ik als freelance developer voor bedrijven als Noten.nl,
+              Capgemini, Schiphol en ReisReport.nl.
+            </p>
+            <p className="mt-6">
+              Ik help opdrachtgevers met het
+              {' '}
+              <Link href="/wordpress-websites">
+                <a className="hover:underline font-bold">WordPress optimalisatie</a>
+              </Link>
+              , het maken van
+              {' '}
+              <Link href="/woocommerce-plugins">
+                <a className="hover:underline font-bold">WooCommerce plugins</a>
+              </Link>
+              {' '}
+              of het schrijven van full-stack
+              apps in
+              {' '}
+              <Link href="/full-stack-mvp">
+                <a className="hover:underline font-bold">
+                  React en TypeScript
+                </a>
+              </Link>
+              .
+            </p>
+            <p className="mt-6">
+              Samenwerken? Stuur een WhatsApp of een email en ik kom snel bij je terug.
+            </p>
+            <p className="mt-6">
+              Tenha um bom dia (heb een fijne dag)
+              {' '}
+              <span role="img" aria-label="Portugese vlag">🇵🇹</span>
+            </p>
+          </div>
+          <div className="absolute sm:relative top-0 right-0 w-6/12 sm:w-3/6 sm:p-4 xl:p-16 xl:pl-0 opacity-25 sm:opacity-100">
+            <img className="w-full" src="./davevanhoorn.jpg" alt="Dave van Hoorn van Dave.nl" />
+          </div>
         </div>
-        <div className="absolute sm:relative top-0 right-0 w-6/12 sm:w-3/6 sm:p-4 xl:p-8 mb-4 opacity-25 sm:opacity-100">
-          <img className="w-full" src="./davevanhoorn.jpg" alt="Dave van Hoorn van Dave.nl" />
-        </div>
-      </div>
-    </main>
-    <Logos />
-  </IndexLayout>
+      </main>
+      <Logos />
+    </IndexLayout>
+    <Project />
+  </>
 )
 
 export default Index

@@ -32,7 +32,7 @@ const Header = () => {
               <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'mr-1 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded'}`}>Over mij</a>
             </Link>
             <Link href="/contact">
-              <a className="hidden xl:inline-block mr-6 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded">Contact</a>
+              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'mr-4 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded'}`}>Contact</a>
             </Link>
             <Link href="/samenwerken">
               <a className={`p-2 px-3 rounded ${menuIsVisible ? 'bg-black text-white border-orange-500 bg-orange-500' : 'bg-transparent hover:bg-orange-500 text-orange-500 hover:text-white border border-orange-500 hover:border-transparent'}`}>Samenwerken</a>
