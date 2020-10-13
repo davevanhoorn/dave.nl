@@ -11,7 +11,7 @@ const Header = () => (
       <header className="py-4 lg:py-8 flex justify-between items-center text-lg text-black font-medium leading-none px-3 max-w-screen-lg mx-auto p-4">
         <div>
           <Link href="/">
-            <a className="p-2 px-3 text-black font-bold">
+            <a className="p-2 px-1 text-black font-bold">
               Dave.nl
             </a>
           </Link>
