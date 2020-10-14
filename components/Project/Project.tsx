@@ -38,7 +38,7 @@ const Project = () => (
         <p className="mt-4 bg-white p-2 leading-relaxed">
           In opdracht van
           {' '}
-          <a className="border-bottom border-dotted border-solid border-b-2 border-black" href="https://orangetribes.com" title="Orange Tribes" rel="noopener noreferrer nofollow" target="_blank">Orange Tribes</a>
+          <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium" href="https://orangetribes.com" title="Orange Tribes" rel="noopener noreferrer nofollow" target="_blank">Orange Tribes</a>
           {' '}
           werd ik gevraagd de designs voor Integral Safety Schiphol uit te werken in
           een responsive, custom WordPress thema.
@@ -48,7 +48,7 @@ const Project = () => (
           de medewerkers van Schiphol eenvoudig te beheren vanuit de WordPress admin omgeving.
         </p>
         <p className="mt-6 bg-white p-2 inline leading-relaxed">
-          <a className="border-bottom border-dotted border-solid border-b-2 border-black" href="https://integralsafetyschiphol.com/projects/in-progress" title="Ga naar de website van Integral Safety Schiphol" rel="noopener noreferrer nofollow" target="_blank">Bekijk de interactieve website</a>
+          <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium" href="https://integralsafetyschiphol.com/projects/in-progress" title="Ga naar de website van Integral Safety Schiphol" rel="noopener noreferrer nofollow" target="_blank">Bekijk de interactieve website</a>
         </p>
       </div>
     </div>
