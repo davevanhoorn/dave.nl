@@ -12,31 +12,31 @@ const Header = () => {
   }
   return (
     <>
-      <div className="bg-red-200 text-center p-4 text-red-800">Deze website is in ontwikkeling.</div>
+      <div className="bg-red-400 text-center py-4">Deze site is in ontwikkeling.</div>
       <div className={styles.headerWrapper}>
-        <header className="py-4 lg:py-8 flex justify-between items-center text-lg text-black leading-none px-3 max-w-screen-lg mx-auto p-4">
+        <header className="py-4 flex justify-between items-center text-lg text-black leading-none px-3 max-w-screen-lg mx-auto p-4">
           <div>
             <Link href="/">
-              <a className="p-2 px-1 text-black">
-                Dave.nl
+              <a title="Dave">
+                <img className="w-20" src="profile.jpg" alt="Dave" />
               </a>
             </Link>
           </div>
           <nav className={`${menuIsVisible ? 'block fixed top-0 right-0 w-auto bg-black h-full flex flex-col items-start p-4 z-30' : 'hidden lg:block'}`}>
             <Link href="/wordpress-websites">
-              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded'}`}>WordPress optimalisatie</a>
+              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded-sm'}`}>WordPress optimalisatie</a>
             </Link>
             <Link href="/react-typescript-werk">
-              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded'}`}>React & TypeScript</a>
+              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded-sm'}`}>React & TypeScript</a>
             </Link>
             <Link href="/over-mij">
-              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded'}`}>Over mij</a>
+              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded-sm'}`}>Over mij</a>
             </Link>
             <Link href="/contact">
-              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'mr-2 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded'}`}>Contact</a>
+              <a className={`${menuIsVisible ? 'py-2 mb-4 bg-black text-white' : 'mr-2 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded-sm'}`}>Contact</a>
             </Link>
             <Link href="/samenwerken">
-              <a className={`p-2 px-3 rounded ${menuIsVisible ? 'bg-black text-white border-orange-500 bg-orange-500' : 'bg-transparent hover:bg-orange-500 text-orange-500 hover:text-white border border-orange-500 hover:border-transparent'}`}>Samenwerken</a>
+              <a className={`p-2 px-3 rounded-sm ${menuIsVisible ? 'bg-black text-white border-yellow-500 bg-yellow-500' : 'bg-transparent bg-teal-400 text-white hover:border-transparent'}`}>Samenwerken</a>
             </Link>
             {menuIsVisible && (
               <button type="button" className="flex justify-end items-end flex-grow mr-4 xl:mr-1 py-2 bg-black text-white hover:bg-black hover:text-white rounded text-sm font-bold mt-2" onClick={handleToggleMenu}>Menu sluiten</button>

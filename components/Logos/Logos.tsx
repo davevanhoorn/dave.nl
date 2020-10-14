@@ -6,9 +6,9 @@ import styles from './logo.module.css'
 
 const Logos = () => (
   <div id={styles.logos} className="flex flex-wrap md:flex-no-wrap items-center justify-between mt-10 sm:px-4 max-w-screen-lg mx-auto">
-    {/* <a href="https://orangetribes.com/" title="Orange Tribes" rel="noopener noreferrer nofollow" target="_blank">
+    <a href="https://orangetribes.com/" title="Orange Tribes" rel="noopener noreferrer nofollow" target="_blank">
       <img className={styles.logo_orange_tribes} src="/company_orange-tribes.png" alt="Logo Orange Tribes" />
-    </a> */}
+    </a>
     <a href="https://www.capgemini.com/" title="Capgemini" rel="noopener noreferrer nofollow" target="_blank">
       <img className={styles.logo_capgemini} src="/company_capgemini.svg" alt="Logo Capgemini" />
     </a>
