@@ -11,7 +11,7 @@ import Project from '~/components/Project/Project'
 const Index: FunctionComponent = () => (
   <>
     <Head>
-      <title>Freelance Web Developer - Dave.nl</title>
+      <title>Freelance web developer - Dave.nl</title>
       <meta name="description" content="Vanuit Portugal werk ik als freelance web developer voor bedrijven als Noten.nl, Capgemini, Schiphol en ReisReport.nl." />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
