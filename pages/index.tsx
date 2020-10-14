@@ -18,8 +18,8 @@ const Index: FunctionComponent = () => (
     <IndexLayout>
       <main className="sm:px-1 sm:mt-6">
         <div className="relative w-12/12 md:w-10/12 lg:w-11/12 flex flex-col-reverse sm:flex-row items-center mx-auto">
-          <div className="pt-4 sm:pt-0 w-12/12 sm:w-3/6 pr-6 xl:pr-12 text-lg">
-            <h1 className="text-4xl font-medium leading-none">
+          <div className="pt-4 sm:pt-0 w-12/12 sm:w-3/6 pr-6 xl:pr-12 text-lg font-medium">
+            <h1 className="text-4xl font-bold leading-none">
               Hallo, Dave hier
               {' '}
               <span role="img" aria-label="Zwaaiende hand">👋</span>
