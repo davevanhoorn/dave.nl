@@ -54,7 +54,7 @@ const Header = () => {
               <a className={`${menuIsVisible ? 'py-2 mb-4 font-medium text-white' : 'mr-2 p-2 px-3 bg-white text-black hover:bg-black hover:text-white rounded-sm'}`}>Contact</a>
             </Link>
             <Link href="/samenwerken">
-              <a className={`p-2 rounded ${menuIsVisible ? 'border-orange-500 text-orange-500 bg-white px-2 font-medium' : 'bg-transparent bg-teal-400 text-white hover:border-transparent'}`}>Samenwerken</a>
+              <a className={`p-2 rounded ${menuIsVisible ? 'border-orange-500 text-orange-500 bg-white px-2 font-medium' : 'bg-transparent text-teal-400 border-solid border-2 border-teal-400 hover:bg-teal-400 hover:text-white text-white hover:border-transparent'}`}>Samenwerken</a>
             </Link>
             {menuIsVisible && (
               <button type="button" className="flex justify-end items-end flex-grow mr-4 xl:mr-1 py-2 text-white rounded text-sm mt-2" onClick={handleToggleMenu}>Menu sluiten</button>

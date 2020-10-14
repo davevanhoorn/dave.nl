@@ -66,7 +66,7 @@ const Index: FunctionComponent = () => (
               <span role="img" aria-label="Portugese vlag">🇵🇹</span>
             </p>
           </div>
-          <div className="hidden sm:block absolute sm:relative top-0 right-0 w-6/12 sm:w-3/6 sm:p-4 xl:p-16 xl:pl-0 sm:opacity-100">
+          <div className="hidden sm:block absolute sm:relative top-0 right-0 w-6/12 sm:w-3/6 sm:p-4 xl:p-16 xl:px-0 sm:opacity-100">
             <img className="w-full" src="./davevanhoorn.jpg" alt="Dave van Hoorn van Dave.nl" />
           </div>
         </div>
