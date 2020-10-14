@@ -32,18 +32,18 @@ const Index: FunctionComponent = () => (
               Ik help met
               {' '}
               <Link href="/wordpress-websites">
-                <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500">WordPress optimalisatie</a>
+                <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium">WordPress optimalisatie</a>
               </Link>
               , het maken van
               {' '}
               <Link href="/woocommerce-plugins">
-                <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500">WooCommerce plugins</a>
+                <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium">WooCommerce plugins</a>
               </Link>
               {' '}
               of het schrijven van full-stack apps in
               {' '}
               <Link href="/full-stack-mvp">
-                <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500">
+                <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium">
                   React en TypeScript
                 </a>
               </Link>
@@ -52,11 +52,11 @@ const Index: FunctionComponent = () => (
             <p className="mt-6 leading-relaxed">
               Samenwerken? Neem contact op via
               {' '}
-              <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500" href="https://wa.me/31616910079" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+              <a className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium" href="https://wa.me/31616910079" rel="noopener noreferrer" target="_blank">WhatsApp</a>
               {' '}
               of per
               {' '}
-              <a href="mailto:mail@dave.nl" className="border-bottom border-dotted border-solid border-b-2 border-teal-500">email</a>
+              <a href="mailto:mail@dave.nl" className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium">email</a>
               {' '}
               en ik kom snel bij je terug.
             </p>

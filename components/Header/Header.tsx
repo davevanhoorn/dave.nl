@@ -12,7 +12,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className="bg-red-400 text-center py-4">Deze site is in ontwikkeling.</div>
+      <div className="bg-red-400 text-center py-4 text-white">Deze site is in ontwikkeling.</div>
       <div className={styles.headerWrapper}>
         <header className="py-4 flex justify-between items-center text-lg text-black leading-none px-3 max-w-screen-lg mx-auto p-4">
           <div>
