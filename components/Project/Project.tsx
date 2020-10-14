@@ -48,7 +48,7 @@ const Project = () => (
           de medewerkers van Schiphol eenvoudig te beheren vanuit de WordPress admin omgeving.
         </p>
         <p className="mt-6 font-bold hover:underline">
-          <a href="https://integralsafetyschiphol.com/" title="Ga naar de website van Integral Safety Schiphol" rel="noopener noreferrer nofollow" target="_blank">Bekijk de website</a>
+          <a href="https://integralsafetyschiphol.com/projects/in-progress" title="Ga naar de website van Integral Safety Schiphol" rel="noopener noreferrer nofollow" target="_blank">Bekijk de interactieve website</a>
         </p>
       </div>
     </div>

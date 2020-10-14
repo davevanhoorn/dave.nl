@@ -12,6 +12,7 @@ const Header = () => {
   }
   return (
     <>
+      <div className="bg-red-200 text-center p-4 text-red-800">Deze website is in ontwikkeling.</div>
       <div className={styles.headerWrapper}>
         <header className="py-4 lg:py-8 flex justify-between items-center text-lg text-black font-medium leading-none px-3 max-w-screen-lg mx-auto p-4">
           <div>

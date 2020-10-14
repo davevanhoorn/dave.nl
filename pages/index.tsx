@@ -1,4 +1,5 @@
 // EXTERNAL
+import Head from 'next/head'
 import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
 
@@ -9,6 +10,11 @@ import Project from '~/components/Project/Project'
 
 const Index: FunctionComponent = () => (
   <>
+    <Head>
+      <title>Freelance Web Developer - Dave.nl</title>
+      <meta name="description" content="Vanuit Portugal werk ik als freelance web developer voor bedrijven als Noten.nl, Capgemini, Schiphol en ReisReport.nl." />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <IndexLayout>
       <main className="sm:px-1 sm:mt-6">
         <div className="relative w-12/12 md:w-10/12 lg:w-11/12 flex flex-col-reverse sm:flex-row items-center mx-auto">
@@ -20,7 +26,7 @@ const Index: FunctionComponent = () => (
               {' '}
             </h1>
             <p className="mt-6">
-              Vanuit Portugal werk ik als freelance developer voor bedrijven als Noten.nl,
+              Vanuit Portugal werk ik als freelance web developer voor bedrijven als Noten.nl,
               Capgemini, Schiphol en ReisReport.nl.
             </p>
             <p className="mt-6">
