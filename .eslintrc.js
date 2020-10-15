@@ -30,6 +30,14 @@ module.exports = {
     'eslint-plugin-import',
     'simple-import-sort',
   ],
+  overrides: [
+    {
+      'files': ['**/*.tsx'],
+      'rules': {
+        'react/prop-types': 'off'
+      }
+    }
+  ]
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'no-use-before-define': 'off',
@@ -47,10 +55,10 @@ module.exports = {
     ],
     semi: [2, 'never'],
     'react/prop-types': [2, { ignore: ['children'] }],
-    "jsx-a11y/anchor-is-valid": ["error", {
-      "components": ["Link"],
-      "specialLink": ["hrefLeft", "hrefRight"],
-      "aspects": ["invalidHref", "preferButton"]
+    'jsx-a11y/anchor-is-valid': ['error', {
+      'components': ['Link'],
+      'specialLink': ['hrefLeft', 'hrefRight'],
+      'aspects': ['invalidHref', 'preferButton']
     }]
   },
 };
