@@ -7,6 +7,7 @@ import React, { FunctionComponent } from 'react'
 import IndexLayout from '~/components/Layouts/IndexLayout'
 import Logos from '~/components/Logos/Logos'
 import Project from '~/components/Project/Project'
+import Services from '~/components/Services/Services'
 
 const Index: FunctionComponent = () => (
   <>
@@ -19,13 +20,13 @@ const Index: FunctionComponent = () => (
       <main className="sm:px-1 sm:mt-6">
         <div className="relative w-12/12 md:w-10/12 lg:w-11/12 flex flex-col-reverse sm:flex-row items-center mx-auto">
           <div className="pt-4 sm:pt-0 w-12/12 sm:w-3/6 pr-6 xl:pr-12 text-lg font-medium">
-            <h1 className="text-4xl font-bold leading-none">
-              Hallo, Dave hier
+            <h1 className="text-4xl font-bold leading-tight">
+              Hola, Dave hier
               {' '}
               <span role="img" aria-label="Zwaaiende hand">👋</span>
             </h1>
             <p className="mt-6 leading-relaxed">
-              Vanuit Portugal werk ik als freelance web developer voor bedrijven als Noten.nl,
+              Vanuit Portugal werk ik voor bedrijven als Noten.nl,
               Capgemini, Schiphol en ReisReport.nl.
             </p>
             <p className="mt-6 leading-relaxed">
@@ -56,17 +57,15 @@ const Index: FunctionComponent = () => (
               {' '}
               of per
               {' '}
-              <a href="mailto:mail@dave.nl" className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium">email</a>
+              <a href="mailto:mail@dave.nl" className="border-bottom border-dotted border-solid border-b-2 border-teal-500 text-teal-500 font-medium">mail</a>
               {' '}
               en ik kom snel bij je terug.
             </p>
             <p className="mt-7 leading-relaxed">
               Tenha um bom dia (heb een fijne dag)
-              {' '}
-              <span role="img" aria-label="Portugese vlag">🇵🇹</span>
             </p>
           </div>
-          <div className="hidden sm:block absolute sm:relative top-0 right-0 w-6/12 sm:w-3/6 sm:p-4 xl:p-16 xl:px-0 sm:opacity-100">
+          <div className="hidden sm:block absolute sm:relative top-0 right-0 w-6/12 sm:w-3/6 sm:p-4 xl:p-16 xl:px-8">
             <img className="w-full" src="./davevanhoorn.jpg" alt="Dave van Hoorn van Dave.nl" />
           </div>
         </div>
@@ -74,6 +73,7 @@ const Index: FunctionComponent = () => (
       <Logos />
     </IndexLayout>
     <Project />
+    <Services />
   </>
 )
 

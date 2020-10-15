@@ -30,7 +30,7 @@ const Header = () => {
           <div>
             <Link href="/">
               <a title="Dave">
-                <img className="w-20" src="profile.jpg" alt="Dave" />
+                <img className="w-32" src="profile-2.jpg" alt="Dave" />
               </a>
             </Link>
           </div>
