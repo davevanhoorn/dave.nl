@@ -27,7 +27,7 @@ const Header: FunctionComponent = () => {
       </button>
       {smallScreenMenuVisible && (
         <div
-          className="bg-teal-400 fixed top-0 left-0 w-full h-full flex items-center justify-between flex-col text-white text-3xl font-medium tracking-wide"
+          className="bg-teal-400 fixed top-0 left-0 w-full h-full flex items-center justify-between flex-col text-white text-3xl font-medium tracking-wide z-50"
         >
           <button type="button" className="text-sm mt-4" onClick={handleToggleMenu}>Menu sluiten</button>
           <div className="flex items-center justify-center flex-col">
