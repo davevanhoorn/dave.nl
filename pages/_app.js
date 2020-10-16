@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#16bdca" />
         <meta name="theme-color" content="#16bdca" />
-        <meta name="viewport" content="viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Component {...pageProps} />
     </>
