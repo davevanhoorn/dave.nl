@@ -13,9 +13,19 @@ import Services from '~/components/Services/Services'
 const Index: FunctionComponent = () => (
   <>
     <Head>
-      <title>Freelance web developer - Dave.nl</title>
-      <meta name="description" content="Vanuit Portugal werk ik als freelance web developer voor bedrijven als Noten.nl, Capgemini, Schiphol en ReisReport.nl." />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <title>Freelance Digital Designer - Dave.nl</title>
+      <meta name="description" content="Vanuit Portugal werk ik als freelance Digital Designer voor bedrijven als Noten.nl, Capgemini, Schiphol en ReisReport.nl." />
+
+      /* Facebook tags */
+      <meta property="og:url" content="https://dave.nl/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Ik ben Dave, freelance Digital Designer." />
+      <meta property="og:description" content="Bedrijven als Capgemini, Schiphol en ReisReport.nl huren mij in voor het optimaliseren of bouwen van hun websites en apps. Waar kan ik jou mee helpen?" />
+      <meta property="og:image" content="https://dave.nl/cover_index.jpg" />
+
+      /* LinkedIn tags */
+
+      /* Twitter tags */
     </Head>
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
