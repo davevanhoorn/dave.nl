@@ -47,12 +47,12 @@ const Index: FunctionComponent = () => (
       </div>
       <div className="flex items-center">
         <Link href="/projecten">
-          <a className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-8 px-20 mr-2" title="Projecten">
+          <a className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-8 px-24 mr-2" title="Projecten">
             Begin een project
           </a>
         </Link>
         <Link href="/projecten">
-          <a className="text-gray-400 text-white text-base font-medium leading-none py-2 ml-4 tracking-wide border-b-2 border-gray-400 border-dotted hover:border-black hover:text-black" title="Projecten">
+          <a className="text-gray-400 text-white text-base font-medium leading-none py-2 ml-4 tracking-wide hover:border-black hover:text-black" title="Projecten">
             Of bekijk mijn werk
           </a>
         </Link>
