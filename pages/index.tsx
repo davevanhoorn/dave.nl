@@ -29,10 +29,10 @@ const Index: FunctionComponent = () => (
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
       <div className="text-lg font-bold mb-8">
-        <h1 className="text-2xl lg:text-4xl text-gray-400 mb-2">
-          Hi, ik ben Dave, freelance Digital Designer.
+        <h1 className="inline sm:block text-2xl sm:text-4xl text-gray-400 mb-2">
+          Hi, ik ben Dave, een freelance Digital Designer.
         </h1>
-        <p className="text-2xl lg:text-5xl">
+        <p className="inline sm:block ml-1 lg:ml-0 text-2xl sm:text-4xl lg:text-5xl">
           <span className="lg:inline-block">
             Ik maak jouw
             {' '}
