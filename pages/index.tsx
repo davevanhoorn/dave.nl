@@ -1,5 +1,4 @@
 // EXTERNAL
-import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
@@ -30,21 +29,11 @@ const Index: FunctionComponent = () => (
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
       <div className="text-lg font-bold mb-8">
-        <motion.h1
-          className="text-2xl lg:text-4xl text-gray-400 mb-2"
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, ease: 'easeOut', duration: 1 }}
-        >
+        <h1 className="text-2xl lg:text-4xl text-gray-400 mb-2">
           Hi, ik ben Dave, freelance Digital Designer.
-        </motion.h1>
+        </h1>
         <p className="text-2xl lg:text-5xl">
-          <motion.span
-            className="lg:inline-block"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.25, ease: 'easeOut', duration: 1 }}
-          >
+          <span className="lg:inline-block">
             Ik maak jouw
             {' '}
             <Link href="/wordpress-websites">
@@ -52,13 +41,8 @@ const Index: FunctionComponent = () => (
             </Link>
             ,
             {' '}
-          </motion.span>
-          <motion.span
-            className="lg:inline-block"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, ease: 'easeOut', duration: 1 }}
-          >
+          </span>
+          <span className="lg:inline-block">
             <span className="lg:block">
               schrijf
               {' '}
@@ -67,13 +51,8 @@ const Index: FunctionComponent = () => (
               </Link>
               {' '}
             </span>
-          </motion.span>
-          <motion.span
-            className="lg:block"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.35, ease: 'easeOut', duration: 1 }}
-          >
+          </span>
+          <span className="lg:block">
             of bouw MVP&apos;s met
             {' '}
             <Link href="/full-stack-mvp">
@@ -82,31 +61,25 @@ const Index: FunctionComponent = () => (
               </a>
             </Link>
             .
-          </motion.span>
+          </span>
         </p>
       </div>
       <div className="sm:pt-0 py-4 flex flex-col sm:flex-row items-center">
         <Link href="/projecten">
-          <motion.a
+          <a
             className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-8 px-8 lg:px-24 mr-2"
             title="Projecten"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, ease: 'easeOut', duration: 1 }}
           >
             Begin een project
-          </motion.a>
+          </a>
         </Link>
         <Link href="/projecten">
-          <motion.a
+          <a
             className="text-gray-400 text-white text-base font-medium leading-none py-2 sm:mt-0 mt-2 sm:ml-4 tracking-wide hover:border-black hover:text-black"
             title="Projecten"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.45, ease: 'easeOut', duration: 1 }}
           >
             Of bekijk mijn werk
-          </motion.a>
+          </a>
         </Link>
       </div>
     </main>

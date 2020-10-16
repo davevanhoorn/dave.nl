@@ -1,5 +1,4 @@
 // EXTERNAL
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React, { FunctionComponent, useState } from 'react'
 
@@ -9,11 +8,8 @@ const Header: FunctionComponent = () => {
     setSmallScreenMenuVisible(() => !smallScreenMenuVisible)
   }
   return (
-    <motion.header
+    <header
       className="p-4 lg:pb-0 lg:pt-4 lg:mb-16 max-w-screen-xl mx-auto flex justify-between items-center text-black leading-none"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: 'easeOut', duration: 1 }}
     >
       <div className="w-32">
         <Link href="/">
@@ -119,7 +115,7 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-    </motion.header>
+    </header>
   )
 }
 
