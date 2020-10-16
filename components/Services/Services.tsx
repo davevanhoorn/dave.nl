@@ -5,7 +5,7 @@ import React from 'react'
 const Services = () => (
   <>
     <h2 className="p-4 text-4xl font-bold leading-tight text-center mt-8 md:mt-10 md:mb-16 underline">Dit kan ik voor je doen</h2>
-    <div className="flex flex-wrap max-w-screen-lg mx-auto lg:mt-12 text-lg leading-relaxed font-medium">
+    <div className="flex flex-wrap p-4 lg:py-0 lg:mb-20 max-w-screen-lg mx-auto lg:mt-12 text-lg leading-relaxed font-medium">
       <div className="p-4 md:p-0 w-full md:w-6/12 md:pl-24 md:pr-4 md:mb-12">
         <h6 className="text-2xl md:text-3xl mb-2 font-bold leading-tight">WordPress optimalisatie</h6>
         <p className="mb-2">
