@@ -29,20 +29,25 @@ const Header: FunctionComponent = () => {
           <motion.div
             className="absolute top-0 left-0 w-full h-full bg-white z-20 origin-top"
             initial={{ opacity: 0 }}
-            animate={{ opacity: smallScreenMenuVisible ? 1 : 0 }}
+            animate={{
+              opacity: smallScreenMenuVisible ? 1 : 0,
+            }}
             transition={{ ease: 'easeInOut', duration: 0.15 }}
           />
           <motion.div
             className="absolute top-0 left-0 w-full h-full bg-teal-400 z-30 origin-top"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: smallScreenMenuVisible ? 1 : 0 }}
-            transition={{ delay: 0.1, ease: 'easeInOut', duration: 0.45 }}
+            transition={{ delay: 0.1, ease: [0.46, 0.86, 0, 1.02], duration: 0.85 }}
           />
           <motion.div
             className="relative z-40 w-full h-full flex flex-col items-center justify-between"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: smallScreenMenuVisible ? 1 : 0 }}
-            transition={{ delay: 0.1, ease: 'easeInOut', duration: 0.25 }}
+            initial={{ opacity: 0, y: -4 }}
+            animate={{
+              opacity: smallScreenMenuVisible ? 1 : 0,
+              y: smallScreenMenuVisible ? 0 : -4,
+            }}
+            transition={{ delay: 0.1, ease: [0.46, 0.86, 0, 1.02], duration: 1 }}
           >
             <button type="button" className="text-sm mt-4" onClick={handleToggleMenu}>Menu sluiten</button>
             <div className="flex items-center justify-center flex-col">

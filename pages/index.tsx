@@ -67,7 +67,7 @@ const Index: FunctionComponent = () => (
       <div className="sm:pt-0 py-4 flex flex-col sm:flex-row items-center">
         <Link href="/projecten">
           <a
-            className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-8 px-8 lg:px-24 mr-2"
+            className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-4 px-8 lg:px-24 mr-2"
             title="Projecten"
           >
             Begin een project
