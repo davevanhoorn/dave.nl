@@ -1,18 +1,40 @@
 // EXTERNAL
 import React from 'react'
+import { motion } from 'framer-motion'
 
 // INTERNAL
 import styles from './logo.module.css'
 
 const Logos = () => (
-  <div id={styles.logos} className="p-4 lg:pb-0 lg:pt-8 lg:mb-16 max-w-screen-xl mx-auto flex flex-wrap md:flex-no-wrap items-center justify-between">
-    <a href="https://orangetribes.com/" title="Orange Tribes" rel="noopener noreferrer nofollow" target="_blank">
+  <motion.div
+    id={styles.logos}
+    className="p-4 lg:pb-0 lg:pt-8 lg:mb-16 max-w-screen-xl mx-auto flex flex-wrap md:flex-no-wrap items-center justify-around"
+    initial={{ scale: 0.99, y: 60, opacity: 0 }}
+    animate={{ scale: 1, y: 0, opacity: 1 }}
+    transition={{ delay: .55, ease: 'easeOut', duration: 1 }}
+  >
+    <a
+      href="https://orangetribes.com/"
+      title="Orange Tribes"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+    >
       <img className={styles.logo_orange_tribes} src="/company_orange-tribes.png" alt="Logo Orange Tribes" />
     </a>
-    <a href="https://www.capgemini.com/" title="Capgemini" rel="noopener noreferrer nofollow" target="_blank">
+    <a
+      href="https://www.capgemini.com/"
+      title="Capgemini"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+    >
       <img className={styles.logo_capgemini} src="/company_capgemini.svg" alt="Logo Capgemini" />
     </a>
-    <a href="https://noten.nl/" title="Noten.nl" rel="noopener noreferrer nofollow" target="_blank">
+    <a
+      href="https://noten.nl/"
+      title="Noten.nl"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+    >
       <img className={styles.logo_noten} src="/company_noten.svg" alt="Logo Noten.nl" />
     </a>
     <a href="https://www.euroclear.com/en.html" title="Euroclear" rel="noopener noreferrer nofollow" target="_blank">
@@ -26,7 +48,7 @@ const Logos = () => (
     <a href="https://reisreport.nl/" title="ReisReport" rel="noopener noreferrer nofollow" target="_blank">
       <img className={styles.logo_reisreport} src="/company_reisreport.png" alt="Logo ReisReport.nl" />
     </a>
-  </div>
+  </motion.div>
 )
 
 export default Logos

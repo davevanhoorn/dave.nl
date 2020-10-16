@@ -20,55 +20,86 @@ const Index: FunctionComponent = () => (
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
       <div className="text-lg font-bold mb-8">
-        <h1 className="text-4xl leading-tight text-gray-400 mb-2">
+        <motion.h1
+          className="text-4xl leading-tight text-gray-400 mb-2"
+          initial={{ scale: 0.99, y: 10, opacity: 0 }}
+          animate={{ scale: 1, y: 0, opacity: 1 }}
+          transition={{ delay: .2, ease: 'easeOut', duration: 1 }}>
           Hi, ik ben Dave, een freelance Digital Designer.
-        </h1>
+        </motion.h1>
         <p className="text-5xl">
-          Ik maak jouw
-              {' '}
-          <Link href="/wordpress-websites">
-            <a className="border-bottom border-dotted border-solid border-b-4 border-teal-500 hover:text-teal-500">WordPress site sneller</a>
-          </Link>
-              , <span className="block">schrijf maatwerk
-              {' '}
-            <Link href="/woocommerce-plugins">
-              <a className="border-bottom border-dotted border-solid border-b-4 border-teal-500 hover:text-teal-500">WooCommerce plugins</a>
-            </Link>
+          <motion.span
+            className="inline-block"
+            initial={{ scale: 0.99, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ delay: .25, ease: 'easeOut', duration: 1 }}
+          >
+            Ik maak jouw
             {' '}
-          </span>of bouw een MVP in
+            <Link href="/wordpress-websites">
+              <a className="border-bottom border-dotted border-solid border-b-4 border-teal-500 hover:text-teal-500">WordPress site sneller</a>
+            </Link>
+            ,
+          </motion.span>
+          <motion.span
+            className="inline-block"
+            initial={{ scale: 0.99, y: 30, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ delay: .3, ease: 'easeOut', duration: 1 }}
+          >
+            <span className="block">schrijf maatwerk
               {' '}
-          <Link href="/full-stack-mvp">
-            <a className="border-bottom border-dotted border-solid border-b-4 border-teal-500 hover:text-teal-500">
-              React en TypeScript
-                </a>
-          </Link>
-              .
-            </p>
+              <Link href="/woocommerce-plugins">
+                <a className="border-bottom border-dotted border-solid border-b-4 border-teal-500 hover:text-teal-500">WooCommerce plugins</a>
+              </Link>
+              {' '}
+            </span>
+          </motion.span>
+          <motion.span
+            className="block"
+            initial={{ scale: 0.99, y: 40, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ delay: .35, ease: 'easeOut', duration: 1 }}>
+            of bouw een MVP met
+            {' '}
+            <Link href="/full-stack-mvp">
+              <a className="border-bottom border-dotted border-solid border-b-4 border-teal-500 hover:text-teal-500">
+                React en TypeScript
+              </a>
+            </Link>
+            .
+          </motion.span>
+        </p>
       </div>
       <div className="flex items-center">
         <Link href="/projecten">
-          <a className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-8 px-24 mr-2" title="Projecten">
-            Begin een project
-          </a>
+          <motion.a
+            className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-8 px-24 mr-2"
+            title="Projecten"
+            initial={{ scale: 0.99, y: 50, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ delay: .4, ease: 'easeOut', duration: 1 }}
+          >
+            Begin een samenwerking
+          </motion.a>
         </Link>
         <Link href="/projecten">
-          <a className="text-gray-400 text-white text-base font-medium leading-none py-2 ml-4 tracking-wide hover:border-black hover:text-black" title="Projecten">
+          <motion.a
+            className="text-gray-400 text-white text-base font-medium leading-none py-2 ml-4 tracking-wide hover:border-black hover:text-black"
+            title="Projecten"
+            initial={{ scale: 0.99, y: 50, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ delay: .45, ease: 'easeOut', duration: 1 }}
+          >
             Of bekijk mijn werk
-          </a>
+          </motion.a>
         </Link>
       </div>
     </main>
     <Logos />
     <Project primaryBackgroundColorRgb="202,191,253">
       <>
-        <motion.img
-          animate={{ rotate: 2, x: 2, y: -5 }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-            duration: 10,
-          }}
+        <img
           className="relative z-10 w-12/12 md:w-7/12 -ml-12 md:-ml-24 origin-bottom-left self-end"
           src="/project_schiphol@2x.png"
           alt="Smartphone met Schiphol project op het scherm"
@@ -98,14 +129,7 @@ const Index: FunctionComponent = () => (
     <Services />
     <Project primaryBackgroundColorRgb="252,233,106" secondaryBackgroundColorRgb="248,180,217">
       <>
-        <motion.img
-          animate={{ rotate: 2, x: 2, y: -5 }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-            duration: 10,
-          }}
+        <img
           className="relative z-10 w-12/12 md:w-7/12 -ml-12 md:-ml-24 origin-bottom-left self-end"
           src="/project_noten.png"
           alt="Zakje noten"

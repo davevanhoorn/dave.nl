@@ -1,10 +1,16 @@
 // EXTERNAL
 import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
+import { motion } from 'framer-motion'
 
 const Header: FunctionComponent = () => {
   return (
-    <header className="p-4 lg:pb-0 lg:pt-4 lg:mb-16 max-w-screen-xl mx-auto flex justify-between items-center text-black leading-none" >
+    <motion.header
+      className="p-4 lg:pb-0 lg:pt-4 lg:mb-16 max-w-screen-xl mx-auto flex justify-between items-center text-black leading-none"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'easeOut', duration: 1 }}
+    >
       <div>
         <Link href="/">
           <a title="Dave">
@@ -34,7 +40,7 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
