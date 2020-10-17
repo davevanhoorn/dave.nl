@@ -37,7 +37,7 @@ const Index: FunctionComponent = () => (
             Ik maak
             {' '}
             <Link href="/wordpress-websites">
-              <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WordPress websites</a>
+              <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WordPress sites</a>
             </Link>
             ,
             {' '}
@@ -53,11 +53,11 @@ const Index: FunctionComponent = () => (
             </span>
           </span>
           <span className="lg:block">
-            en bouw MVP&apos;s met
+            en bouw apps met
             {' '}
             <Link href="/full-stack-mvp">
               <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">
-                React en TypeScript
+                React
               </a>
             </Link>
             .
