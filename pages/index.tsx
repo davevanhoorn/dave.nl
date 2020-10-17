@@ -87,7 +87,8 @@ const Index: FunctionComponent = () => (
     <Project primaryBackgroundColorRgb="202,191,253">
       <>
         <img
-          className="relative z-10 w-12/12 lg:w-7/12 -ml-12 lg:-ml-24 origin-bottom-left self-end"
+          style={{ left: '-2rem' }}
+          className="relative z-10 w-12/12 lg:w-7/12 lg:-ml-24 origin-bottom-left self-end"
           src="/project_schiphol@2x.png"
           alt="Smartphone met Schiphol project op het scherm"
         />
@@ -120,6 +121,7 @@ const Index: FunctionComponent = () => (
           className="relative z-10 w-12/12 lg:w-7/12 -ml-12 lg:-ml-24 origin-bottom-left self-end"
           src="/project_noten.png"
           alt="Zakje noten"
+          style={{ left: '-2rem' }}
         />
         <div className="flex flex-col w-12/12 lg:w-6/12 text-lg font-medium items-start px-4 pt-16 lg:pt-40 lg:pb-40 lg:pt-24 lg:pb-12">
           <img className="pt-2 pb-2 bg-white w-52 px-2" src="/company_noten.svg" alt="Noten.nl logo" />
