@@ -142,7 +142,19 @@ const Header: FunctionComponent = () => {
                   </svg>
                 </div>
               </div>
-              <button type="button" className="text-xs mb-4 font-medium tracking-normal" onClick={() => { router.push(router.asPath.replace(navHash, '')) }}>Menu sluiten</button>
+              <motion.button
+                type="button"
+                className="text-xs mb-4 font-medium tracking-normal"
+                onClick={() => { router.push(router.asPath.replace(navHash, '')) }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{
+                  opacity: smallScreenMenuVisible ? 1 : 0,
+                  y: smallScreenMenuVisible ? 0 : 10,
+                }}
+                transition={{ delay: 1, ease: [0.46, 0.86, 0, 1.02], duration: 1 }}
+              >
+                Menu sluiten
+              </motion.button>
             </motion.div>
           </div>
         )}

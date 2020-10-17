@@ -29,25 +29,26 @@ const Index: FunctionComponent = () => (
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
       <div className="text-lg font-bold mb-2 lg:mb-8">
-        <h1 className="text-3xl sm:text-4xl text-gray-400 mt-4 mb-2">
+        <h1 className="text-3xl sm:text-4xl text-gray-400 mt-4 mb-6">
           Ik ben Dave, een freelance webdesigner.
         </h1>
-        <p className="inline-block sm:mt-0 sm:block lg:ml-0 text-3xl sm:text-4xl lg:text-5xl mb-2">
+        <p className="inline-block sm:mt-0 sm:block lg:ml-0 text-3xl sm:text-4xl lg:text-5xl mb-6">
           <span className="lg:inline-block">
             Ik maak
             {' '}
             <Link href="/wordpress-websites">
-              <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WordPress sites</a>
+              <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WordPress</a>
             </Link>
-            ,
+            {' '}
+            sites,
             {' '}
           </span>
           <span className="lg:inline-block">
             <span className="lg:block">
-              schrijf
+              schrijf plugins voor
               {' '}
               <Link href="/woocommerce-plugins">
-                <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WooCommerce plugins</a>
+                <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WooCommerce</a>
               </Link>
               {' '}
             </span>
