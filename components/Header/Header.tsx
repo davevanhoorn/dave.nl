@@ -19,22 +19,23 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-      <button type="button" onClick={handleToggleMenu} className="sm:hidden bg-black text-sm text-white font-bold px-3 py-2 rounded">
+      <button type="button" onClick={handleToggleMenu} className="sm:hidden bg-black text-base text-white font-bold p-3 rounded">
         Menu
       </button>
       {smallScreenMenuVisible && (
         <div
-          className="fixed top-0 left-0 w-full h-full flex items-center justify-between flex-col text-white text-4xl font-medium tracking-wide z-50"
+          className="fixed top-0 left-0 w-full h-full flex items-center justify-between flex-col text-white text-3xl font-bold tracking-wide z-50"
         >
           <motion.div
             className="absolute top-0 left-0 w-full h-full bg-white z-20 origin-top"
             initial={{ opacity: 0 }}
             animate={{
-              opacity: smallScreenMenuVisible ? 1 : 0,
+              opacity: smallScreenMenuVisible ? 0.67 : 0,
             }}
             transition={{ ease: 'easeInOut', duration: 0.15 }}
           />
           <motion.div
+            style={{ opacity: 0.93 }}
             className="absolute top-0 left-0 w-full h-full bg-black z-30 origin-top"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: smallScreenMenuVisible ? 1 : 0 }}
@@ -53,7 +54,7 @@ const Header: FunctionComponent = () => {
             <div className="flex items-center justify-center flex-col uppercase">
               <Link href="/">
                 <a
-                  className="py-4"
+                  className="py-4 text-teal-400"
                   title="Projecten"
                 >
                   Home
