@@ -150,7 +150,7 @@ const Header: FunctionComponent = () => {
       <div className="font-bold lowercase leading-none text-gray-400 hidden sm:block">
         <Link href="/">
           <a
-            className="ml-6 hover:text-black"
+            className="text-teal-400 ml-6"
             title="Projecten"
           >
             home

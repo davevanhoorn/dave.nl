@@ -35,17 +35,15 @@
 
   #logos a img,
   #logos a svg {
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
   }
 
   .logo_capgemini {
     width: 70%;
-    padding-bottom: 0.8rem;
   }
 
   .logo_noten {
     width: 50%;
-    padding-bottom: 0.8rem;
   }
 
   .logo_schiphol {
@@ -62,8 +60,25 @@
   }
 }
 
-@media (max-width: 568px) {
-  #logos a {
-    width: 50%;
+@media (max-width: 468px) {
+  .logo_capgemini {
+    width: 80%;
+  }
+
+  .logo_noten {
+    width: 60%;
+  }
+
+  .logo_schiphol {
+    width: 70%;
+  }
+
+  .logo_reisreport,
+  .logo_orange_tribes {
+    width: 40%;
+  }
+
+  .logo_euroclear {
+    width: 48%;
   }
 }

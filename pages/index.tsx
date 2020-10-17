@@ -75,7 +75,7 @@ const Index: FunctionComponent = () => (
         </Link>
         <Link href="/projecten">
           <a
-            className="hidden lg:block text-gray-400 text-white text-base font-medium leading-none py-2 sm:mt-0 sm:mt-2 sm:ml-4 tracking-wide hover:border-black hover:text-black"
+            className="hidden lg:block text-gray-400 text-white text-base font-medium leading-none py-2 sm:mt-0 sm:ml-4 tracking-wide hover:border-black hover:text-black"
             title="Projecten"
           >
             Of start een project
