@@ -53,14 +53,14 @@ const Header: FunctionComponent = () => {
           >
             <div className="px-4 w-full text-xs mt-4 font-medium flex justify-between tracking-normal">
               <span>
-                Telefoon:
+                <span className="opacity-50">Tel:</span>
                 {' '}
-                <span className="opacity-50">06 169 100 79</span>
+                <span className="opacity-100">+31 (0)6 169 100 79</span>
               </span>
               <span>
-                Email:
+                <span className="opacity-50">Mail:</span>
                 {' '}
-                <span className="opacity-50">mail@dave.nl</span>
+                <span className="opacity-100">hallo@dave.nl</span>
               </span>
             </div>
             <div className="flex items-center justify-center flex-col uppercase">
