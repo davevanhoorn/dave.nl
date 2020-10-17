@@ -32,7 +32,7 @@ const Header: FunctionComponent = () => {
             animate={{
               opacity: smallScreenMenuVisible ? 0.67 : 0,
             }}
-            transition={{ ease: 'easeInOut', duration: 0.15 }}
+            transition={{ ease: 'easeInOut', duration: 0.5 }}
           />
           <motion.div
             style={{ opacity: 0.93 }}
@@ -53,12 +53,12 @@ const Header: FunctionComponent = () => {
           >
             <div className="px-4 w-full text-xs mt-4 font-medium flex justify-between tracking-normal">
               <span>
-                <span className="opacity-50">Tel:</span>
+                <span className="opacity-50">Telefoon:</span>
                 {' '}
                 <span className="opacity-100">+31 (0)6 169 100 79</span>
               </span>
               <span>
-                <span className="opacity-50">Mail:</span>
+                <span className="opacity-50">Email:</span>
                 {' '}
                 <span className="opacity-100">hallo@dave.nl</span>
               </span>
