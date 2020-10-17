@@ -28,8 +28,8 @@ const Index: FunctionComponent = () => (
     </Head>
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
-      <div className="text-lg font-bold mb-2 lg:mb-8">
-        <h1 className="text-3xl sm:text-4xl text-gray-400 mt-4 mb-6">
+      <div className="text-lg font-bold mb-2 lg:mb-16">
+        <h1 className="text-3xl sm:text-4xl text-gray-400 mt-4 mb-4">
           Ik ben Dave, een freelance webdesigner.
         </h1>
         <p className="inline-block sm:mt-0 sm:block lg:ml-0 text-3xl sm:text-4xl lg:text-5xl mb-6">
