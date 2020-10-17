@@ -35,8 +35,8 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-      <button type="button" onClick={() => { router.push(navHash) }} className="sm:hidden text-black text-base text-white font-medium p-2 px-3 rounded border-black border-2 rounded">
-        Menu
+      <button type="button" onClick={() => { router.push(navHash) }} className="sm:hidden text-black text-sm text-white font-bold p-2 px-3 rounded border-black border-2 rounded">
+        menu
       </button>
       <AnimatePresence>
         {smallScreenMenuVisible && (
@@ -82,12 +82,12 @@ const Header: FunctionComponent = () => {
                 <span>
                   <span className="opacity-50">T:</span>
                   {' '}
-                  <span className="opacity-100">+31 (0)6 169 100 79</span>
+                  <span className="opacity-100 underline">+31 (0)6 169 100 79</span>
                 </span>
                 <span>
                   <span className="opacity-50">M:</span>
                   {' '}
-                  <span className="opacity-100">hallo@dave.nl</span>
+                  <span className="opacity-100 underline">hallo@dave.nl</span>
                 </span>
               </div>
               <div className="flex items-center justify-center flex-col uppercase">
