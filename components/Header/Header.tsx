@@ -5,20 +5,15 @@ import { useRouter } from 'next/router'
 import React, { FunctionComponent, useEffect, useState } from 'react'
 
 const Header: FunctionComponent = () => {
+  const navHash = '#menu'
+  const router = useRouter()
   const [smallScreenMenuVisible, setSmallScreenMenuVisible] = useState<boolean>(false)
   const [animationCount, setAnimationCount] = useState<number>(0)
-  const [isAnimating, setIsAnimating] = useState<boolean>(false)
-  const router = useRouter()
-  const navHash = '#menu'
 
   const handleToggleMenu = () => {
-    if (isAnimating === false) {
-      setIsAnimating(true)
-    }
-
-    if (smallScreenMenuVisible === false && router.asPath.includes(navHash) === true) {
+    if (router.asPath.includes(navHash) === true) {
       setSmallScreenMenuVisible(() => true)
-    } else if (smallScreenMenuVisible === true && router.asPath.includes(navHash) === false) {
+    } else if (router.asPath.includes(navHash) === false) {
       setSmallScreenMenuVisible(() => false)
     }
   }
@@ -57,14 +52,14 @@ const Header: FunctionComponent = () => {
             />
             <motion.div
               style={{ opacity: 0.93 }}
-              className={`absolute top-0 left-0 w-full h-full bg-black z-30 origin-top ${animationCount % 2 === 0 ? 'origin-top' : 'origin-bottom'}`}
+              className={`absolute top-0 left-0 w-full h-full bg-black z-30 origin-top ${(animationCount % 2 === 0 || animationCount === 0) ? 'origin-top' : 'origin-bottom'}`}
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               exit={{ scaleY: 0 }}
               transition={{ delay: 0.1, ease: [0.46, 0.86, 0, 1.02], duration: 0.85 }}
             />
             <motion.div
-              className={`relative z-40 w-full h-full flex flex-col items-center justify-between ${animationCount % 2 === 0 ? 'origin-top' : 'origin-bottom'}`}
+              className={`relative z-40 w-full h-full flex flex-col items-center justify-between ${(animationCount % 2 === 0 || animationCount === 0) ? 'origin-top' : 'origin-bottom'}`}
               initial={{ scaleY: 0.98, opacity: 0, y: -4 }}
               animate={{
                 scaleY: 1,
@@ -79,8 +74,7 @@ const Header: FunctionComponent = () => {
               transition={{ delay: 0.1, ease: [0.46, 0.86, 0, 1.02], duration: 1 }}
               onAnimationComplete={
                 () => {
-                  setAnimationCount(() => animationCount + 1)
-                  setIsAnimating(false)
+                  setAnimationCount(() => (window?.location?.hash?.includes(navHash) ? 1 : 0))
                 }
               }
             >
