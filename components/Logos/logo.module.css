@@ -40,14 +40,16 @@
 
   .logo_capgemini {
     width: 70%;
+    padding-bottom: 0.8rem;
   }
 
   .logo_noten {
-    width: 45%;
+    width: 50%;
+    padding-bottom: 0.8rem;
   }
 
   .logo_schiphol {
-    width: 50%;
+    width: 60%;
   }
 
   .logo_reisreport,
@@ -56,7 +58,7 @@
   }
 
   .logo_euroclear {
-    width: 30%;
+    width: 38%;
   }
 }
 

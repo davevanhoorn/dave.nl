@@ -28,32 +28,32 @@ const Index: FunctionComponent = () => (
     </Head>
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
-      <div className="text-lg font-bold mb-8">
-        <h1 className="inline sm:block text-2xl sm:text-4xl text-gray-400 mb-2">
-          Hi, ik ben Dave, een freelance Digital Designer.
+      <div className="text-lg font-bold mb-2 lg:mb-8">
+        <h1 className="hidden sm:block text-2xl sm:text-4xl text-gray-400">
+          Ik ben Dave, een freelance webdesigner.
         </h1>
-        <p className="inline sm:block ml-1 lg:ml-0 text-2xl sm:text-4xl lg:text-5xl">
+        <p className="inline-block mt-6 sm:mt-0 sm:block lg:ml-0 text-3xl sm:text-4xl lg:text-5xl">
           <span className="lg:inline-block">
-            Ik maak jouw
+            Ik maak
             {' '}
             <Link href="/wordpress-websites">
-              <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WordPress site sneller</a>
+              <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WordPress websites</a>
             </Link>
             ,
             {' '}
           </span>
           <span className="lg:inline-block">
             <span className="lg:block">
-              schrijf
+              schrijf plugins voor
               {' '}
               <Link href="/woocommerce-plugins">
-                <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WooCommerce plugins</a>
+                <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WooCommerce</a>
               </Link>
               {' '}
             </span>
           </span>
           <span className="lg:block">
-            of bouw MVP&apos;s met
+            en bouw MVP&apos;s met
             {' '}
             <Link href="/full-stack-mvp">
               <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">
@@ -64,21 +64,21 @@ const Index: FunctionComponent = () => (
           </span>
         </p>
       </div>
-      <div className="sm:pt-0 py-4 flex flex-col sm:flex-row items-center">
+      <div className="sm:pt-0 py-2 flex items-center mb-8">
         <Link href="/projecten">
           <a
-            className="hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-4 px-8 lg:px-24 mr-2"
+            className="w-full sm:w-auto text-center sm:text-left block sm:inline-block hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-4 px-5 lg:px-24 lg:mr-2"
             title="Projecten"
           >
-            Begin een project
+            Bekijk mijn werk
           </a>
         </Link>
         <Link href="/projecten">
           <a
-            className="text-gray-400 text-white text-base font-medium leading-none py-2 sm:mt-0 mt-2 sm:ml-4 tracking-wide hover:border-black hover:text-black"
+            className="hidden lg:block text-gray-400 text-white text-base font-medium leading-none py-2 sm:mt-0 sm:mt-2 sm:ml-4 tracking-wide hover:border-black hover:text-black"
             title="Projecten"
           >
-            Of bekijk mijn werk
+            Of start een project
           </a>
         </Link>
       </div>

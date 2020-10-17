@@ -19,12 +19,12 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-      <button type="button" onClick={handleToggleMenu} className="sm:hidden bg-teal-400 text-white font-bold px-5 py-3 rounded">
+      <button type="button" onClick={handleToggleMenu} className="sm:hidden bg-black text-sm text-white font-bold px-3 py-2 rounded">
         Menu
       </button>
       {smallScreenMenuVisible && (
         <div
-          className="fixed top-0 left-0 w-full h-full flex items-center justify-between flex-col text-white text-3xl font-medium tracking-wide z-50"
+          className="fixed top-0 left-0 w-full h-full flex items-center justify-between flex-col text-white text-4xl font-medium tracking-wide z-50"
         >
           <motion.div
             className="absolute top-0 left-0 w-full h-full bg-white z-20 origin-top"
@@ -35,7 +35,7 @@ const Header: FunctionComponent = () => {
             transition={{ ease: 'easeInOut', duration: 0.15 }}
           />
           <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-teal-400 z-30 origin-top"
+            className="absolute top-0 left-0 w-full h-full bg-black z-30 origin-top"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: smallScreenMenuVisible ? 1 : 0 }}
             transition={{ delay: 0.1, ease: [0.46, 0.86, 0, 1.02], duration: 0.85 }}
@@ -49,38 +49,38 @@ const Header: FunctionComponent = () => {
             }}
             transition={{ delay: 0.1, ease: [0.46, 0.86, 0, 1.02], duration: 1 }}
           >
-            <button type="button" className="text-sm mt-4" onClick={handleToggleMenu}>Menu sluiten</button>
-            <div className="flex items-center justify-center flex-col">
+            <button type="button" className="text-sm mt-4 font-medium" onClick={handleToggleMenu}>Menu sluiten</button>
+            <div className="flex items-center justify-center flex-col uppercase">
               <Link href="/">
                 <a
-                  className="py-3"
+                  className="py-4"
                   title="Projecten"
                 >
-                  home
+                  Home
                 </a>
               </Link>
               <Link href="/">
                 <a
-                  className="py-3"
+                  className="py-4"
                   title="Projecten"
                 >
-                  diensten
+                  Diensten
                 </a>
               </Link>
               <Link href="/">
                 <a
-                  className="py-3"
+                  className="py-4"
                   title="Projecten"
                 >
-                  portfolio
+                  Portfolio
                 </a>
               </Link>
               <Link href="/">
                 <a
-                  className="py-3"
+                  className="py-4"
                   title="Projecten"
                 >
-                  over mij
+                  Over mij
                 </a>
               </Link>
               <div className="flex mt-8">
@@ -102,7 +102,7 @@ const Header: FunctionComponent = () => {
                 </svg>
               </div>
             </div>
-            <button type="button" className="text-sm mb-4" onClick={handleToggleMenu}>Menu sluiten</button>
+            <button type="button" className="text-sm mb-4 font-medium" onClick={handleToggleMenu}>Menu sluiten</button>
           </motion.div>
         </div>
       )}
