@@ -44,10 +44,10 @@ const Index: FunctionComponent = () => (
           </span>
           <span className="lg:inline-block">
             <span className="lg:block">
-              schrijf plugins voor
+              schrijf
               {' '}
               <Link href="/woocommerce-plugins">
-                <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WooCommerce</a>
+                <a className="border-bottom border-dotted border-solid border-b-2 lg:border-b-4 border-teal-500 hover:text-teal-500">WooCommerce plugins</a>
               </Link>
               {' '}
             </span>
