@@ -1,14 +1,34 @@
 // EXTERNAL
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import React, { FunctionComponent, useState } from 'react'
+import { useRouter } from 'next/router'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 
 const Header: FunctionComponent = () => {
   const [smallScreenMenuVisible, setSmallScreenMenuVisible] = useState<boolean>(false)
   const [animationCount, setAnimationCount] = useState<number>(0)
+  const [isAnimating, setIsAnimating] = useState<boolean>(false)
+  const router = useRouter()
+  const navHash = '#menu'
+
   const handleToggleMenu = () => {
-    setSmallScreenMenuVisible(() => !smallScreenMenuVisible)
+    if (isAnimating === false) {
+      setIsAnimating(true)
+    }
+
+    if (smallScreenMenuVisible === false && router.asPath.includes(navHash) === true) {
+      setSmallScreenMenuVisible(() => true)
+    } else if (smallScreenMenuVisible === true && router.asPath.includes(navHash) === false) {
+      setSmallScreenMenuVisible(() => false)
+    }
   }
+
+  if (process.browser) {
+    useEffect(() => {
+      handleToggleMenu()
+    }, [window?.location?.hash])
+  }
+
   return (
     <header
       className="p-4 lg:pb-0 lg:pt-4 lg:mb-16 max-w-screen-xl mx-auto flex justify-between items-center text-black leading-none"
@@ -20,7 +40,7 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-      <button type="button" onClick={handleToggleMenu} className="sm:hidden bg-black text-base text-white font-bold p-3 rounded">
+      <button type="button" onClick={() => { router.push(navHash) }} className="sm:hidden bg-black text-base text-white font-bold p-3 rounded">
         Menu
       </button>
       <AnimatePresence>
@@ -60,17 +80,18 @@ const Header: FunctionComponent = () => {
               onAnimationComplete={
                 () => {
                   setAnimationCount(() => animationCount + 1)
+                  setIsAnimating(false)
                 }
               }
             >
               <div className="px-4 w-full text-xs mt-4 font-medium flex justify-between tracking-normal">
                 <span>
-                  <span className="opacity-50">Telefoon:</span>
+                  <span className="opacity-50">T:</span>
                   {' '}
                   <span className="opacity-100">+31 (0)6 169 100 79</span>
                 </span>
                 <span>
-                  <span className="opacity-50">Email:</span>
+                  <span className="opacity-50">M:</span>
                   {' '}
                   <span className="opacity-100">hallo@dave.nl</span>
                 </span>
@@ -127,7 +148,7 @@ const Header: FunctionComponent = () => {
                   </svg>
                 </div>
               </div>
-              <button type="button" className="text-xs mb-4 font-medium tracking-normal" onClick={handleToggleMenu}>Menu sluiten</button>
+              <button type="button" className="text-xs mb-4 font-medium tracking-normal" onClick={() => { router.push(router.asPath.replace(navHash, '')) }}>Menu sluiten</button>
             </motion.div>
           </div>
         )}
