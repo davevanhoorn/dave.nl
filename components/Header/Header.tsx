@@ -35,7 +35,7 @@ const Header: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-      <button type="button" onClick={() => { router.push(navHash) }} className="sm:hidden bg-black text-base text-white font-bold p-3 rounded">
+      <button type="button" onClick={() => { router.push(navHash) }} className="sm:hidden text-black text-base text-white font-medium p-2 px-3 rounded border-black border-2 rounded">
         Menu
       </button>
       <AnimatePresence>

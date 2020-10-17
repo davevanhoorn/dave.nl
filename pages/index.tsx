@@ -29,10 +29,10 @@ const Index: FunctionComponent = () => (
     <Header />
     <main className="p-4 lg:pb-0 lg:pt-8 lg:mb-20 max-w-screen-lg mx-auto">
       <div className="text-lg font-bold mb-2 lg:mb-8">
-        <h1 className="hidden sm:block text-2xl sm:text-4xl text-gray-400">
+        <h1 className="text-3xl sm:text-4xl text-gray-400 mt-4 mb-2">
           Ik ben Dave, een freelance webdesigner.
         </h1>
-        <p className="inline-block mt-6 sm:mt-0 sm:block lg:ml-0 text-3xl sm:text-4xl lg:text-5xl">
+        <p className="inline-block sm:mt-0 sm:block lg:ml-0 text-3xl sm:text-4xl lg:text-5xl mb-2">
           <span className="lg:inline-block">
             Ik maak
             {' '}
@@ -67,7 +67,7 @@ const Index: FunctionComponent = () => (
       <div className="sm:pt-0 py-2 flex items-center mb-8">
         <Link href="/projecten">
           <a
-            className="w-full sm:w-auto text-center sm:text-left block sm:inline-block hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-4 px-5 lg:px-24 lg:mr-2"
+            className="sm:w-auto text-center sm:text-left block sm:inline-block hover:bg-teal-500 bg-teal-400 text-white rounded font-medium text-xl leading-none py-4 px-8 lg:px-24 lg:mr-2"
             title="Projecten"
           >
             Bekijk mijn werk
