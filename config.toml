@@ -3,7 +3,7 @@ languageCode = "nl-nl"
 title = "Dave.nl"
 theme = "ink"
 
-copyright = "© Dave van Hoorn"
+copyright = "© Dave van Hoorn | yo@dave.nl | +31 (0)6 169 100 79"
 
 pygmentsstyle = "vs"
 pygmentscodefences = true
