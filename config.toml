@@ -9,7 +9,7 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [params]
-	subtitle = "Online ondernemen op Dave.nl, offline ondernemen bij Noten.nl"
+	subtitle = "Online ondernemen op Dave.nl & offline ondernemen met Noten.nl."
 	avatar = "/images/dave.png"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
