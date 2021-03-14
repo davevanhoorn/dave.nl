@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin? Nope. Waarom ik wél investeer in een .crypto domeinnaam."
+title: "Bitcoin? Nope. Maar ik reserveer wél een .crypto domeinnaam"
 date: 2021-03-14
 ---
 
