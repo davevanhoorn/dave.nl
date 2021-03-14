@@ -9,7 +9,7 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [params]
-	subtitle = "Digitaal ondernemen en analoog noten branden."
+	subtitle = "Digitaal ondernemen @dave.nl analoog noten branden @noten.nl"
 	avatar = "/images/dave.png"
 	disableDisqusTypes = ["page"]
 	featherIconsCDN = true
