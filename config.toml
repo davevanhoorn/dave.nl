@@ -2,12 +2,15 @@ baseURL = "https://dave.nl/"
 languageCode = "nl-nl"
 title = "Dave.nl"
 theme = "ink"
+
 copyright = "© Dave van Hoorn"
+
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-subtitle = "Digitaal ondernemen en analoog noten branden."
-avatar = "/images/dave.png"
-disableDisqusTypes = ["page"]
-featherIconsCDN = true
+[params]
+	subtitle = "Digitaal ondernemen en analoog noten branden."
+	avatar = "/images/dave.png"
+	disableDisqusTypes = ["page"]
+	featherIconsCDN = false
 mode = "auto" # "dark" or "auto"
