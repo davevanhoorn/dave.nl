@@ -38,9 +38,9 @@ Deze tweet zegt 't allemaal:
 
 Investeer je in Bitcoin omdat je snel rijk wilt worden? Of investeer je in Bitcoin omdat je gelooft dat deze technologie iets gaat doen met de wereld?
 
-## Waarom ik niet investeer in Bitcoin
+## Waarom _ik_ niet investeer in Bitcoin
 
-Persoonlijk investeer ik **niet** in Bitcoin. Ik ben van mening dat er te veel investeerders snel (en lui) rijk willen worden en dat er te weinig zakelijke adoptie is om het voor Jan en alleman aantrekkelijk te maken.
+Ik investeer niet in Bitcoin. Ik ben van mening dat er te veel investeerders snel (en lui) rijk willen worden en dat er te weinig werkelijke adoptie is om het voor Jan en alleman aantrekkelijk te maken.
 
 Ik zie te veel overeenkomsten met wat ik in Bali heb zien gebeuren en ik ben bang dat men door deze Bitcoin koers [nóg](https://cointelegraph.com/news/crypto-users-split-on-taking-out-loans-to-buy-bitcoin-dips) [harder](https://twitter.com/novice_bitcoin/status/1370798055579074568) [op](https://trends.google.com/trends/explore?q=is%20bitcoin%20going%20to%20crash&date=today%205-y#TIMESERIES) [hun](https://www.bnnbloomberg.ca/economics/video/economist-who-predicated-the-last-financial-crisis-warns-of-a-debt-bubble-pop-amid-the-covid-19~1924800) [bek](https://www.thehour.com/business/article/Bitcoin-Critic-Slams-Brainwashed-Son-for-16018304.php) [gaat](https://www.quora.com/Did-you-ruin-your-life-by-trading-crypto).
 
