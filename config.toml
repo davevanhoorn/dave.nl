@@ -1,4 +1,4 @@
-baseURL = "http://dave.nl/"
+baseURL = "https://dave.nl/"
 languageCode = "nl-nl"
 title = "Dave.nl"
 theme = "ink"
