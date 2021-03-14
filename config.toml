@@ -12,5 +12,5 @@ pygmentscodefencesguesssyntax = true
 	subtitle = "Digitaal ondernemen en analoog noten branden."
 	avatar = "/images/dave.png"
 	disableDisqusTypes = ["page"]
-	featherIconsCDN = false
+	featherIconsCDN = true
 mode = "auto" # "dark" or "auto"
