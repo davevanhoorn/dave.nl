@@ -261,6 +261,8 @@ ul {
 
 .header .site-description p {
   margin-top: 0.25rem;
+  font-size: smaller;
+  margin-left: 0.05rem;
 }
 
 .header nav {
