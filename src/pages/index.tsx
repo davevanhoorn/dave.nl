@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className='container mx-auto max-w-4xl px-8'>
       <Seo />
-      <header className='mb-8 flex items-center justify-between border-b py-8'>
+      <header className='mb-8 flex flex-col items-center justify-between border-b py-8 md:flex-row'>
         <div>
           <h1 className='text-xl font-semibold leading-relaxed'>
             Dave van Hoorn
@@ -23,14 +23,14 @@ export default function HomePage() {
             Freelance front-end developer | available March 2022
           </h2>
         </div>
-        <Button variant='light'>
+        <Button variant='outline' disabled className='mt-6 opacity-25 md:mt-0'>
           <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
           Download CV
         </Button>
       </header>
       <main>
         <div className='grid grid-cols-12 gap-8'>
-          <div className='col-span-9 border-r'>
+          <div className='col-span-12 md:col-span-9 md:border-r'>
             <h3 className='text-xl font-semibold leading-relaxed'>
               Experience
             </h3>
@@ -100,7 +100,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className='col-span-3'>
+          <div className='col-span-12 md:col-span-3'>
             <ul className='mt-2 mb-4 text-sm leading-relaxed'>
               <li className='mb-2 text-base font-semibold'>Personal details</li>
               <li>Dave van Hoorn</li>
