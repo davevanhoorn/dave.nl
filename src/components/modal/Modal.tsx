@@ -63,9 +63,8 @@ export const Modal = () => {
                 format.
               </p>
               <p className='mb-4 border-b pb-5 text-sm leading-6'>
-                Prefer an instant answer or need instant help with a project?
-                Give me a call or send a WhatsApp message to +31 (0)6 169 100
-                79.
+                Prefer a quick answer or need instant help with a project? Call
+                me or send a WhatsApp message to +31 (0)6 169 100 79.
               </p>
               <label
                 className='mb-2 block text-base font-medium text-black'
