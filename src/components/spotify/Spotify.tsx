@@ -1,0 +1,58 @@
+import Image from 'next/image';
+import { BsPlayCircleFill } from 'react-icons/bs';
+import useSWR from 'swr';
+
+import { fetcher } from '@/helpers/common';
+
+// artist: 'Rick James';
+// songUrl: 'https://open.spotify.com/track/13v3siPyvy5TTEZYmGPPse';
+// title: 'Give It To Me Baby';
+// image: {
+//   height: number;
+//   width: number;
+//   url: string;
+// }
+
+export const Spotify = () => {
+  const { data, error } = useSWR('/api/spotify', fetcher);
+
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+
+  return (
+    <>
+      <div className='mt-8'></div>
+      {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
+      {data.map((song: any, index: number) => (
+        <div key={`song-${index}`} className='mb-4 flex items-center last:mb-0'>
+          <div className='relative mr-4 h-14 w-14 flex-shrink-0 overflow-hidden rounded'>
+            <a
+              href={song.songUrl}
+              target='_blank'
+              rel='noreferrer noopener nofollow'
+            >
+              <BsPlayCircleFill
+                className='absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-white opacity-70 hover:cursor-pointer hover:opacity-100'
+                size={30}
+              />
+            </a>
+            <Image
+              src={song.image.url}
+              width={100}
+              height={100}
+              alt={`${song.artist} - ${song.title}`}
+            />
+          </div>
+          <div>
+            <h6 className='overflow-hidden font-medium leading-none'>
+              {song.title}
+            </h6>
+            <h6 className='mt-1 overflow-hidden text-ellipsis text-sm'>
+              {song.artist}
+            </h6>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};

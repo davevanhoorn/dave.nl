@@ -5,8 +5,8 @@ type CertificateProps = {
 
 export const Certificate = ({ title, issuedDate }: CertificateProps) => {
   return (
-    <div className='mt-4 mb-2 mr-8 border-b pt-2 pb-4 last:border-b-0'>
-      <h4 className='mb-1 text-base font-semibold leading-relaxed'>
+    <div className='mt-4 mr-8 pt-2'>
+      <h4 className='mb-1 text-base font-medium leading-7'>
         {title} <br />
         <span className='text-sm font-medium opacity-40'>{issuedDate}</span>
       </h4>

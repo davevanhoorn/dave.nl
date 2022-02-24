@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as React from 'react';
 import {
   BsFillFileEarmarkPdfFill,
@@ -9,31 +10,38 @@ import {
 import Button from '@/components/buttons/Button';
 import { Certificate } from '@/components/certificate/Certificate';
 import { Experience } from '@/components/experience/Experience';
+import { Modal } from '@/components/modal/Modal';
 import Seo from '@/components/Seo';
+import { Spotify } from '@/components/spotify/Spotify';
+
+import { useModalStore } from '@/store/modal';
+
 export default function HomePage() {
+  const { setVisibility, visible } = useModalStore();
+
   return (
-    <div className='container mx-auto max-w-4xl px-8'>
+    <div className='container mx-auto max-w-4xl px-4 md:px-8'>
       <Seo />
       <header className='mb-8 flex flex-col items-center justify-between border-b py-8 md:flex-row'>
         <div>
-          <h1 className='text-xl font-semibold leading-relaxed'>
-            Dave van Hoorn
-          </h1>
-          <h2 className='text-sm font-normal'>
-            Freelance front-end developer | available March 2022
+          <h1 className='mb-1 text-2xl font-semibold'>Dave van Hoorn</h1>
+          <h2 className='text-base font-medium'>
+            Front-end Developer • Available May &apos;22
           </h2>
         </div>
-        <Button variant='outline' disabled className='mt-6 opacity-25 md:mt-0'>
+        <Button
+          onClick={() => setVisibility(!visible)}
+          variant='outline'
+          className='mt-6 md:mt-0'
+        >
           <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
           Download CV
         </Button>
       </header>
       <main>
-        <div className='grid grid-cols-12 gap-8'>
-          <div className='col-span-12 md:col-span-9 md:border-r'>
-            <h3 className='text-xl font-semibold leading-relaxed'>
-              Experience
-            </h3>
+        <div className='grid md:grid-cols-12 md:gap-8'>
+          <div className='col-span-12 md:col-span-8 md:border-r lg:col-span-9'>
+            <h3 className='text-2xl font-semibold leading-7'>Experience</h3>
             <Experience
               title='Freelance front-end developer @ Dept Agency'
               dates='01-2022 - present'
@@ -45,11 +53,20 @@ export default function HomePage() {
             />
 
             <Experience
-              title='Owner, full-stack developer @ Noten.nl'
+              title='Freelance front-end developer @ Bankai'
+              dates='01-2021 - 03-2021'
+              description="Develop customer flow based on designs. Enable the user to add car by license plate with external API\'s (or manually) and calculate efficient BPM models within UsedCarController.nl."
+              stack='React, Redux, Formik, Axios, PHP, Netlify, GitLab, ClickUp, Git, Figma'
+              rate='€70/hour'
+              location='Utrecht, Netherlands (100% remote)'
+              industry='Automotive'
+            />
+
+            <Experience
+              title='Full-stack developer @ Noten.nl'
               dates='01-2018 - 12-2021'
               description='Develop the headless front-end and custom WordPress (with GraphQL) back-end of Noten.nl, NüsseKaufen.de. I was responsible for design, development, marketing etc. Exited the business after organically scaling to five figures.'
-              stack='React, TypeScript, Next.js, GraphQL, Tailwind CSS, PHP, Vercel, Git, Adobe XD'
-              rate='-'
+              stack='React, TypeScript, Next.js, Tailwind CSS, PHP, Vercel, Git'
               location='Utrecht, Netherlands'
               industry='B2C | food'
             />
@@ -61,10 +78,9 @@ export default function HomePage() {
               stack='React, TypeScript, .NET, Material-UI, Azure Devops, Formik, Git, Figma'
               location='Amsterdam, Netherlands'
               industry='Fintech'
-              rate='-'
             />
-            <h4 className='pt-6 text-xl font-semibold leading-relaxed'>
-              Certifications
+            <h4 className='border-t pt-8 text-2xl font-semibold leading-7'>
+              Certifications & Studies
             </h4>
             <Certificate
               title='Professional Scrum Master PSMI'
@@ -74,53 +90,71 @@ export default function HomePage() {
               title='HBO Bachelor of Commerce (B.Comm.), Communication & Media Design'
               issuedDate='05-2013'
             />
-            <h4 className='pt-6 text-xl font-semibold leading-relaxed'>
-              About me
-            </h4>
-            <div className='mt-4 mb-2 mr-8 border-b pt-2 pb-4 last:border-b-0'>
-              <p className='mb-4'>
+            <div className='mt-8 flex items-center justify-between border-t pt-6 pr-8'>
+              <h4 className='text-2xl font-semibold leading-7'>About</h4>
+              <Image
+                width={50}
+                height={50}
+                className='inline-block h-10 w-10 flex-shrink-0 rounded-full ring-2 ring-white'
+                src='/images/davevanhoorn.jpg'
+                alt='Dave van Hoorn'
+              />
+            </div>
+
+            <div className='mt-4 mb-2 border-b pb-4 leading-7 last:border-b-0 md:mr-8'>
+              <p className='mb-5'>
                 Hi! 👋 I&apos;m Dave, a 33 year old web enthousiast.{' '}
               </p>
-              <p className='mb-4'>
+              <p className='mb-5'>
                 Outside of work I enjoy walking my Balinese dog, shredding Dutch
                 trails on my mountainbike (these can actually be challenging) or
                 surfing small to medium sized waves - preferably in warm water.
               </p>
-              <p className='mb-4'>
+              <p className='mb-5'>
                 At work I consider myself an extravert person with a keen eye
                 for user-experience and visual design. I thrive in small teams
-                where communication is open, honest feedback (even when it
-                hurts) is appreciated and there&apos;s room for humour and
-                legitimate personal interest.
+                where communication is open, honest feedback is appreciated and
+                there&apos;s room for humour and legitimate personal interest.
               </p>
-              <p className='mb-4'>
+              <p className='mb-5'>
                 I&apos;m also an avid music lover. With Spotify playing 24/7 I
                 might have some tracks for you to enjoy. Here&apos;s what
-                I&apos;ve recently been listening to:
+                I&apos;ve been listening to:
               </p>
+              <Spotify />
             </div>
           </div>
-          <div className='col-span-12 md:col-span-3'>
-            <ul className='mt-2 mb-4 text-sm leading-relaxed'>
-              <li className='mb-2 text-base font-semibold'>Personal details</li>
+          <div className='col-span-12 md:col-span-4 lg:col-span-3'>
+            <ul className='mt-2 mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
+              <li className='mb-2 list-none text-sm font-semibold'>
+                Personal details
+              </li>
               <li>Dave van Hoorn</li>
               <li>33 years old</li>
               <li>Born in the Netherlands</li>
               <li>Fluent in Dutch, English</li>
               <li>10+ years experience</li>
             </ul>
-            <ul className='mb-4 text-sm leading-relaxed'>
-              <li className='mb-2 text-base font-semibold'>Business details</li>
+            <ul className='mt-2 mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
+              <li className='mb-2 list-none text-sm font-semibold'>
+                Business details
+              </li>
               <li>Dave van Hoorn</li>
               <li>Meindert Hobbemalaan 8</li>
               <li>3401 NB IJsselstein</li>
-              <li className='mb-2'>Utrecht, The Netherlands</li>
-              <li>CoC: 51002922</li>
-              <li>Tax: NL001234740B24</li>
+              <li>Utrecht, The Netherlands</li>
+              <li>
+                <span className='font-semibold'>CoC:</span> 51002922
+              </li>
+              <li>
+                <span className='font-semibold'>Tax:</span> NL001234740B24
+              </li>
             </ul>
-            <ul className='mb-4 text-sm leading-relaxed'>
-              <li className='mb-2 text-base font-semibold'>Contact details</li>
-              <li>yo@dave.nl</li>
+            <ul className='mt-2 mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
+              <li className='mb-2 list-none text-sm font-semibold'>
+                Contact details
+              </li>
+              <li>mail [@] dave.nl</li>
               <li>+31 (0)6 169 100 79</li>
               <li className='mt-8 flex'>
                 <span className='mr-2'>
@@ -159,6 +193,7 @@ export default function HomePage() {
         </div>
       </main>
       <footer></footer>
+      <Modal />
     </div>
   );
 }
