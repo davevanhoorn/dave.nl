@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 import { openGraph } from '@/lib/helper';
 
 const defaultMeta = {
-  title: 'Freelance front-end developer | Dave van Hoorn',
-  siteName: 'Freelance front-end developer | Dave van Hoorn',
-  description: 'Download my CV here.',
+  title: 'Freelance front-end developer',
+  siteName: 'Freelance front-end developer',
+  description: 'Dave van Hoorn | +31 (0)6 169 100 70 | yo@dave.nl',
   url: 'https://dave.nl',
   type: 'website',
   robots: 'follow, index',
