@@ -57,40 +57,47 @@ export const Modal = () => {
               />
             </motion.div>
             <div>
-              <p className='mb-2 text-sm leading-6'>
-                Please enter your details below to receive my CV in{' '}
-                <span className='font-semibold'>PDF and Microsoft Word</span>{' '}
-                format.
+              <p className='border-red mb-4 rounded border border-red-500 px-2 py-2 text-center text-sm text-sm font-medium leading-6 leading-6 text-red-500'>
+                Sorry. I&apos;m currently not available for new work.
               </p>
-              <p className='mb-4 border-b pb-5 text-sm leading-6'>
-                Prefer a quick answer or need instant help with a project? Call
-                me or send a WhatsApp message to +31 (0)6 169 100 79.
-              </p>
-              <label
-                className='mb-2 block text-base font-medium text-black'
-                htmlFor='name'
-              >
-                Your name:
-              </label>
-              <input
-                className='focus:shadow-outline mb-4 w-full appearance-none rounded border px-3 py-3 leading-tight text-gray-700 focus:outline-none'
-                id='name'
-                type='text'
-              />
-              <label
-                className='mb-2 block text-base font-medium text-black'
-                htmlFor='name'
-              >
-                Your email address:
-              </label>
-              <input
-                className='focus:shadow-outline w-full appearance-none rounded border px-3 py-3 leading-tight text-gray-700 focus:outline-none'
-                id='email'
-                type='text'
-              />
-              <Button className='mt-6' variant='dark'>
-                Download my CV
-              </Button>
+              <div className='opacity-10'>
+                <p className='mb-2 text-sm leading-6'>
+                  Please enter your details below to receive my CV in{' '}
+                  <span className='font-semibold'>PDF and Microsoft Word</span>{' '}
+                  format.
+                </p>
+                <p className='mb-4 text-sm'>
+                  Prefer a quick answer or need instant help with a project?
+                  Call me or send a WhatsApp message to +31 (0)6 169 100 79.
+                </p>
+                <label
+                  className='mb-2 block text-base font-medium text-black'
+                  htmlFor='name'
+                >
+                  Your name:
+                </label>
+                <input
+                  disabled
+                  className='focus:shadow-outline mb-4 w-full appearance-none rounded border px-3 py-3 leading-tight text-gray-700 focus:outline-none'
+                  id='name'
+                  type='text'
+                />
+                <label
+                  className='mb-2 block text-base font-medium text-black'
+                  htmlFor='name'
+                >
+                  Your email address:
+                </label>
+                <input
+                  disabled
+                  className='focus:shadow-outline w-full appearance-none rounded border px-3 py-3 leading-tight text-gray-700 focus:outline-none'
+                  id='email'
+                  type='text'
+                />
+                <Button disabled className='mt-6' variant='dark'>
+                  Download my CV
+                </Button>
+              </div>
             </div>
           </motion.div>
         </motion.div>
