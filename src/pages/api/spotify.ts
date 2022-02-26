@@ -1,9 +1,13 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
-import { getTopTracks } from 'lib/spotify';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import { cors } from '@/lib/helper';
+import { getTopTracks } from '@/lib/spotify';
+
 const spotify = async (req: NextApiRequest, res: NextApiResponse) => {
+  await cors(req, res);
+
   const response = await getTopTracks();
   const { items } = await response.json();
 

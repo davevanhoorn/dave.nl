@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { useClickAway, useLockBodyScroll } from 'react-use';
 
-import Button from '@/components/buttons/Button';
+import { Form } from '@/components/form/Form';
 
 import { useModalStore } from '@/store/modal';
 
@@ -57,47 +57,11 @@ export const Modal = () => {
               />
             </motion.div>
             <div>
-              <p className='border-red mb-4 rounded border border-red-500 px-2 py-2 text-center text-sm text-sm font-medium leading-6 leading-6 text-red-500'>
-                Sorry. I&apos;m currently not available for new work.
+              <p className='border-red mb-4 rounded border border-red-500 px-2 py-2 text-center text-sm font-medium leading-6 text-red-500'>
+                Please note I&apos;m not directly available for new work. <br />
+                I&apos;m available for a 32/hr a week job from May 2022.
               </p>
-              <div className='opacity-10'>
-                <p className='mb-2 text-sm leading-6'>
-                  Please enter your details below to receive my CV in{' '}
-                  <span className='font-semibold'>PDF and Microsoft Word</span>{' '}
-                  format.
-                </p>
-                <p className='mb-4 text-sm'>
-                  Prefer a quick answer or need instant help with a project?
-                  Call me or send a WhatsApp message to +31 (0)6 169 100 79.
-                </p>
-                <label
-                  className='mb-2 block text-base font-medium text-black'
-                  htmlFor='name'
-                >
-                  Your name:
-                </label>
-                <input
-                  disabled
-                  className='focus:shadow-outline mb-4 w-full appearance-none rounded border px-3 py-3 leading-tight text-gray-700 focus:outline-none'
-                  id='name'
-                  type='text'
-                />
-                <label
-                  className='mb-2 block text-base font-medium text-black'
-                  htmlFor='name'
-                >
-                  Your email address:
-                </label>
-                <input
-                  disabled
-                  className='focus:shadow-outline w-full appearance-none rounded border px-3 py-3 leading-tight text-gray-700 focus:outline-none'
-                  id='email'
-                  type='text'
-                />
-                <Button disabled className='mt-6' variant='dark'>
-                  Download my CV
-                </Button>
-              </div>
+              <Form />
             </div>
           </motion.div>
         </motion.div>
