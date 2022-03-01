@@ -32,7 +32,7 @@ const sendgrid = async (req: NextApiRequest, res: NextApiResponse) => {
     body: data,
   };
 
-  client
+  await client
     .request(request)
     .then(() => {
       res.status(200).json({ message: 'ok' });
