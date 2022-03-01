@@ -36,6 +36,7 @@ yarn-error.log*
 
 # MJML
 *.mjml
+/mjml/*
 
 # changelog
 CHANGELOG.md
