@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import Image from 'next/image';
 import * as React from 'react';
 import {
@@ -18,16 +19,17 @@ import { useModalStore } from '@/store/modal';
 
 export default function HomePage() {
   const { setVisibility, visible } = useModalStore();
-
+  const date = format(new Date(), 'yyyy');
   return (
     <div className='container mx-auto max-w-4xl px-4 md:px-8'>
       <Seo />
       <header className='mb-8 flex flex-col items-center justify-between border-b py-8 md:flex-row'>
         <div>
-          <h1 className='mb-1 text-2xl font-semibold'>Dave van Hoorn</h1>
-          <h2 className='text-base font-medium'>
-            Front-end Developer • Available May &apos;22
-          </h2>
+          <h2 className='mb-1 text-2xl font-semibold'>Dave van Hoorn</h2>
+          <h1 className='text-base font-medium'>
+            Freelance FE developer (React, TypeScript, Next.js) • available
+            August 2022
+          </h1>
         </div>
         <Button
           onClick={() => setVisibility(!visible)}
@@ -41,6 +43,16 @@ export default function HomePage() {
       <main>
         <div className='grid md:grid-cols-12 md:gap-8'>
           <div className='col-span-12 md:col-span-8 md:border-r lg:col-span-9'>
+            <div className='mb-8 rounded-lg border-yellow-200 bg-yellow-100 p-5 text-sm font-medium leading-6 md:mr-8'>
+              About me in 64 words: <br />
+              Front-end developer based in Utrecht, the Netherlands. With 10+
+              years of experience I&apos;m grateful to have worked for small,
+              local brands and big international brands. Schiphol, Noten.nl,
+              Dept Agency, Capgemini and Euroclear to name a few. In my recent
+              jobs I focus on FE development with Next.js, React and TypeScript.
+              Always in for a chat about music, dogs, surfing, skateboarding,
+              mountainbiking and the web.
+            </div>
             <h3 className='text-2xl font-semibold leading-7'>Experience</h3>
             <Experience
               title='Freelance front-end developer @ Dept Agency'
@@ -67,7 +79,7 @@ export default function HomePage() {
               dates='01-2018 - 12-2021'
               description='Develop the headless front-end and custom WordPress (with GraphQL) back-end of Noten.nl, NüsseKaufen.de. I was responsible for design, development, marketing etc. Exited the business after organically scaling to five figures.'
               stack='React, TypeScript, Next.js, Tailwind CSS, PHP, Vercel, Git'
-              location='Utrecht, Netherlands'
+              location='Cape Town, South Africa | Utrecht, Netherlands'
               industry='B2C | food'
             />
 
@@ -79,6 +91,16 @@ export default function HomePage() {
               location='Amsterdam, Netherlands'
               industry='Fintech'
             />
+
+            <Experience
+              title='Front-end developer @ Schiphol Nederland (for Orange Tribes)'
+              dates='05-2018 - 08-2018'
+              description='Create an interactive map for Integral Safety Schiphol (.com). The map should be manageable by Schiphol employees. I built a custom, multilingual WordPress website with jQuery, Leaflet.js. The map can be zoomed in and out of by using pre-exported tiles based on a SVG illustration.'
+              stack='WordPress, Advanced Custom Fields, jQuery, Leaflet.js, Git'
+              location='Bali, Indonesia (100% remote)'
+              industry='Aviation'
+            />
+
             <h4 className='border-t pt-8 text-2xl font-semibold leading-7'>
               Certifications & Studies
             </h4>
@@ -192,7 +214,9 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-      <footer></footer>
+      <footer className='mt-16 pb-16 text-center text-xs font-medium'>
+        Copyright © {date} Dave.nl - This is a size 8 footer 🦶
+      </footer>
       <Modal />
     </div>
   );
