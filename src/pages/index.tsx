@@ -20,8 +20,9 @@ import { useModalStore } from '@/store/modal';
 export default function HomePage() {
   const { setVisibility, visible } = useModalStore();
   const date = format(new Date(), 'yyyy');
+
   return (
-    <div className='container mx-auto max-w-4xl px-4 md:px-8'>
+    <div className='container mx-auto max-w-5xl px-4 md:px-8'>
       <Seo />
       <header className='mb-8 flex flex-col items-center justify-between border-b py-8 md:flex-row'>
         <div>
@@ -43,15 +44,27 @@ export default function HomePage() {
       <main>
         <div className='grid md:grid-cols-12 md:gap-8'>
           <div className='col-span-12 md:col-span-8 md:border-r lg:col-span-9'>
-            <div className='mb-8 rounded-lg border-yellow-200 bg-yellow-100 p-5 text-sm font-medium leading-6 md:mr-8'>
-              About me in 64 words: <br />
-              Front-end developer based in Utrecht, the Netherlands. With 10+
-              years of experience I&apos;m grateful to have worked for small,
-              local brands and big international brands. Schiphol, Noten.nl,
-              Dept Agency, Capgemini and Euroclear to name a few. In my recent
-              jobs I focus on FE development with Next.js, React and TypeScript.
-              Always in for a chat about music, dogs, surfing, skateboarding,
-              mountainbiking and the web.
+            <div className='mb-8 rounded-lg border-2 border-black bg-yellow-100 p-5 text-sm font-medium leading-6 md:mr-8'>
+              <span className='font-semibold'>About me in 62 words:</span>{' '}
+              <br />
+              Front-end developer based in Utrecht, the Netherlands. With{' '}
+              <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-green-200'>
+                <span className='relative font-semibold text-black'>
+                  10+ years
+                </span>
+              </span>{' '}
+              of experience I&apos;m grateful to have worked for both local and
+              international brands. Schiphol, Noten.nl, Dept Agency, Capgemini
+              and Euroclear to name a few. In my recent jobs I focus on FE
+              development with Next.js,{' '}
+              <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-red-200'>
+                <span className='relative font-semibold text-black'>React</span>
+              </span>{' '}
+              and TypeScript. Always in for a chat about music,{' '}
+              <span className='relative inline-block before:absolute before:-inset-1 before:block before:skew-y-1 before:bg-blue-200'>
+                <span className='relative font-semibold text-black'>dogs</span>
+              </span>{' '}
+              , surfing, skateboarding, mountainbiking and the web.
             </div>
             <h3 className='text-2xl font-semibold leading-7'>Experience</h3>
             <Experience

@@ -58,7 +58,6 @@ export const Modal = () => {
             </motion.div>
             <div>
               <p className='border-red mb-4 rounded border border-red-500 px-2 py-2 text-center text-sm font-medium leading-6 text-red-500'>
-                Please note I&apos;m not directly available for new work. <br />
                 I&apos;m available for a 32/hr a week job from August 2022.
               </p>
               <Form />
