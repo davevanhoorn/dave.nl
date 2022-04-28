@@ -6,7 +6,7 @@ const postsDirectory = join(process.cwd(), 'src/data/posts');
 
 export const getPostSlugs = (): Array<string> => {
   const files = fs.readdirSync(postsDirectory);
-  return files.map((file) => file.replaceAll('.md', ''));
+  return files.map((file) => file.replace(/.md/g, ''));
 };
 
 export const getPost = (slug: string) => {
