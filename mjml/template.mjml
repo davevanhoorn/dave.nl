@@ -26,15 +26,8 @@
     <mj-section padding-top="6px" background-color="#ffffff" border-left="solid 1px #e9e9f1" border-right="solid 1px #e9e9f1" border-bottom="solid 1px #e9e9f1">
       <mj-column>
         <mj-social font-weight="bold" font-family="Helvetica" font-size="18px" icon-size="22px" mode="horizontal" align="center" padding-left="20px" padding-bottom="30px">
-          <mj-social-element src="https://dave.nl/images/icon-pdf.jpg" name="cta" padding="0 10px 0 0" href="https://dave.nl/files/cv.pdf">
-            Download PDF
-          </mj-social-element>
-        </mj-social>
-      </mj-column>
-      <mj-column>
-        <mj-social font-weight="bold" font-family="Helvetica" font-size="18px" icon-size="22px" mode="horizontal" align="center" padding-left="20px" padding-bottom="30px">
-          <mj-social-element src="https://dave.nl/images/icon-word.jpg" name="cta" padding="0 10px 0 0" href="https://dave.nl/files/cv.docx">
-            Download Word
+          <mj-social-element src="https://dave.nl/images/icon-pdf.jpg" name="cta" padding="0 10px 0 0" href="https://dave.nl/files/front-end-developer_dave-van-hoorn_cv.pdf?utm_source=dave.nl&utm_medium=cv_download">
+            Download CV
           </mj-social-element>
         </mj-social>
       </mj-column>

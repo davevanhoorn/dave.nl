@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className='mt-16 pb-16 text-center text-xs font-medium'>
-      Copyright © {date} Dave.nl - This is a size 8 footer 🦶
+      Copyright © {date} Dave.nl
     </footer>
   );
 };

@@ -54,14 +54,10 @@ export const Form = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <p className='mb-2 text-sm leading-6'>
-          Nice to meet you! Please enter your details below so I can send you my
-          CV in both <span className='font-semibold'>PDF</span> and{' '}
-          <span className='font-semibold'>Word</span> format.
-        </p>
         <p className='mb-4 text-sm leading-6'>
-          Do you prefer an instant answer or do you need help urgently? Then
-          give me a phone call or send a message to +31 (0)6 169 100 79.
+          Please enter your details below to receive my CV. Prefer an instant
+          answer or do you need help urgently? Send a WhatsApp message to +31
+          (0)6 169 100 79.
         </p>
         <div className='flex flex-col md:flex-row'>
           <div className='md:mr-2'>

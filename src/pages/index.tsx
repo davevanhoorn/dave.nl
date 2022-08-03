@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import * as React from 'react';
 
 import { Certificate } from '@/components/certificate/Certificate';
 import { Experience } from '@/components/experience/Experience';
@@ -9,22 +8,31 @@ import { Spotify } from '@/components/spotify/Spotify';
 export default function HomePage() {
   return (
     <Layout>
-      <div className='text-md mb-8 rounded-lg border-2 border-black bg-yellow-100 p-5 font-medium leading-7'>
-        <span className='text-lg font-semibold'>Hi! 🖖</span> <br />
-        I&apos;m Dave, a Dutch front-end developer based in the Netherlands.
-        With{' '}
-        <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-green-200 '>
-          <span className='relative font-semibold text-black'>10+ years</span>
-        </span>{' '}
-        of experience I&apos;m grateful to have worked for both local and
-        international brands like Schiphol, Noten.nl, Dept Agency, Capgemini and
-        Euroclear. I focus on front-end development with Next.js,{' '}
-        <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-red-200'>
-          <span className='relative font-semibold text-black'>React</span>
-        </span>{' '}
-        and TypeScript. <br />
-        <br /> Always in for a chat about{' '}
-        <span className='relative inline-block before:absolute before:-inset-1 before:block before:skew-y-1 before:bg-blue-200'>
+      <div className='text-md mb-8 rounded-lg bg-green-50 p-5 font-medium leading-7 md:p-7'>
+        <span className='mb-4 block text-xl font-semibold'>Hello 🖖</span>
+        <span className='mb-4 block'>
+          I&apos;m Dave, a freelance front-end developer based in Utrecht, the
+          Netherlands.
+        </span>
+        <span className='mb-4 block'>
+          With{' '}
+          <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-green-200 '>
+            <span className='relative font-semibold text-black'>10+ years</span>
+          </span>{' '}
+          of experience in web development I&apos;m grateful to have worked for
+          both local and international brands like Schiphol, Noten.nl, Dept
+          Agency, Capgemini and Euroclear.{' '}
+        </span>
+        <span className='mb-4 block'>
+          I focus on front-end development with Next.js,{' '}
+          <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-green-200'>
+            <span className='relative font-semibold text-black'>React</span>
+          </span>{' '}
+          and TypeScript and prefer to work short-term (max. 6 months) freelance
+          jobs in personal and honest teams.
+        </span>
+        Always in for a chat about{' '}
+        <span className='relative inline-block before:absolute before:-inset-1 before:block before:skew-y-1 before:bg-green-200'>
           <span className='relative font-semibold text-black'>dogs</span>
         </span>{' '}
         , surfing, skateboarding, mountainbiking and your Spotify playlist.
