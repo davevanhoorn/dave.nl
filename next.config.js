@@ -7,6 +7,15 @@ module.exports = {
     domains: ['i.scdn.co'],
   },
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/files/cv.docx',
+        destination: '/files/cv.pdf',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
@@ -19,7 +28,7 @@ module.exports = {
         ],
       },
       {
-        source: '/files/front-end-developer_dave-van-hoorn_cv.pdf',
+        source: '/files/cv.pdf',
         headers: [
           {
             key: 'X-Robots-Tag',
