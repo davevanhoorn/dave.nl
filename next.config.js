@@ -14,7 +14,7 @@ module.exports = {
         destination: '/files/cv.pdf',
         permanent: true,
       },
-    ]
+    ];
   },
   async headers() {
     return [
