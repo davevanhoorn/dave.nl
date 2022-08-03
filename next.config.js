@@ -18,6 +18,15 @@ module.exports = {
           },
         ],
       },
+      {
+        source: '/files/front-end-developer_dave-van-hoorn_cv.pdf',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'none',
+          },
+        ],
+      },
     ];
   },
   reactStrictMode: true,
