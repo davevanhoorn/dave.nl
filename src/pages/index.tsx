@@ -38,6 +38,69 @@ export default function HomePage() {
         , surfing, skateboarding, mountainbiking and your Spotify playlist.
       </div>
       {/* <h3 className='text-2xl font-semibold leading-7 mb-9'>Blog</h3> */}
+      <div className='mb-20 mt-14 grid grid-cols-2 items-end gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0'>
+        <div
+          style={{
+            marginLeft: '-2px',
+          }}
+        >
+          <Image
+            src='/images/dept.svg'
+            alt='DEPT agency logo'
+            width='67'
+            height='18'
+          />
+        </div>
+        <div
+          style={{
+            marginBottom: '-2px',
+          }}
+        >
+          <Image
+            src='/images/euroclear.svg'
+            alt='Euroclear logo'
+            width='60'
+            height='60'
+          />
+        </div>
+        <div
+          style={{
+            marginBottom: '-10px',
+            marginLeft: '-2px',
+          }}
+        >
+          <Image
+            src='/images/capgemini.svg'
+            alt='Capgemini logo'
+            width='127'
+            height='28'
+          />
+        </div>
+        <div
+          style={{
+            marginBottom: '-5px',
+          }}
+        >
+          <Image
+            src='/images/schiphol.svg'
+            alt='Schiphol logo'
+            width='89'
+            height='23'
+          />
+        </div>
+        <div
+          style={{
+            marginBottom: '0px',
+          }}
+        >
+          <Image
+            src='/images/formule1-nl.svg'
+            alt='Formule1.nl logo'
+            width='125'
+            height='12'
+          />
+        </div>
+      </div>
       <h3 className='text-2xl font-semibold leading-7'>Experience</h3>
       <Experience
         title='Freelance front-end developer @ Dept Agency'
