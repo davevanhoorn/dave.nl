@@ -9,39 +9,28 @@ export default function HomePage() {
   return (
     <Layout>
       <div className='text-md mb-8 rounded-lg bg-green-50 p-5 font-medium leading-7 md:p-7'>
-        <span className='mb-4 block text-xl font-semibold'>Hello 🖖</span>
-        <span className='mb-4 block'>
-          I&apos;m Dave, a freelance front-end developer based in Utrecht, the
-          Netherlands.
-        </span>
-        <span className='mb-4 block'>
-          With{' '}
-          <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-green-200 '>
-            <span className='relative font-semibold text-black'>10+ years</span>
-          </span>{' '}
-          of experience in web development I&apos;m grateful to have worked for
-          both local and international brands like Schiphol, Noten.nl, Dept
-          Agency, Capgemini and Euroclear.{' '}
-        </span>
-        <span className='mb-4 block'>
-          I focus on front-end development with Next.js,{' '}
-          <span className='relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-green-200'>
-            <span className='relative font-semibold text-black'>React</span>
-          </span>{' '}
-          and TypeScript and prefer to work short-term (max. 6 months) freelance
-          jobs in personal and honest teams.
-        </span>
-        Always in for a chat about{' '}
-        <span className='relative inline-block before:absolute before:-inset-1 before:block before:skew-y-1 before:bg-green-200'>
-          <span className='relative font-semibold text-black'>dogs</span>
-        </span>{' '}
-        , surfing, skateboarding, mountainbiking and your Spotify playlist.
+        <p className='mb-4 text-xl font-semibold'>Hello 🤙</p>
+        <p className='mb-4'>
+          I&apos;m Dave. A freelance front-end developer from the Netherlands.
+        </p>
+        <p className='mb-4'>
+          With 10+ years of experience I&apos;m grateful to have worked for both
+          local and international brands like Schiphol, Dept Agency, Capgemini
+          and Euroclear.{' '}
+        </p>
+        <p className='mb-4'>
+          I prefer to work with Next.js, React and TypeScript. I enjoy working
+          in small and honest teams.
+        </p>
+        I&apos;m always in for a chat about your project, dogs, surfing,
+        mountainbiking and your favourite music.
       </div>
       {/* <h3 className='text-2xl font-semibold leading-7 mb-9'>Blog</h3> */}
-      <div className='mb-20 mt-14 grid grid-cols-2 items-end gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0'>
+      <div className='mb-20 mt-14 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0'>
         <div
           style={{
             marginLeft: '-2px',
+            marginBottom: '-4px',
           }}
         >
           <Image
@@ -90,7 +79,7 @@ export default function HomePage() {
         </div>
         <div
           style={{
-            marginBottom: '0px',
+            marginBottom: '1px',
           }}
         >
           <Image
@@ -160,16 +149,10 @@ export default function HomePage() {
         title='HBO Bachelor of Commerce (B.Comm.), Communication & Media Design'
         issuedDate='May 2013'
       />
-      <div className='mt-8 flex items-center justify-between border-t pt-6 pr-8'>
-        <h4 className='text-2xl font-semibold leading-7'>About</h4>
-        <Image
-          width={50}
-          height={50}
-          className='inline-block h-10 w-10 flex-shrink-0 rounded-full ring-2 ring-white'
-          src='/images/davevanhoorn.jpg'
-          alt='Dave van Hoorn'
-        />
-      </div>
+
+      <h4 className='mt-12 border-t pt-10 pr-8 text-2xl font-semibold leading-7'>
+        About
+      </h4>
 
       <div className='mt-4 mb-2 border-b pb-4 leading-7 last:border-b-0'>
         <p className='mb-5'>
@@ -185,8 +168,8 @@ export default function HomePage() {
         </p>
         <p className='mb-5'>
           I&apos;m also an avid music lover. With Spotify playing 24/7 I might
-          have some tracks for you to enjoy. Here&apos;s what I&apos;ve been
-          listening to:
+          have some tracks for you to enjoy. Here&apos;s what I&apos;ve recently
+          been listening to:
         </p>
         <Spotify />
       </div>
