@@ -2,15 +2,15 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'Freelance front-end developer Utrecht | Dave van Hoorn',
-  siteName: 'Freelance front-end developer Utrecht | Dave van Hoorn',
+  title: 'Freelance senior front-end (REACT) developer (NL) | Dave van Hoorn',
+  siteName:
+    'Freelance senior front-end (REACT) developer (NL) | Dave van Hoorn',
   description:
-    'Freelance front-end developer based in Utrecht, the Netherlands. With 10+ years of experience',
+    'Freelance senior front-end developer with 10+ years of experience. From the Netherlands, working remote. React, TypeScript, Next.js, Tailwind.css',
   url: 'https://dave.nl',
   type: 'website',
   robots: 'follow, index',
-  /** No need to be filled, will be populated with openGraph function */
-  image: '',
+  image: 'https://dave.nl/opengraph/dave-nl_senior-front-end-developer.jpg',
 };
 
 type SeoProps = {
@@ -27,11 +27,6 @@ export default function Seo(props: SeoProps) {
   meta['title'] = props.templateTitle
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
-
-  // Use siteName if there is templateTitle
-  // but show full title if there is none
-  meta['image'] =
-    'https://dave.nl/opengraph/dave-nl_senior-front-end-developer.jpg';
 
   return (
     <Head>
