@@ -16,7 +16,7 @@ const Header = () => {
             width={50}
             height={50}
             className='inline-block h-10 w-10 rounded-full ring-2 ring-white'
-            src='/images/davevanhoorn.jpg'
+            src='/images/davevanhoorn-2022.png'
             alt='Dave van Hoorn'
           />
         </div>
