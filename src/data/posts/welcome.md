@@ -1,5 +1,5 @@
 ---
-title: 'Dynamic Routing and Static Generation'
+title: 'Zo update je eenvoudig je Macbook.'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-03-16T05:35:07.322Z'
@@ -20,7 +20,7 @@ Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris 
 
 We'll transform this one:
 
-```typescript https://stackoverflow.com/questions/4042434/converting-arrayliststring-to-string-in-java
+```typescript
 type BlogPostProps = {
   postData: {
     title: string;

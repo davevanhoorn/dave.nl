@@ -2,11 +2,10 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'Freelance senior front-end (REACT) developer (NL) | Dave van Hoorn',
-  siteName:
-    'Freelance senior front-end (REACT) developer (NL) | Dave van Hoorn',
+  title: 'Freelance front-end (REACT) developer (NL) | Dave van Hoorn',
+  siteName: 'Freelance front-end (REACT) developer (NL) | Dave van Hoorn',
   description:
-    'Freelance senior front-end developer with 10+ years of experience. From the Netherlands, working remote. React, TypeScript, Next.js, Tailwind.css',
+    'Freelance front-end developer with 10+ years of experience. From the Netherlands, working remote. React, TypeScript, Next.js, Tailwind.css',
   url: 'https://dave.nl',
   type: 'website',
   robots: 'follow, index',

@@ -1,16 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import Prism from 'prismjs';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { getPost, getPostSlugs } from '@/lib/api';
 
 import Layout from '@/components/layouts/Layout';
-
-require('prismjs/components/prism-typescript');
-require('prismjs/components/prism-javascript');
-require('prismjs/components/prism-css');
-require('prismjs/components/prism-jsx');
 
 type BlogPostProps = {
   postData: {
@@ -29,13 +23,28 @@ type BlogPostProps = {
   postContent: string;
 };
 
-const BlogPost: NextPage<BlogPostProps> = ({ postContent }) => {
+const BlogPost: NextPage<BlogPostProps> = ({ postData, postContent }) => {
   useEffect(() => {
-    Prism.highlightAll();
+    const highlightAllWithPrism = async () => {
+      const Prism = (await import('prismjs')).default;
+
+      if (!Prism) return;
+
+      await require('prismjs/components/prism-typescript');
+      await require('prismjs/components/prism-javascript');
+      await require('prismjs/components/prism-css');
+      await require('prismjs/components/prism-jsx');
+      await require('prismjs/components/prism-bash');
+
+      Prism.highlightAll();
+    };
+
+    highlightAllWithPrism();
   }, []);
 
   return (
     <Layout>
+      <h1 className='mt-4 mb-8 text-5xl leading-tight'>{postData.title}</h1>
       <article className='prose-lg'>
         <ReactMarkdown>{postContent}</ReactMarkdown>
       </article>

@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
 import Footer from '@/components/footer/Footer';
@@ -11,15 +13,23 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const router = useRouter();
+  const isBlogPage = router.pathname === '/blog/[slug]';
+
   return (
     <div className='container mx-auto max-w-5xl px-4 md:px-8'>
       <Seo />
       <Header />
       <div className='grid md:grid-cols-12 md:gap-8'>
-        <div className='col-span-12 md:col-span-8 md:border-r md:pr-8 lg:col-span-9'>
+        <div
+          className={clsx('col-span-12 max-w-full overflow-hidden', {
+            'md:col-span-8 md:border-r md:pr-8 lg:col-span-9': !isBlogPage,
+          })}
+        >
           {children}
         </div>
-        <Sidebar />
+        {}
+        {!isBlogPage && <Sidebar />}
       </div>
       <Footer />
       <Modal />

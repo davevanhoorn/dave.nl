@@ -8,7 +8,7 @@ import { Spotify } from '@/components/spotify/Spotify';
 export default function HomePage() {
   return (
     <Layout>
-      <div className='text-md mb-8 rounded-lg bg-green-50 p-5 font-medium leading-7 md:p-7'>
+      <div className='text-md mb-8 rounded-lg border border-black p-5 font-medium leading-7 md:p-7'>
         <p className='mb-4 text-xl font-semibold'>Hello 🤙</p>
         <p className='mb-4'>
           I&apos;m Dave. A freelance front-end developer from the Netherlands.
