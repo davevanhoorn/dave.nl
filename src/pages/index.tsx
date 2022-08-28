@@ -8,25 +8,24 @@ import { Spotify } from '@/components/spotify/Spotify';
 export default function HomePage() {
   return (
     <Layout>
-      <div className='text-md mb-8 rounded-lg border border-black p-5 font-medium leading-7 md:p-7'>
-        <p className='mb-4 text-xl font-semibold'>Hello 🤙</p>
-        <p className='mb-4'>
-          I&apos;m Dave. A freelance front-end developer from the Netherlands.
+      <div className='text-md leading-7'>
+        <p className='mb-6 text-2xl font-semibold leading-7 sm:mt-2'>
+          Hi there!
         </p>
         <p className='mb-4'>
+          I&apos;m Dave. A freelance front-end developer from the Netherlands.
           With 10+ years of experience I&apos;m grateful to have worked for both
           local and international brands like Schiphol, Dept Agency, Capgemini
           and Euroclear.{' '}
         </p>
-        <p className='mb-4'>
-          I prefer to work with Next.js, React and TypeScript. I enjoy working
-          in small and honest teams.
+        <p>
+          I enjoy working in small, open and honest teams. I&apos;m always in
+          for a chat about your project, dogs, surfing, mountainbiking and your
+          favourite music.
         </p>
-        I&apos;m always in for a chat about your project, dogs, surfing,
-        mountainbiking and your favourite music.
       </div>
       {/* <h3 className='text-2xl font-semibold leading-7 mb-9'>Blog</h3> */}
-      <div className='mb-20 mt-14 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0'>
+      <div className='mt-10 mb-14 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0'>
         <div
           style={{
             marginLeft: '-2px',
@@ -40,18 +39,7 @@ export default function HomePage() {
             height='18'
           />
         </div>
-        <div
-          style={{
-            marginBottom: '-2px',
-          }}
-        >
-          <Image
-            src='/images/euroclear.svg'
-            alt='Euroclear logo'
-            width='60'
-            height='60'
-          />
-        </div>
+
         <div
           style={{
             marginBottom: '-10px',
@@ -89,8 +77,20 @@ export default function HomePage() {
             height='12'
           />
         </div>
+        <div
+          style={{
+            marginBottom: '-2px',
+          }}
+        >
+          <Image
+            src='/images/euroclear.svg'
+            alt='Euroclear logo'
+            width='50'
+            height='50'
+          />
+        </div>
       </div>
-      <h3 className='text-2xl font-semibold leading-7'>Experience</h3>
+      <h2 className='text-2xl font-semibold leading-7'>My experience</h2>
       <Experience
         title='Freelance front-end developer @ Dept Agency'
         dates='January 2022 - March 2022'
@@ -138,9 +138,9 @@ export default function HomePage() {
         industry='Aviation'
       />
 
-      <h4 className='border-t pt-8 text-2xl font-semibold leading-7'>
+      <h3 className='border-t pt-8 text-2xl font-semibold leading-7'>
         Certifications & Studies
-      </h4>
+      </h3>
       <Certificate
         title='Professional Scrum Master PSMI'
         issuedDate='November 2019'

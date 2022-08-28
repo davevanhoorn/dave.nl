@@ -2,7 +2,7 @@ import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 const Sidebar = () => {
   return (
-    <div className='col-span-12 md:col-span-4 lg:col-span-3'>
+    <aside className='col-span-12 md:col-span-4 lg:col-span-3'>
       <ul className='mt-2 mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
         <li className='mb-2 list-none text-sm font-semibold'>
           Personal details
@@ -66,7 +66,7 @@ const Sidebar = () => {
           </span>
         </li>
       </ul>
-    </div>
+    </aside>
   );
 };
 

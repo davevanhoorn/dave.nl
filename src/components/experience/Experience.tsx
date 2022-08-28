@@ -21,7 +21,7 @@ export const Experience = ({
 }: ExperienceProps) => {
   return (
     <div className='mt-4 mb-4 pt-2 pb-4 md:mr-8'>
-      <h4 className='mb-2 text-lg font-medium leading-7'>{title}</h4>
+      <p className='mb-2 text-lg font-medium leading-7'>{title}</p>
       <div className='md:text-base'>
         <p className='mb-2 leading-7'>{description}</p>
         <table className='text-sm leading-loose text-gray-500'>

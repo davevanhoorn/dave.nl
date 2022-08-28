@@ -21,13 +21,14 @@ const Layout = ({ children }: LayoutProps) => {
       <Seo />
       <Header />
       <div className='grid md:grid-cols-12 md:gap-8'>
-        <div
+        <main
+          role='main'
           className={clsx('col-span-12 max-w-full overflow-hidden', {
             'md:col-span-8 md:border-r md:pr-8 lg:col-span-9': !isBlogPage,
           })}
         >
           {children}
-        </div>
+        </main>
         {}
         {!isBlogPage && <Sidebar />}
       </div>
