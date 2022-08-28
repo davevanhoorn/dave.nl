@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export const Logo = () => {
   return (
-    <div className='flex items-center justify-between pb-4 md:flex-row'>
+    <div className='flex items-center justify-between pb-4 sm:pb-0 md:flex-row'>
       <div className='mr-3 inline-block h-14 w-14 flex-shrink-0'>
         <Image
           width={70}

@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className='mb-4 pt-8 sm:mb-6' role='banner'>
-      <div className='flex items-center justify-between md:flex-row'>
+      <div className='flex flex-col items-center justify-between sm:flex-row md:flex-row'>
         {asPath !== '/' ? (
           <Link href='/'>
             <a className='flex items-center justify-center'>
@@ -24,12 +24,8 @@ const Header = () => {
           <Logo />
         )}
 
-        <div className='flex gap-4 md:mt-0'>
-          <Button
-            className='hidden sm:flex'
-            onClick={() => setVisibility(!visible)}
-            variant='outline'
-          >
+        <div className='mb-6 flex gap-4 sm:mb-0 md:mt-0'>
+          <Button onClick={() => setVisibility(!visible)} variant='outline'>
             <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
             Download CV
           </Button>
@@ -38,7 +34,7 @@ const Header = () => {
             tabIndex={0}
             target='_blank'
             href='https://api.whatsapp.com/send?phone=31616910079&text=Hoi%20Dave.nl!%20Ik%20kan%20wel%20wat%20front-end%20hulp%20gebruiken%20%F0%9F%92%BB'
-            className='hidden items-center rounded border border-primary-500 px-4 py-2 font-medium shadow-sm transition-colors duration-75 hover:bg-primary-50 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-primary-100 disabled:cursor-not-allowed disabled:bg-primary-100 sm:flex'
+            className='flex items-center rounded border border-primary-500 px-4 py-2 font-medium shadow-sm transition-colors duration-75 hover:bg-primary-50 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-primary-100 disabled:cursor-not-allowed disabled:bg-primary-100'
             rel='noreferrer noopener'
           >
             <BsWhatsapp size={20} className='mr-2 text-green-500' />
