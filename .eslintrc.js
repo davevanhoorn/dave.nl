@@ -4,13 +4,19 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
+  plugins: [
+    'jsx-a11y',
+    '@typescript-eslint',
+    'simple-import-sort',
+    'unused-imports',
+  ],
   extends: [
     'eslint:recommended',
     'next',
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'plugin:jsx-a11y/recommended',
   ],
   rules: {
     'no-unused-vars': 'off',

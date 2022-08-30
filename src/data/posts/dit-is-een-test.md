@@ -1,10 +1,10 @@
 ---
-slug: 'dit-is-welcome-slug'
-title: 'Zo update je eenvoudig je Macbook.'
+slug: 'dit-is-een-test-slug'
+title: 'Dit is een test met een hele lange titel voor een lange longtail key en nog meer tekst voor dit (🇳🇱)'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2022-08-29T05:35:07.322Z'
-subject: 'React'
+date: '2020-03-16T05:35:07.322Z'
+subject: 'JavaScript'
 author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'

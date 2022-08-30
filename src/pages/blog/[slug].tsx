@@ -2,14 +2,16 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { getPost, getPostSlugs } from '@/lib/api';
+import { getAllPostsDataField, getPostByFieldValue } from '@/lib/api';
 
 import Layout from '@/components/layouts/Layout';
 
-type BlogPostProps = {
+export type PostProps = {
   postData: {
+    slug: string;
     title: string;
     excerpt: string;
+    subject: 'React' | 'JavaScript';
     coverImage: string; // '/assets/blog/dynamic-routing/cover.jpg'
     date: string; // '2020-03-16T05:35:07.322Z'
     author: {
@@ -23,7 +25,7 @@ type BlogPostProps = {
   postContent: string;
 };
 
-const BlogPost: NextPage<BlogPostProps> = ({ postData, postContent }) => {
+const BlogPost: NextPage<PostProps> = ({ postData, postContent }) => {
   useEffect(() => {
     const highlightAllWithPrism = async () => {
       const Prism = (await import('prismjs')).default;
@@ -44,7 +46,9 @@ const BlogPost: NextPage<BlogPostProps> = ({ postData, postContent }) => {
 
   return (
     <Layout>
-      <h1 className='mt-4 mb-8 text-5xl leading-tight'>{postData.title}</h1>
+      <h1 className='mb-8 text-3xl font-semibold leading-10 lg:text-5xl lg:leading-tight'>
+        {postData.title}
+      </h1>
       <article className='prose-lg'>
         <ReactMarkdown>{postContent}</ReactMarkdown>
       </article>
@@ -53,14 +57,8 @@ const BlogPost: NextPage<BlogPostProps> = ({ postData, postContent }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = getPostSlugs();
-
   return {
-    paths: slugs.map((slug) => ({
-      params: {
-        slug,
-      },
-    })),
+    paths: getAllPostsDataField('slug').map((slug) => ({ params: { slug } })), // [{ params: { slug: '1' } }, { params: { slug: '2' } }]
     fallback: false,
   };
 };
@@ -72,13 +70,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 
-  const slug = Array.isArray(params.slug) ? params.slug.join('/') : params.slug;
-  const { data, content } = getPost(slug);
+  const slug = Array.isArray(params?.slug)
+    ? params?.slug.join('/')
+    : params?.slug;
+
+  const post = getPostByFieldValue('slug', slug);
+
+  if (!post?.postContent || !post?.postData) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { postData, postContent } = post;
 
   return {
     props: {
-      postData: data,
-      postContent: content,
+      postData,
+      postContent,
     },
   };
 };

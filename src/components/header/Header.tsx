@@ -1,6 +1,9 @@
+import clsx from 'clsx';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { AiFillGift } from 'react-icons/ai';
 import { BsFillFileEarmarkPdfFill, BsWhatsapp } from 'react-icons/bs';
+
+import usePageLocation from '@/hooks/usePageLocation';
 
 import Button from '@/components/buttons/Button';
 import { Logo } from '@/components/logo/Logo';
@@ -9,13 +12,14 @@ import { useModalStore } from '@/store/modal';
 
 const Header = () => {
   const { setVisibility, visible } = useModalStore();
-  const { asPath } = useRouter();
+  const { isHome, isBlog, isAbout, isPortfolio, isContact } = usePageLocation();
 
   return (
     <header className='mb-4 pt-8 sm:mb-6' role='banner'>
       <div className='flex flex-col items-center justify-between sm:flex-row md:flex-row'>
-        {asPath !== '/' ? (
+        {!isHome ? (
           <Link href='/'>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className='flex items-center justify-center'>
               <Logo />
             </a>
@@ -25,7 +29,7 @@ const Header = () => {
         )}
 
         <div className='mb-6 flex gap-4 sm:mb-0 md:mt-0'>
-          <Button onClick={() => setVisibility(!visible)} variant='outline'>
+          <Button onClick={() => setVisibility(!visible)} variant='light'>
             <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
             Download CV
           </Button>
@@ -34,7 +38,7 @@ const Header = () => {
             tabIndex={0}
             target='_blank'
             href='https://api.whatsapp.com/send?phone=31616910079&text=Hoi%20Dave.nl!%20Ik%20kan%20wel%20wat%20front-end%20hulp%20gebruiken%20%F0%9F%92%BB'
-            className='flex items-center rounded border border-primary-500 px-4 py-2 font-medium shadow-sm transition-colors duration-75 hover:bg-primary-50 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-primary-100 disabled:cursor-not-allowed disabled:bg-primary-100'
+            className='inline-flex items-center rounded border border-gray-300 bg-white px-4 py-2 font-medium text-black shadow-sm transition-colors duration-75 hover:bg-gray-100 hover:text-black focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-white/80 disabled:cursor-not-allowed disabled:bg-gray-200'
             rel='noreferrer noopener'
           >
             <BsWhatsapp size={20} className='mr-2 text-green-500' />
@@ -42,52 +46,53 @@ const Header = () => {
           </a>
         </div>
       </div>
-      {/* 
-      <div className='flex items-center justify-between gap-6 px-4 py-4 pr-4 mt-4 text-white bg-gray-800 rounded-md sm:px-4'>
+
+      <div className='mt-2 mb-8 flex items-center justify-between gap-6 rounded-md border bg-white py-3 pl-6 pr-3 text-black md:my-10'>
         <nav
           role='navigation'
-          className='flex items-center justify-around w-full gap-2 text-sm font-medium sm:w-fit sm:gap-6 sm:pl-4 sm:text-base md:gap-8'
+          className='flex w-full items-center justify-around gap-2 text-sm font-medium sm:w-fit sm:gap-6 sm:text-base'
         >
           <Link href='/'>
-            <a
-              className={clsx('hover:underline', { underline: asPath === '/' })}
-            >
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a className={clsx('hover:underline', { underline: isHome })}>
               Home
             </a>
           </Link>
           <Link href='/blog' passHref>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
-              tabIndex={0}
               className={clsx('hover:underline', {
-                underline:
-                  asPath === '/blog' || asPath.indexOf('/blog/') !== -1,
+                underline: isBlog,
               })}
             >
               Blog
             </a>
           </Link>
           <Link href='/portfolio'>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               className={clsx('hover:underline', {
-                underline: asPath === '/portfolio',
+                underline: isPortfolio,
               })}
             >
               Portfolio
             </a>
           </Link>
           <Link href='/about'>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               className={clsx('hover:underline', {
-                underline: asPath === '/about',
+                underline: isAbout,
               })}
             >
               About
             </a>
           </Link>
           <Link href='/contact'>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               className={clsx('hover:underline', {
-                underline: asPath === '/contact',
+                underline: isContact,
               })}
             >
               Contact
@@ -97,12 +102,12 @@ const Header = () => {
         <Button
           className='hidden sm:flex'
           onClick={() => setVisibility(!visible)}
-          variant='light'
+          variant='ghost'
         >
           <AiFillGift size={20} className='mr-2' />
           Surprise button
         </Button>
-      </div>*/}
+      </div>
     </header>
   );
 };

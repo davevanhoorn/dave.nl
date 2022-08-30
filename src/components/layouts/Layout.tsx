@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
+
+import usePageLocation from '@/hooks/usePageLocation';
 
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
@@ -9,28 +10,29 @@ import Seo from '@/components/Seo';
 import Sidebar from '@/components/sidebar/Sidebar';
 
 type LayoutProps = {
+  className?: string;
   children: ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => {
-  const router = useRouter();
-  const isBlogPage = router.pathname === '/blog/[slug]';
+const Layout = ({ className, children }: LayoutProps) => {
+  const { isHome, isBlog } = usePageLocation();
 
   return (
-    <div className='container mx-auto max-w-5xl px-4 md:px-8'>
+    <div className='container mx-auto max-w-7xl px-4 md:px-8'>
       <Seo />
       <Header />
       <div className='grid md:grid-cols-12 md:gap-8'>
         <main
           role='main'
           className={clsx('col-span-12 max-w-full overflow-hidden', {
-            'md:col-span-8 md:border-r md:pr-8 lg:col-span-9': !isBlogPage,
+            'md:col-span-8 md:border-r  md:pr-12 lg:col-span-9':
+              isHome || isBlog,
+            [String(className)]: !!className,
           })}
         >
           {children}
         </main>
-        {}
-        {!isBlogPage && <Sidebar />}
+        {isHome || isBlog ? <Sidebar /> : null}
       </div>
       <Footer />
       <Modal />

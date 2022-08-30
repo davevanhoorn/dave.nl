@@ -44,27 +44,27 @@
 
   /* #region  /**=========== Typography =========== */
   .h0 {
-    @apply font-primary text-3xl font-bold md:text-5xl;
+    @apply font-primary text-3xl font-semibold md:text-5xl;
   }
 
   h1,
   .h1 {
-    @apply font-primary text-2xl font-bold md:text-4xl;
+    @apply font-primary text-2xl font-semibold md:text-4xl;
   }
 
   h2,
   .h2 {
-    @apply font-primary text-xl font-bold md:text-3xl;
+    @apply font-primary text-xl font-semibold md:text-3xl;
   }
 
   h3,
   .h3 {
-    @apply font-primary text-lg font-bold md:text-2xl;
+    @apply font-primary text-lg font-semibold md:text-2xl;
   }
 
   h4,
   .h4 {
-    @apply font-primary text-base font-bold md:text-lg;
+    @apply font-primary text-base font-semibold md:text-lg;
   }
 
   body,
@@ -112,4 +112,11 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
+}
+
+html {
+  background-image: url('/images/background_blue-orange_light_flipped.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
