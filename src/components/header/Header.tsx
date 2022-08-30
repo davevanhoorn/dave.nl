@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { AiFillGift } from 'react-icons/ai';
 import { BsFillFileEarmarkPdfFill, BsWhatsapp } from 'react-icons/bs';
 
 import usePageLocation from '@/hooks/usePageLocation';
@@ -29,7 +28,11 @@ const Header = () => {
         )}
 
         <div className='mb-6 flex gap-4 sm:mb-0 md:mt-0'>
-          <Button onClick={() => setVisibility(!visible)} variant='light'>
+          <Button
+            onClick={() => setVisibility(!visible)}
+            variant='light'
+            className='px-2 text-xs sm:px-4 sm:text-base'
+          >
             <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
             Download CV
           </Button>
@@ -38,11 +41,11 @@ const Header = () => {
             tabIndex={0}
             target='_blank'
             href='https://api.whatsapp.com/send?phone=31616910079&text=Hoi%20Dave.nl!%20Ik%20kan%20wel%20wat%20front-end%20hulp%20gebruiken%20%F0%9F%92%BB'
-            className='inline-flex items-center rounded border border-gray-300 bg-white px-4 py-2 font-medium text-black shadow-sm transition-colors duration-75 hover:bg-gray-100 hover:text-black focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-white/80 disabled:cursor-not-allowed disabled:bg-gray-200'
+            className='inline-flex items-center rounded border border-gray-300 bg-white px-2 py-2 text-xs font-medium text-black shadow-sm transition-colors duration-75 hover:bg-gray-100 hover:text-black focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-white/80 disabled:cursor-not-allowed disabled:bg-gray-200 sm:hidden sm:px-4'
             rel='noreferrer noopener'
           >
             <BsWhatsapp size={20} className='mr-2 text-green-500' />
-            <span className='mr-1 hidden sm:inline-block'>Send</span> WhatsApp
+            Ask a question
           </a>
         </div>
       </div>
@@ -99,14 +102,17 @@ const Header = () => {
             </a>
           </Link>
         </nav>
-        <Button
-          className='hidden sm:flex'
-          onClick={() => setVisibility(!visible)}
-          variant='ghost'
+        <a
+          role='button'
+          tabIndex={0}
+          target='_blank'
+          href='https://api.whatsapp.com/send?phone=31616910079&text=Hoi%20Dave.nl!%20Ik%20kan%20wel%20wat%20front-end%20hulp%20gebruiken%20%F0%9F%92%BB'
+          className='disabled:cursor-not-allowedinline-flex hidden items-center rounded bg-white px-4 py-2 font-medium text-black shadow-none transition-colors duration-75 hover:bg-gray-50 hover:text-black focus:outline-none focus-visible:ring focus-visible:ring-primary-500 active:bg-primary-100 active:bg-white/80 disabled:cursor-not-allowed disabled:bg-primary-100 disabled:bg-gray-200 sm:inline-flex'
+          rel='noreferrer noopener'
         >
-          <AiFillGift size={20} className='mr-2' />
-          Surprise button
-        </Button>
+          <BsWhatsapp size={20} className='mr-2 text-green-500' />
+          Ask a question
+        </a>
       </div>
     </header>
   );
