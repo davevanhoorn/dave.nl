@@ -22,13 +22,13 @@ export const Logo = () => {
       <div>
         {isHome ? (
           <>
-            <h2 className='text-xl font-semibold'>{name}</h2>
-            <h1 className='mt-1 flex text-sm font-normal leading-none text-gray-900 md:mt-1'>
+            <h1 className='text-xl font-semibold'>{name}</h1>
+            <h2 className='mt-1 flex text-sm font-normal leading-none text-gray-900 md:mt-1'>
               {role}
               <span className='ml-1 hidden lg:inline-block'>
                 - {availableFrom}
               </span>
-            </h1>
+            </h2>
           </>
         ) : (
           <>
