@@ -81,13 +81,12 @@ export default function Seo(props: SeoProps) {
       />
       <link rel='manifest' href='/favicon/site.webmanifest' />
       <meta name='msapplication-TileColor' content='#ffc40d' />
-      <meta name='theme-color' content='#ffffff' />
       <meta name='msapplication-TileColor' content='#ffffff' />
+      <meta name='theme-color' content='#ffffff' />
       <meta
         name='msapplication-TileImage'
         content='/favicon/ms-icon-144x144.png'
       />
-      <meta name='theme-color' content='#ffffff' />
     </Head>
   );
 }

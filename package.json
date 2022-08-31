@@ -32,7 +32,6 @@
     "global": "^4.4.0",
     "gray-matter": "^4.0.3",
     "html-react-parser": "^3.0.4",
-    "jest-environment-jsdom": "^29.0.1",
     "next": "^12.2.5",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.29.0",

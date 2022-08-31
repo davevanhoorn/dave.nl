@@ -1,6 +1,9 @@
 {
   "name": "Dave.nl",
   "lang": "en",
+  "start_url": "/",
+  "description": "Personal website",
+  "orientation": "portrait",
   "short_name": "Dave.nl",
   "icons": [
     {
