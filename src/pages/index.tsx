@@ -8,7 +8,7 @@ import { Spotify } from '@/components/spotify/Spotify';
 export default function HomePage() {
   return (
     <Layout>
-      <div className='text-base font-medium leading-8 md:text-2xl md:leading-10'>
+      <div className='mt-2 text-base font-medium leading-8 md:text-2xl md:leading-10'>
         <p className='mb-4'>
           I&apos;m Dave. A freelance front-end developer from the Netherlands.
           With 10+ years of experience I&apos;m grateful to have worked for both
@@ -22,7 +22,7 @@ export default function HomePage() {
         </p>
       </div>
       {/* <h3 className='text-2xl font-semibold leading-7 mb-9'>Blog</h3> */}
-      <div className='mt-10 mb-14 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0'>
+      <div className='mt-10 mb-14 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-12'>
         <div
           style={{
             marginLeft: '-2px',
