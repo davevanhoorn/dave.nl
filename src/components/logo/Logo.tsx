@@ -12,8 +12,8 @@ export const Logo = () => {
     <div className='flex items-center justify-between pb-4 sm:pb-0 md:flex-row'>
       <div className='mr-3 inline-block h-14 w-14 flex-shrink-0'>
         <Image
-          width={70}
-          height={70}
+          width={56}
+          height={56}
           className='inline-block h-10 w-10 rounded-full ring-2 ring-white'
           src='/images/davevanhoorn-2022.webp'
           alt='Dave van Hoorn'

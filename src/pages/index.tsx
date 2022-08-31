@@ -27,13 +27,15 @@ export default function HomePage() {
           style={{
             marginLeft: '-2px',
             marginBottom: '-4px',
+            width: '67px',
+            height: '18px',
           }}
         >
           <Image
             src='/images/dept.svg'
             alt='DEPT agency logo'
-            width='67'
-            height='18'
+            width='134'
+            height='36'
           />
         </div>
 
@@ -41,13 +43,15 @@ export default function HomePage() {
           style={{
             marginBottom: '-10px',
             marginLeft: '-2px',
+            width: '127px',
+            height: '28px',
           }}
         >
           <Image
             src='/images/capgemini.svg'
             alt='Capgemini logo'
-            width='127'
-            height='28'
+            width='254'
+            height='56'
           />
         </div>
         <div
