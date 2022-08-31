@@ -15,7 +15,7 @@ export const Logo = () => {
           width={70}
           height={70}
           className='inline-block h-10 w-10 rounded-full ring-2 ring-white'
-          src='/images/davevanhoorn-2022.png'
+          src='/images/davevanhoorn-2022.webp'
           alt='Dave van Hoorn'
         />
       </div>

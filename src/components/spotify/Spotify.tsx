@@ -30,6 +30,7 @@ export const Spotify = () => {
               href={song.songUrl}
               target='_blank'
               rel='noreferrer noopener nofollow'
+              title={`Listen to the song "${song.title}" from ${song.artist} on Spotify`}
             >
               <BsPlayCircleFill
                 className='absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-white opacity-70 hover:cursor-pointer hover:opacity-100'
@@ -44,12 +45,12 @@ export const Spotify = () => {
             />
           </div>
           <div>
-            <h6 className='overflow-hidden font-medium leading-none'>
+            <p className='overflow-hidden font-medium leading-none'>
               {song.title}
-            </h6>
-            <h6 className='mt-1 overflow-hidden text-ellipsis text-sm'>
+            </p>
+            <p className='mt-1 overflow-hidden text-ellipsis text-sm'>
               {song.artist}
-            </h6>
+            </p>
           </div>
         </div>
       ))}
