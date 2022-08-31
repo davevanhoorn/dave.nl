@@ -1,5 +1,6 @@
 {
   "name": "Dave.nl",
+  "start_url": "https://dave.nl",
   "icons": [
     {
       "src": "/android-icon-36x36.png",
@@ -35,7 +36,8 @@
       "src": "/favicon/android-icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "density": "4.0"
+      "density": "4.0",
+      "purpose": "maskable"
     }
   ]
 }
