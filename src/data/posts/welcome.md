@@ -1,6 +1,7 @@
 ---
 slug: 'dit-is-welcome-slug'
 title: 'Zo update je eenvoudig je Macbook.'
+subTitle: 'Kleine moeite, groot resultaat'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2022-08-29T05:35:07.322Z'

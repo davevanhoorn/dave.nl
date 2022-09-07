@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 
-import { PostProps } from '@/pages/blog/[slug]';
+import { PostProps } from '@/pages/posts/[slug]';
 
 const postsDirectory = join(process.cwd(), 'src/data/posts');
 

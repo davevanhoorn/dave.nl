@@ -9,9 +9,11 @@ import { Logo } from '@/components/logo/Logo';
 
 import { useModalStore } from '@/store/modal';
 
+import { routes } from '@/config/config';
+
 const Header = () => {
   const { setVisibility, visible } = useModalStore();
-  const { isHome, isBlog, isAbout, isPortfolio, isContact } = usePageLocation();
+  const { isHome, isBlog, isAbout, isContact } = usePageLocation();
 
   return (
     <header className='mb-4 pt-8 sm:mb-6' role='banner'>
@@ -61,24 +63,14 @@ const Header = () => {
               Home
             </a>
           </Link>
-          <Link href='/blog' passHref>
+          <Link href={routes.blog} passHref>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               className={clsx('hover:underline', {
                 underline: isBlog,
               })}
             >
-              Blog
-            </a>
-          </Link>
-          <Link href='/portfolio'>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a
-              className={clsx('hover:underline', {
-                underline: isPortfolio,
-              })}
-            >
-              Portfolio
+              Posts
             </a>
           </Link>
           <Link href='/about'>

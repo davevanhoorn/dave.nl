@@ -26,7 +26,7 @@ module.exports = withBundleAnalyzer({
   async headers() {
     return [
       {
-        source: '/blog/:slug',
+        source: '/posts/:slug',
         headers: [
           {
             key: 'X-Robots-Tag',

@@ -1,9 +1,14 @@
+import clsx from 'clsx';
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
+import usePageLocation from '@/hooks/usePageLocation';
+
 const Sidebar = () => {
+  const { isHome } = usePageLocation();
+
   return (
     <aside className='col-span-12 pt-4 md:col-span-4 md:pt-0 lg:col-span-3'>
-      <div className='pt-4 md:sticky md:top-0'>
+      <div className={clsx('pt-4', { 'md:sticky md:top-0': isHome })}>
         <ul className='mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
           <li className='mb-2 list-none text-sm font-semibold'>
             Personal details

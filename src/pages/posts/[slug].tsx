@@ -10,6 +10,7 @@ export type PostProps = {
   postData: {
     slug: string;
     title: string;
+    subTitle: string;
     excerpt: string;
     subject: 'React' | 'JavaScript';
     coverImage: string; // '/assets/blog/dynamic-routing/cover.jpg'
@@ -46,10 +47,13 @@ const BlogPost: NextPage<PostProps> = ({ postData, postContent }) => {
 
   return (
     <Layout>
-      <h1 className='mb-8 text-3xl font-semibold leading-10 lg:text-5xl lg:leading-tight'>
+      <h1 className='text-4xl font-semibold leading-tight lg:text-5xl lg:leading-tight'>
         {postData.title}
       </h1>
-      <article className='prose-lg'>
+      <h2 className='mt-2 mb-8 text-2xl font-normal leading-snug text-gray-400 lg:text-2xl lg:leading-snug'>
+        {postData.subTitle}
+      </h2>
+      <article className='prose lg:prose-xl'>
         <ReactMarkdown>{postContent}</ReactMarkdown>
       </article>
     </Layout>
