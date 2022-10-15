@@ -18,7 +18,8 @@ class MyDocument extends Document {
         <Head>
           <link
             href='https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=EB+Garamond:wght@400;500&display=optional&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789®.-'
-            rel='stylesheet'
+            rel='stylesheet preload prefetch'
+            crossOrigin='anonymous'
           />
         </Head>
         <body className='font-body'>
