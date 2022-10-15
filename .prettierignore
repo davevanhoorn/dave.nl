@@ -45,4 +45,5 @@ CHANGELOG.md
 /*
 
 # Except myapp:
+!next.config.js
 !/src

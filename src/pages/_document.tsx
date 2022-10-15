@@ -1,18 +1,18 @@
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document';
+import {
+  getCspInitialProps,
+  provideComponents,
+} from '@next-safe/middleware/dist/document';
+import Document, { DocumentContext, Html, Main } from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
+    const initialProps = await getCspInitialProps({ ctx });
     return { ...initialProps };
   }
 
   render() {
+    const { Head, NextScript } = provideComponents(this.props);
+
     return (
       <Html>
         <Head>
