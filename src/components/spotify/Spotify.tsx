@@ -1,17 +1,8 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 import { BsPlayCircleFill } from 'react-icons/bs';
 import useSWR from 'swr';
 
 import { fetcher } from '@/helpers/common';
-
-// artist: 'Rick James';
-// songUrl: 'https://open.spotify.com/track/13v3siPyvy5TTEZYmGPPse';
-// title: 'Give It To Me Baby';
-// image: {
-//   height: number;
-//   width: number;
-//   url: string;
-// }
 
 export const Spotify = () => {
   const { data, error } = useSWR('/api/spotify', fetcher);

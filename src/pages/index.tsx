@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 
 import { Certificate } from '@/components/certificate/Certificate';
 import { Experience } from '@/components/experience/Experience';
@@ -25,8 +25,8 @@ export default function HomePage() {
           <Image
             src='/images/euroclear.svg'
             alt='Euroclear logo'
-            width='50'
-            height='50'
+            width={50}
+            height={50}
           />
         </div>
         <div
@@ -40,8 +40,8 @@ export default function HomePage() {
           <Image
             src='/images/dept.svg'
             alt='DEPT agency logo'
-            width='134'
-            height='36'
+            width={134}
+            height={36}
           />
         </div>
 
@@ -56,8 +56,8 @@ export default function HomePage() {
           <Image
             src='/images/capgemini.svg'
             alt='Capgemini logo'
-            width='254'
-            height='56'
+            width={254}
+            height={56}
           />
         </div>
         <div
@@ -68,8 +68,8 @@ export default function HomePage() {
           <Image
             src='/images/schiphol.svg'
             alt='Schiphol logo'
-            width='89'
-            height='23'
+            width={89}
+            height={23}
           />
         </div>
         <div
@@ -80,8 +80,8 @@ export default function HomePage() {
           <Image
             src='/images/formule1-nl.svg'
             alt='Formule1.nl logo'
-            width='125'
-            height='12'
+            width={125}
+            height={12}
           />
         </div>
       </div>

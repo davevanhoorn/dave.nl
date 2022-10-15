@@ -2,7 +2,7 @@
   "name": "Dave.nl",
   "lang": "en",
   "start_url": "/",
-  "description": "Personal website",
+  "description": "Personal website from Dave van Hoorn, freelance senior front-end developer",
   "orientation": "portrait",
   "short_name": "Dave.nl",
   "icons": [
@@ -14,7 +14,8 @@
     {
       "src": "/favicon/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "theme_color": "#000000",
