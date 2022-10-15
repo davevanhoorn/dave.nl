@@ -40,3 +40,9 @@ yarn-error.log*
 
 # changelog
 CHANGELOG.md
+
+# Ignore everything:
+/*
+
+# Except myapp:
+!/src
