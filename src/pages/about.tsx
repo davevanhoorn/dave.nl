@@ -34,10 +34,13 @@ const About: NextPage = () => {
           </div>
           <Image
             className='mt-0 flex-shrink-0 lg:w-1/2 lg:pr-12'
-            src='/images/dave-nl_about-composition.jpg'
+            src='/images/dave-nl_about-composition_resized.webp'
             alt='Dave van Hoorn'
             width={677}
             height={976}
+            sizes='(max-width: 768px) 100vw,
+              (max-width: 1024px) 50vw,
+              33vw'
           />
         </div>
         <div className='md:pr-12 lg:pr-32'>
