@@ -54,7 +54,6 @@ jobs:
 
   web-vitals:
     name: Run Web Vitals
-    needs: audit # Speeds up build as it leverages the dependency caching.
     runs-on: ubuntu-latest
 
     strategy:

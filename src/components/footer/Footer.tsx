@@ -1,14 +1,12 @@
-import { format } from 'date-fns';
-
 const Footer = () => {
-  const date = format(new Date(), 'yyyy');
+  const date = new Date();
 
   return (
     <footer
       role='contentinfo'
       className='mt-16 pb-16 text-center text-xs font-medium'
     >
-      Copyright © {date} Dave.nl
+      Copyright © {date.getFullYear()} Dave.nl
     </footer>
   );
 };
