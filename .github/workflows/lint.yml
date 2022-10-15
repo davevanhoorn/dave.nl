@@ -62,7 +62,7 @@ jobs:
 
     steps:
       - name: Install Lighthouse CI
-        run: yarn install -g @lhci/cli@0.9.x
+        run: yarn global add @lhci/cli@0.9.x
 
       - name: Setup Next.js build cache
         uses: actions/cache@v3
