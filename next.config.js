@@ -1,14 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-/** @type {import('next').NextConfig} */
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+/** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({
   eslint: {
     dirs: ['src'],
+  },
+  i18n: {
+    localeDetection: false,
+    locales: ['nl-NL', 'en-US'],
+    defaultLocale: 'nl-NL',
   },
   images: {
     domains: ['i.scdn.co'],

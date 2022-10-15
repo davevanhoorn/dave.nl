@@ -8,21 +8,27 @@ import { Spotify } from '@/components/spotify/Spotify';
 export default function HomePage() {
   return (
     <Layout>
-      <div className='mt-2 text-base font-semibold leading-8 md:text-2xl md:leading-10'>
-        <p className='mb-4'>
-          I&apos;m Dave. A freelance front-end developer from the Netherlands.
-          With 10+ years of experience I&apos;m grateful to have worked for both
-          local and international brands like Schiphol, Dept Agency, Capgemini
-          and Euroclear.{' '}
-        </p>
+      <div className='font-display text-4xl font-medium leading-snug md:text-5xl md:leading-snug'>
         <p>
-          I enjoy working in small, open and honest teams. I&apos;m always in
-          for a chat about your project, dogs, surfing, mountainbiking and your
-          favourite music.
+          Hello! Dave here. I&apos;ve been working in front-end dev for 12
+          years. <br className='hidden xl:inline' /> Let&apos;s build something
+          cool together.
         </p>
       </div>
-      {/* <h3 className='text-2xl font-semibold leading-7 mb-9'>Blog</h3> */}
-      <div className='mt-10 mb-14 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-12'>
+      {/* <h3 className='text-2xl font-medium leading-7 mb-9'>Blog</h3> */}
+      <div className='mb-18 mt-10 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0 lg:pr-12'>
+        <div
+          style={{
+            marginBottom: '-2px',
+          }}
+        >
+          <Image
+            src='/images/euroclear.svg'
+            alt='Euroclear logo'
+            width='50'
+            height='50'
+          />
+        </div>
         <div
           style={{
             marginLeft: '-2px',
@@ -78,20 +84,10 @@ export default function HomePage() {
             height='12'
           />
         </div>
-        <div
-          style={{
-            marginBottom: '-2px',
-          }}
-        >
-          <Image
-            src='/images/euroclear.svg'
-            alt='Euroclear logo'
-            width='50'
-            height='50'
-          />
-        </div>
       </div>
-      <h2 className='text-2xl font-semibold leading-7'>My experience</h2>
+      <h2 className='mt-16 mb-7 font-display text-4xl font-medium leading-7'>
+        My experience
+      </h2>
       <Experience
         title='Freelance front-end developer @ Dept Agency'
         dates='January 2022 - March 2022'
@@ -139,7 +135,7 @@ export default function HomePage() {
         industry='Aviation'
       />
 
-      <h3 className='border-t pt-8 text-2xl font-semibold leading-7'>
+      <h3 className='mb-7 mt-9 border-t pt-12 font-display text-4xl font-medium leading-7'>
         Certifications & Studies
       </h3>
       <Certificate
@@ -151,26 +147,28 @@ export default function HomePage() {
         issuedDate='May 2013'
       />
 
-      <h4 className='mt-12 border-t pt-10 pr-8 text-2xl font-semibold leading-7'>
-        About
+      <h4 className='mt-12 border-t pt-12 pr-8 font-display text-4xl font-medium leading-7'>
+        About me
       </h4>
 
-      <div className='mt-4 mb-2 border-b pb-4 leading-7 last:border-b-0'>
+      <div className='mt-8 mb-2 border-b pb-4 text-lg leading-8 last:border-b-0'>
         <p className='mb-5'>
-          When I&apos;m not working I enjoy walking my (Balinese) dog, shredding
-          Dutch trails on my mountainbike (these can actually be challenging) or
-          surfing small to medium sized waves, preferably in warm water.
+          When I&apos;m not working I like shredding Dutch trails on my
+          mountainbike (these can actually be challenging) or surfing small to
+          medium sized waves, preferably in warm water.
         </p>
         <p className='mb-5'>
-          On the job I consider myself an extravert person with a keen eye for
-          user-experience and visual design. I thrive in small teams where
-          communication is open, honest feedback is appreciated and there&apos;s
-          room for humour and legitimate personal interest.
+          In office or on the job I consider myself an extravert person with a
+          keen eye for user-experience and visual design. I thrive in small
+          teams where communication is open, honest feedback is appreciated and
+          there&apos;s room for humour and legitimate personal interest.
         </p>
         <p className='mb-5'>
           I&apos;m also an avid music lover. With Spotify playing 24/7 I might
-          have some tracks for you to enjoy. Here&apos;s what I&apos;ve recently
-          been listening to:
+          have some tracks for you to enjoy.
+        </p>
+        <p className='mb-5'>
+          Here&apos;s what I&apos;ve recently been listening to:
         </p>
         <Spotify />
       </div>

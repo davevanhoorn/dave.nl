@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { fontFamily } = require('tailwindcss/defaultTheme');
-
 function withOpacityValue(variable) {
   return ({ opacityValue }) => {
     if (opacityValue === undefined) {
@@ -16,7 +14,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
+        display: ["'EB Garamond'", 'serif'],
+        body: ["'Barlow'", 'sans-serif'],
       },
       colors: {
         primary: {

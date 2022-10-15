@@ -47,13 +47,13 @@ const BlogPost: NextPage<PostProps> = ({ postData, postContent }) => {
 
   return (
     <Layout>
-      <h1 className='text-4xl font-semibold leading-tight lg:text-5xl lg:leading-tight'>
+      <h1 className='font-display text-6xl font-medium leading-snug md:text-5xl md:leading-snug'>
         {postData.title}
       </h1>
       <h2 className='mt-2 mb-8 text-2xl font-normal leading-snug text-gray-400 lg:text-2xl lg:leading-snug'>
         {postData.subTitle}
       </h2>
-      <article className='prose lg:prose-xl'>
+      <article className='prose prose-stone text-black prose-h1:font-display prose-h2:font-display lg:prose-xl'>
         <ReactMarkdown>{postContent}</ReactMarkdown>
       </article>
     </Layout>

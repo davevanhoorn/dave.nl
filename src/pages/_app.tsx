@@ -5,11 +5,7 @@ import React from 'react';
 import '@/styles/globals.css';
 import 'prism-themes/themes/prism-coldark-dark.css';
 
-const isServerSideRendered = () => {
-  return typeof window === 'undefined';
-};
-
-if (process.env.NODE_ENV !== 'production' && !isServerSideRendered()) {
+if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
   import('react-dom').then((ReactDOM) => {
     import('@axe-core/react').then((axe) => {
       axe.default(React, ReactDOM, 1000, {});

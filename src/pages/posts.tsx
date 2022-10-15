@@ -24,20 +24,20 @@ const BlogOverview: NextPage<BlogOverviewProps> = ({ posts }) => {
           >
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className='flex flex-col rounded-md border bg-white p-4 md:p-8'>
-              <p className='text-xl font-semibold hover:text-purple-600 md:text-2xl md:leading-8'>
+              <p className='font-display text-2xl font-medium hover:text-purple-600 md:text-4xl md:leading-none'>
                 {post.postData.title}
               </p>
               {post.postData.subTitle && (
-                <p className='mt-1 text-lg font-medium leading-6 text-gray-400'>
+                <p className='font-regular mt-3 text-lg leading-6 text-gray-400'>
                   {post.postData.subTitle}
                 </p>
               )}
               {post.postData.excerpt && (
-                <p className='mt-5 flex-grow text-base leading-relaxed text-black'>
+                <p className='mt-5 flex-grow text-lg leading-relaxed text-black'>
                   {post.postData.excerpt}
                 </p>
               )}
-              <p className='mt-4 text-base font-semibold text-black hover:text-purple-600'>
+              <p className='mt-4 text-base font-medium text-black hover:text-purple-600'>
                 Meer lezen →
               </p>
             </a>

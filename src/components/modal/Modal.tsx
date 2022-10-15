@@ -30,7 +30,7 @@ export const Modal = () => {
         </div>
         <div>
           <p className='border-red mb-4 rounded border border-green-600 px-2 py-2 text-center text-sm font-medium leading-6 text-green-600'>
-            I&apos;m available for a new job from November 2022.
+            I&apos;m available for a new job from January 2023.
           </p>
           <Form />
         </div>

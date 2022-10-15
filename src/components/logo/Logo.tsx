@@ -5,8 +5,8 @@ import usePageLocation from '@/hooks/usePageLocation';
 export const Logo = () => {
   const { isHome } = usePageLocation();
   const name = 'Dave van Hoorn';
-  const role = 'Front-end developer';
-  const availableFrom = 'Available 11/2022';
+  const role = 'Freelance front-end developer';
+  const availableFrom = "Available Jan' 2023";
 
   return (
     <div className='flex items-center justify-between pb-4 sm:pb-0 md:flex-row'>
@@ -25,7 +25,9 @@ export const Logo = () => {
       <div>
         {isHome ? (
           <>
-            <h1 className='text-xl font-semibold'>{name}</h1>
+            <h1 className='relative -top-1 text-xl font-medium leading-none'>
+              {name}
+            </h1>
             <h2 className='mt-1 flex text-sm font-normal leading-none text-gray-900 md:mt-1'>
               {role}
               <span className='ml-1 hidden lg:inline-block'>
@@ -35,7 +37,9 @@ export const Logo = () => {
           </>
         ) : (
           <>
-            <p className='text-xl font-semibold'>{name}</p>
+            <p className='relative -top-1 text-xl font-medium leading-none'>
+              {name}
+            </p>
             <p className='mt-1 flex text-sm font-normal leading-none text-gray-900 md:mt-1'>
               {role}
               <span className='ml-1 hidden lg:inline-block'>

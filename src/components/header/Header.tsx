@@ -9,11 +9,9 @@ import { Logo } from '@/components/logo/Logo';
 
 import { useModalStore } from '@/store/modal';
 
-import { routes } from '@/config/config';
-
 const Header = () => {
   const { setVisibility, visible } = useModalStore();
-  const { isHome, isBlog, isAbout, isContact } = usePageLocation();
+  const { isHome, isAbout } = usePageLocation();
 
   return (
     <header className='mb-4 pt-8 sm:mb-6' role='banner'>
@@ -36,7 +34,7 @@ const Header = () => {
             className='px-2 text-xs sm:px-4 sm:text-base'
           >
             <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
-            Download CV
+            Download my CV
           </Button>
           <a
             role='button'
@@ -47,15 +45,15 @@ const Header = () => {
             rel='noreferrer noopener'
           >
             <BsWhatsapp size={20} className='mr-2 text-green-500' />
-            Ask a question
+            Ask me a question
           </a>
         </div>
       </div>
 
-      <div className='mt-2 mb-8 flex items-center justify-between gap-6 rounded-md border bg-white py-3 pl-6 pr-3 text-black md:my-10'>
+      <div className='mt-2 mb-8 flex items-center justify-between gap-6 rounded-md border bg-white py-3 pr-4 pl-7 text-base text-black sm:mt-8 md:my-10 md:text-lg'>
         <nav
           role='navigation'
-          className='flex w-full items-center justify-around gap-2 text-sm font-medium sm:w-fit sm:gap-6 sm:text-base'
+          className='flex w-full items-center justify-around gap-2 font-medium sm:w-fit sm:gap-6 '
         >
           <Link href='/'>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -63,8 +61,7 @@ const Header = () => {
               Home
             </a>
           </Link>
-          <Link href={routes.blog} passHref>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          {/* <Link href={routes.blog} passHref>
             <a
               className={clsx('hover:underline', {
                 underline: isBlog,
@@ -72,7 +69,7 @@ const Header = () => {
             >
               Posts
             </a>
-          </Link>
+          </Link> */}
           <Link href='/about'>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
@@ -80,17 +77,7 @@ const Header = () => {
                 underline: isAbout,
               })}
             >
-              About
-            </a>
-          </Link>
-          <Link href='/contact'>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a
-              className={clsx('hover:underline', {
-                underline: isContact,
-              })}
-            >
-              Contact
+              About me
             </a>
           </Link>
         </nav>
@@ -103,7 +90,7 @@ const Header = () => {
           rel='noreferrer noopener'
         >
           <BsWhatsapp size={20} className='mr-2 text-green-500' />
-          Ask a question
+          Ask me a question
         </a>
       </div>
     </header>

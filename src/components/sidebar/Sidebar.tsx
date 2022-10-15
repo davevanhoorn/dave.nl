@@ -8,9 +8,9 @@ const Sidebar = () => {
 
   return (
     <aside className='col-span-12 pt-4 md:col-span-4 md:pt-0 lg:col-span-3'>
-      <div className={clsx('pt-4', { 'md:sticky md:top-0': isHome })}>
-        <ul className='mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
-          <li className='mb-2 list-none text-sm font-semibold'>
+      <div className={clsx('pt-5', { 'md:sticky md:top-0': isHome })}>
+        <ul className='mb-6 list-inside list-disc leading-7 marker:text-gray-300'>
+          <li className='mb-2 list-none text-lg font-medium'>
             Personal details
           </li>
           <li>Dave van Hoorn</li>
@@ -19,24 +19,22 @@ const Sidebar = () => {
           <li>Fluent in Dutch, English</li>
           <li>10+ yrs of web experience</li>
         </ul>
-        <ul className='mt-2 mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
-          <li className='mb-2 list-none text-sm font-semibold'>
-            Business details
+        <ul className='mt-2 mb-6 list-inside list-disc leading-7 marker:text-gray-300'>
+          <li className='mb-2 list-none text-lg font-medium'>
+            Address details
           </li>
           <li>Meindert Hobbemalaan 8</li>
           <li>3401 NB IJsselstein</li>
           <li>Utrecht, The Netherlands</li>
           <li>
-            <span className='font-semibold'>CoC:</span> 51002922
+            <span className='font-medium'>CoC:</span> 51002922
           </li>
           <li>
-            <span className='font-semibold'>Tax:</span> NL001234740B24
+            <span className='font-medium'>Tax:</span> NL001234740B24
           </li>
         </ul>
-        <ul className='mt-2 mb-6 list-inside list-disc text-sm leading-loose marker:text-gray-300'>
-          <li className='mb-2 list-none text-sm font-semibold'>
-            Contact details
-          </li>
+        <ul className='mt-2 mb-6 list-inside list-disc leading-7 marker:text-gray-300'>
+          <li className='mb-2 list-none text-lg font-medium'>Contact me</li>
           <li>mail [@] dave.nl</li>
           <li>+31 (0)6 169 100 79</li>
           <li className='mt-8 flex'>
