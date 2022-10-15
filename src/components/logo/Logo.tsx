@@ -15,9 +15,9 @@ export const Logo = () => {
         style={{ width: '56px', height: '56px' }}
       >
         <Image
-          width={112}
-          height={112}
-          className='inline-block h-10 w-10 rounded-full ring-2 ring-white'
+          width={56}
+          height={56}
+          className='inline-block rounded-full ring-2 ring-white'
           src='/images/davevanhoorn-2022_xs.webp'
           alt='Dave van Hoorn'
         />

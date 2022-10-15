@@ -1,9 +1,13 @@
 import dynamic from 'next/dynamic';
-import Image from 'next/future/image';
 
 import { Certificate } from '@/components/certificate/Certificate';
 import { Experience } from '@/components/experience/Experience';
 import Layout from '@/components/layouts/Layout';
+
+import Capgemini from '@/icons/capgemini.svg';
+import Dept from '@/icons/dept.svg';
+import Formule1 from '@/icons/formule1-nl.svg';
+import Schiphol from '@/icons/schiphol.svg';
 
 const Spotify = dynamic(() => import('@/components/spotify/Spotify'), {
   ssr: false,
@@ -21,61 +25,47 @@ export default function HomePage() {
       </div>
       {/* <h3 className='text-2xl font-medium leading-7 mb-9'>Blog</h3> */}
       <div className='mb-18 mt-10 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0 lg:pr-12'>
-        <div
+        <Dept
+          aria-label='Dept logo'
           style={{
             marginLeft: '-2px',
             marginBottom: '-4px',
             width: '67px',
             height: '18px',
           }}
-        >
-          <Image
-            src='/images/dept.svg'
-            alt='DEPT agency logo'
-            width={134}
-            height={36}
-          />
-        </div>
+        />
 
-        <div
+        <Capgemini
+          aria-label='Capgemini logo'
           style={{
+            position: 'relative',
+            marginTop: '-1px',
             marginBottom: '-10px',
             marginLeft: '-2px',
             width: '127px',
             height: '28px',
           }}
-        >
-          <Image
-            src='/images/capgemini.svg'
-            alt='Capgemini logo'
-            width={254}
-            height={56}
-          />
-        </div>
-        <div
+        />
+
+        <Schiphol
+          aria-label='Schiphol logo'
           style={{
             marginBottom: '-5px',
+            width: '89px',
+            height: '23px',
           }}
-        >
-          <Image
-            src='/images/schiphol.svg'
-            alt='Schiphol logo'
-            width={89}
-            height={23}
-          />
-        </div>
-        <div
+        />
+
+        <Formule1
+          aria-label='Formule1.nl logo'
           style={{
+            position: 'relative',
+            top: '2px',
             marginBottom: '1px',
+            width: '125px',
+            height: '12px',
           }}
-        >
-          <Image
-            src='/images/formule1-nl.svg'
-            alt='Formule1.nl logo'
-            width={125}
-            height={12}
-          />
-        </div>
+        />
       </div>
       <h2 className='mt-16 mb-7 font-display text-4xl font-medium leading-7'>
         My experience
