@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/future/image';
 
 import { Certificate } from '@/components/certificate/Certificate';
 import { Experience } from '@/components/experience/Experience';
 import Layout from '@/components/layouts/Layout';
-import { Spotify } from '@/components/spotify/Spotify';
+
+const Spotify = dynamic(() => import('@/components/spotify/Spotify'), {
+  ssr: false,
+});
 
 export default function HomePage() {
   return (
@@ -17,18 +21,6 @@ export default function HomePage() {
       </div>
       {/* <h3 className='text-2xl font-medium leading-7 mb-9'>Blog</h3> */}
       <div className='mb-18 mt-10 grid grid-cols-2 items-center gap-10 px-2 lg:my-16 lg:flex lg:justify-between lg:px-0 lg:pr-12'>
-        <div
-          style={{
-            marginBottom: '-2px',
-          }}
-        >
-          <Image
-            src='/images/euroclear.svg'
-            alt='Euroclear logo'
-            width={50}
-            height={50}
-          />
-        </div>
         <div
           style={{
             marginLeft: '-2px',

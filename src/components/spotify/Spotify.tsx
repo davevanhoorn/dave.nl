@@ -4,7 +4,7 @@ import useSWR from 'swr';
 
 import { fetcher } from '@/helpers/common';
 
-export const Spotify = () => {
+const Spotify = () => {
   const { data, error } = useSWR('/api/spotify', fetcher);
 
   if (error) return <div>failed to load</div>;
@@ -48,3 +48,5 @@ export const Spotify = () => {
     </>
   );
 };
+
+export default Spotify;

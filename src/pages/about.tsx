@@ -19,7 +19,7 @@ const About: NextPage = () => {
               <li>I prefer shorebreaks over pointbreaks</li>
               <li>I always listen to music</li>
             </ul>
-            <p className='mb-3 font-display text-3xl font-bold md:mt-12 lg:mt-12 lg:mb-5 xl:mt-12'>
+            <p className='mb-3 font-display text-3xl font-medium md:mt-12 lg:mt-12 lg:mb-5 xl:mt-12'>
               Why I started developing
             </p>
             <p>
@@ -41,7 +41,7 @@ const About: NextPage = () => {
           />
         </div>
         <div className='md:pr-12 lg:pr-32'>
-          <p className='mb-0 font-display text-3xl font-bold lg:mb-5 xl:mb-5 xl:mt-2'>
+          <p className='mb-0 font-display text-3xl font-medium lg:mb-5 xl:mb-5 xl:mt-2'>
             When I close my laptop, I...
           </p>
           <p>
@@ -53,7 +53,7 @@ const About: NextPage = () => {
             account for a surfsession in a heartbeat.
           </p>
 
-          <p className='mb-0 font-display text-3xl font-bold lg:mb-5 xl:mb-5 xl:mt-8'>
+          <p className='mb-0 font-display text-3xl font-medium lg:mb-5 xl:mb-5 xl:mt-8'>
             What I value in life:
           </p>
           <p>
