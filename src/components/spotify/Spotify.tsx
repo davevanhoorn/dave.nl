@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { BsPlayCircleFill } from 'react-icons/bs';
 import useSWR from 'swr';
 

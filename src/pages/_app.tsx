@@ -5,14 +5,6 @@ import React from 'react';
 import '@/styles/globals.css';
 import 'prism-themes/themes/prism-coldark-dark.css';
 
-if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
-  import('react-dom').then((ReactDOM) => {
-    import('@axe-core/react').then((axe) => {
-      axe.default(React, ReactDOM, 1000, {});
-    });
-  });
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

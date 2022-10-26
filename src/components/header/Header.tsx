@@ -17,11 +17,8 @@ const Header = () => {
     <header className='mb-4 pt-8 sm:mb-6' role='banner'>
       <div className='flex flex-col items-center justify-between sm:flex-row md:flex-row'>
         {!isHome ? (
-          <Link href='/'>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className='flex items-center justify-center'>
-              <Logo />
-            </a>
+          <Link href='/' className='flex items-center justify-center'>
+            <Logo />
           </Link>
         ) : (
           <Logo />
@@ -55,11 +52,11 @@ const Header = () => {
           role='navigation'
           className='flex w-full items-center justify-around gap-2 font-medium sm:w-fit sm:gap-6 '
         >
-          <Link href='/'>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className={clsx('hover:underline', { underline: isHome })}>
-              Home
-            </a>
+          <Link
+            href='/'
+            className={clsx('hover:underline', { underline: isHome })}
+          >
+            Home
           </Link>
           {/* <Link href={routes.blog} passHref>
             <a
@@ -70,15 +67,13 @@ const Header = () => {
               Posts
             </a>
           </Link> */}
-          <Link href='/about'>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a
-              className={clsx('hover:underline', {
-                underline: isAbout,
-              })}
-            >
-              About me
-            </a>
+          <Link
+            href='/about'
+            className={clsx('hover:underline', {
+              underline: isAbout,
+            })}
+          >
+            About me
           </Link>
         </nav>
         <a

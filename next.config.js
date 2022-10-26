@@ -19,7 +19,6 @@ const nextConfig = {
     domains: ['i.scdn.co'],
   },
   experimental: {
-    browsersListForSwc: true,
     legacyBrowsers: false,
   },
   poweredByHeader: false,
