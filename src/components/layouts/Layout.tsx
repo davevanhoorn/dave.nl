@@ -1,13 +1,17 @@
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import { useRouter } from 'next/router';
+import { ReactNode, useEffect } from 'react';
 
 import usePageLocation from '@/hooks/usePageLocation';
 
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
+import MobileMenu from '@/components/mobile-menu/MobileMenu';
 import { Modal } from '@/components/modal/Modal';
 import Seo from '@/components/Seo';
 import Sidebar from '@/components/sidebar/Sidebar';
+
+import { useMenuStore } from '@/store/menu';
 
 type LayoutProps = {
   className?: string;
@@ -15,7 +19,13 @@ type LayoutProps = {
 };
 
 const Layout = ({ className, children }: LayoutProps) => {
+  const router = useRouter();
   const { isHome, isBlog, isSingleBlog, isAbout } = usePageLocation();
+  const { visible, setVisibility } = useMenuStore();
+
+  useEffect(() => {
+    setVisibility(false);
+  }, [router.asPath, setVisibility]);
 
   return (
     <div className='container mx-auto max-w-7xl px-4 md:px-8'>
@@ -40,6 +50,7 @@ const Layout = ({ className, children }: LayoutProps) => {
       </div>
       <Footer />
       <Modal />
+      {visible && <MobileMenu />}
     </div>
   );
 };

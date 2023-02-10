@@ -22,7 +22,7 @@ export const Experience = ({
   review,
 }: ExperienceProps) => {
   return (
-    <div className='mt-4 pt-2 pb-4 md:mr-8 md: mb-8'>
+    <div className='mt-4 pt-2 pb-4 md:mr-8 md:mb-6'>
       <p className='mb-2 text-xl font-medium leading-7'>
         {title}
         <span className='hidden md:inline-block md:mx-1'>@</span>

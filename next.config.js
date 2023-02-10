@@ -12,7 +12,7 @@ const nextConfig = {
   },
   i18n: {
     localeDetection: false,
-    locales: ['nl-NL', 'en-US'],
+    locales: ['nl-NL'],
     defaultLocale: 'nl-NL',
   },
   images: {
@@ -35,7 +35,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/posts/:slug',
+        source: '/blog/:slug',
         headers: [
           {
             key: 'X-Robots-Tag',

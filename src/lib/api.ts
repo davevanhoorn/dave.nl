@@ -2,9 +2,9 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 
-import { PostProps } from '@/pages/posts/[slug]';
+import { PostProps } from '@/pages/blog/[slug]';
 
-const postsDirectory = join(process.cwd(), 'src/data/posts');
+const postsDirectory = join(process.cwd(), 'src/data/blog');
 
 export const getPostsFiles = (): Array<string> => {
   const files = fs.readdirSync(postsDirectory);

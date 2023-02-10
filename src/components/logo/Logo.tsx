@@ -6,7 +6,6 @@ export const Logo = () => {
   const { isHome } = usePageLocation();
   const name = 'Dave van Hoorn';
   const role = 'Freelance front-end developer';
-  const availableFrom = "Available Jan' 2023";
 
   return (
     <div className='flex items-center justify-between pb-4 sm:pb-0 md:flex-row'>
@@ -25,14 +24,11 @@ export const Logo = () => {
       <div>
         {isHome ? (
           <>
-            <h1 className='relative -top-1 text-xl font-medium leading-none'>
+            <h1 className='relative -top-1 text-xl font-medium leading-none whitespace-nowrap'>
               {name}
             </h1>
-            <h2 className='mt-1 flex text-sm font-normal leading-none text-gray-900 md:mt-1'>
+            <h2 className='mt-1 flex text-sm font-medium leading-none text-gray-900 md:mt-1 whitespace-nowrap'>
               {role}
-              <span className='ml-1 hidden lg:inline-block'>
-                - {availableFrom}
-              </span>
             </h2>
           </>
         ) : (
@@ -42,9 +38,6 @@ export const Logo = () => {
             </p>
             <p className='mt-1 flex text-sm font-normal leading-none text-gray-900 md:mt-1'>
               {role}
-              <span className='ml-1 hidden lg:inline-block'>
-                - {availableFrom}
-              </span>
             </p>
           </>
         )}

@@ -6,7 +6,7 @@ import { getAllPosts } from '@/lib/api';
 import Layout from '@/components/layouts/Layout';
 
 import { routes } from '@/config/config';
-import { PostProps } from '@/pages/posts/[slug]';
+import { PostProps } from '@/pages/blog/[slug]';
 
 interface BlogOverviewProps {
   posts: Array<PostProps>;
@@ -22,7 +22,7 @@ const BlogOverview: NextPage<BlogOverviewProps> = ({ posts }) => {
           key={`post-${postKey}`}
           passHref
         >
-          <p className='font-display text-3xl font-semibold hover:text-purple-600 md:text-4xl md:leading-tight'>
+          <p className='font-display text-3xl font-semibold hover:underline md:text-4xl md:leading-tight'>
             {post.postData.title}
           </p>
           {post.postData.subTitle && (
@@ -35,7 +35,7 @@ const BlogOverview: NextPage<BlogOverviewProps> = ({ posts }) => {
               {post.postData.excerpt}
             </p>
           )}
-          <p className='mt-4 text-base font-medium text-black hover:text-purple-600'>
+          <p className='mt-4 text-base font-medium text-black hover:underline'>
             Meer lezen →
           </p>
         </Link>
