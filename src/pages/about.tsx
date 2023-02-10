@@ -6,7 +6,7 @@ import Layout from '@/components/layouts/Layout';
 const About: NextPage = () => {
   return (
     <Layout>
-      <h1 className='font-display text-4xl font-medium leading-tight lg:text-5xl lg:leading-none'>
+      <h1 className='font-display text-4xl font-semibold leading-tight lg:leading-none'>
         About me
       </h1>
       <article className='prose prose-stone max-w-fit text-black prose-h1:font-display prose-h2:font-display lg:prose-lg lg:pt-6 lg:prose-p:mt-0 lg:prose-img:mt-0'>
@@ -20,7 +20,7 @@ const About: NextPage = () => {
               <li>I always listen to music</li>
             </ul>
             <p className='mb-3 font-display text-3xl font-medium md:mt-12 lg:mt-12 lg:mb-5 xl:mt-12'>
-              Why I started developing
+              Why I started
             </p>
             <p>
               Inspired by my dad (who owned a website around the year 2000) I

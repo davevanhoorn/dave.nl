@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className='mb-4 pt-8 sm:mb-6' role='banner'>
-      <div className='flex flex-col items-center justify-between sm:flex-row md:flex-row'>
+      <div className='flex flex-col items-start md:items-center justify-between sm:flex-row md:flex-row'>
         {!isHome ? (
           <Link href='/' className='flex items-center justify-center'>
             <Logo />
@@ -31,7 +31,9 @@ const Header = () => {
             className='px-2 text-xs sm:px-4 sm:text-base'
           >
             <BsFillFileEarmarkPdfFill size={20} className='mr-2 text-red-500' />
-            Download my CV
+            Download
+            <span className='hidden'>my</span>
+            <span className='ml-1'>CV</span>
           </Button>
           <a
             role='button'
@@ -42,7 +44,7 @@ const Header = () => {
             rel='noreferrer noopener'
           >
             <BsWhatsapp size={20} className='mr-2 text-green-500' />
-            Ask me a question
+            Ask <span className='hidden'>me</span> a question
           </a>
         </div>
       </div>
@@ -58,14 +60,13 @@ const Header = () => {
           >
             Home
           </Link>
-          {/* <Link href={routes.blog} passHref>
-            <a
-              className={clsx('hover:underline', {
-                underline: isBlog,
-              })}
-            >
-              Posts
-            </a>
+          {/* <Link
+            href={routes.blog}
+            className={clsx('hover:underline', {
+              underline: isBlog,
+            })}
+          >
+            Posts
           </Link> */}
           <Link
             href='/about'
@@ -73,7 +74,7 @@ const Header = () => {
               underline: isAbout,
             })}
           >
-            About me
+            About
           </Link>
         </nav>
         <a

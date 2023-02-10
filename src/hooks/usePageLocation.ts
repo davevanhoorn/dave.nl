@@ -5,8 +5,7 @@ import { routes } from '@/config/config';
 const usePageLocation = () => {
   const router = useRouter();
   const isHome = router.pathname === '/';
-  const isBlog =
-    router.asPath === routes.blog || router.asPath.indexOf(routes.blog) !== -1;
+  const isBlog = router.asPath === routes.blog;
   const isSingleBlog =
     router.asPath !== routes.blog &&
     router.asPath.indexOf(`${routes.blog}/`) !== -1;

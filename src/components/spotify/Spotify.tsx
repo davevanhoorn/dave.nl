@@ -36,10 +36,10 @@ const Spotify = () => {
             />
           </div>
           <div>
-            <p className='overflow-hidden font-medium leading-none'>
+            <p className='overflow-hidden font-medium leading-1'>
               {song.title}
             </p>
-            <p className='mt-1 overflow-hidden text-ellipsis text-sm'>
+            <p className='mt-0 overflow-hidden text-ellipsis text-sm'>
               {song.artist}
             </p>
           </div>

@@ -17,16 +17,16 @@ const BlogOverview: NextPage<BlogOverviewProps> = ({ posts }) => {
     <Layout className='flex flex-col gap-4 md:gap-8'>
       {posts.map((post, postKey) => (
         <Link
-          className='flex flex-col rounded-md border bg-white p-4 md:p-8'
+          className='flex flex-col rounded-md border bg-white p-6 md:p-8'
           href={`${routes.blog}/${post.postData.slug}`}
           key={`post-${postKey}`}
           passHref
         >
-          <p className='font-display text-2xl font-medium hover:text-purple-600 md:text-4xl md:leading-none'>
+          <p className='font-display text-3xl font-semibold hover:text-purple-600 md:text-4xl md:leading-tight'>
             {post.postData.title}
           </p>
           {post.postData.subTitle && (
-            <p className='font-regular mt-3 text-lg leading-6 text-gray-400'>
+            <p className='font-regular mt-1 text-lg leading-6 text-gray-400 md:mt-2'>
               {post.postData.subTitle}
             </p>
           )}

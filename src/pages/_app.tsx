@@ -1,9 +1,14 @@
+import { Inter } from '@next/font/google';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import React from 'react';
 
 import '@/styles/globals.css';
 import 'prism-themes/themes/prism-coldark-dark.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <Component {...pageProps} />
+      <div className={`${inter.variable} font-sans`}>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

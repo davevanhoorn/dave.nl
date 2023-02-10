@@ -26,17 +26,17 @@ const Layout = ({ className, children }: LayoutProps) => {
           role='main'
           className={clsx('col-span-12 max-w-full overflow-hidden', {
             'md:col-span-8 md:border-r md:pr-12 lg:col-span-9':
-              isHome || isSingleBlog || isAbout,
-            'lg:px-12 lg:pr-32 lg:pt-2': isSingleBlog || isHome || isAbout,
-            'lg:pr-0': isAbout,
-            'col-span-12 grid grid-cols-1 gap-4 lg:grid-cols-2':
-              isBlog && !isSingleBlog,
+              isHome || isAbout,
+            'lg:px-12 lg:pr-32 lg:pt-2': isSingleBlog || isHome || isBlog,
+            'lg:px-36 lg:pt-2 max-w-full': isSingleBlog,
+            'lg:pr-0 lg:pl-12 lg:pt-2': isAbout,
+            'col-span-12 grid grid-cols-1 gap-4 lg:grid-cols-2': isBlog,
             [String(className)]: !!className,
           })}
         >
           {children}
         </main>
-        {isHome || isSingleBlog || isAbout ? <Sidebar /> : null}
+        {isHome || isAbout ? <Sidebar /> : null}
       </div>
       <Footer />
       <Modal />
