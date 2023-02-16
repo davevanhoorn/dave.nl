@@ -1,0 +1,114 @@
+@import "mixins";
+
+@mixin animation {
+  @include transition-transform-with-ease;
+
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes logo-hover {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  35% {
+    transform: translateX(-4px) scale(0.95);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes letter {
+  0% {
+    transform: translateY(0px) scale(1) rotate(0);
+  }
+  25% {
+    transform: translateY(-50px) scale(0.8) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-100px) scale(1.1) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-50px) scale(1) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0px) scale(1) rotate(0);
+  }
+}
+
+@keyframes dash {
+  0% {
+    transform: translateY(0px) scaleX(1);
+  }
+  25% {
+    transform: translateY(-25px) scaleX(0.6);
+  }
+  50% {
+    transform: translateY(-50px) scaleX(1.25);
+  }
+  100% {
+    transform: translateY(0px) scaleX(1);
+  }
+}
+
+.logo {
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  overflow: visible;
+
+  &:hover,
+  &:focus {
+    animation-name: logo-hover;
+
+    .letter-d {
+      @include animation;
+
+      animation-name: letter;
+    }
+
+    .letter-a {
+      @include animation;
+
+      animation-delay: 0.04s;
+      animation-name: letter;
+    }
+
+    .letter-v {
+      @include animation;
+
+      animation-delay: 0.08s;
+      animation-name: letter;
+    }
+
+    .letter-e {
+      @include animation;
+
+      animation-delay: 0.12s;
+      animation-name: letter;
+    }
+
+    .exclamation {
+      @include animation;
+
+      animation-delay: 0.18s;
+      animation-name: letter;
+    }
+
+    .dash-1 {
+      @include animation;
+
+      animation-delay: 0.18s;
+      animation-name: dash;
+    }
+
+    .dash-2 {
+      @include animation;
+
+      animation-delay: 0.25s;
+      animation-name: dash;
+    }
+  }
+}

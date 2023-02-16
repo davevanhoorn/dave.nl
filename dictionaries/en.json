@@ -1,0 +1,193 @@
+{
+  "global": {
+    "header": {
+      "company": "Dave.nl",
+      "title": "Header title",
+      "description": "Header description",
+      "navigation": [
+        {
+          "value": "Home",
+          "href": "/en",
+          "title": "Navigate to Dave.nl's homepage",
+          "ariaLabel": "Navigate to Dave.nl's homepage"
+        },
+        {
+          "value": "About",
+          "href": "/en/about-me",
+          "title": "Navigate to Dave's \"About me\" page",
+          "ariaLabel": "Navigate to Dave's \"About me\" page"
+        },
+        {
+          "value": "Blog",
+          "href": "/en/blog",
+          "title": "Navigate to the blog articles overview page of Dave.nl",
+          "ariaLabel": "Navigate to the blog articles overview page of Dave.nl"
+        },
+        {
+          "value": "Contact",
+          "href": "/en/contact",
+          "title": "Navigate to Dave.nl's contact page",
+          "ariaLabel": "Navigate to Dave.nl's contact page"
+        }
+      ],
+      "callToAction": {
+        "project": {
+          "value": "Start a project",
+          "href": "#start-project",
+          "title": "Start a project with Dave.nl",
+          "ariaLabel": "Start a project with Dave.nl"
+        },
+        "whatsapp": {
+          "value": "WhatsApp",
+          "href": "#whatsapp",
+          "title": "Quickly get in touch with Dave.nl through a message on WhatsApp",
+          "ariaLabel": "Quickly get in touch with Dave.nl through a message on WhatsApp"
+        }
+      }
+    },
+    "languageSwitcher": {
+      "label": "Change language",
+      "locales": {
+        "en": {
+          "name": "English",
+          "code": "EN"
+        },
+        "nl": {
+          "name": "Dutch",
+          "code": "NL"
+        }
+      }
+    },
+    "seo": {
+      "keywords": [
+        "javascript",
+        "typescript",
+        "next.js",
+        "development",
+        "freelance",
+        "career",
+        "digital nomad"
+      ],
+      "authors": ["Dave van Hoorn"],
+      "creator": "Dave van Hoorn",
+      "publisher": "Dave van Hoorn",
+      "formatDetection": {
+        "email": "no",
+        "address": "no",
+        "telephone": "no"
+      },
+      "applicationName": "Dave.nl",
+      "generator": "Next.js",
+      "colorScheme": "light"
+    },
+    "icons": {
+      "icon": "/favicons/icon.png",
+      "shortcut": "/favicons/shortcut-icon.png",
+      "apple": [
+        {
+          "url": "/favicons/apple-touch-icon.png",
+          "sizes": "180x180",
+          "type": "image/png"
+        }
+      ],
+      "other": [
+        {
+          "rel": "mask-icon",
+          "url": "/favicons/safari-pinned-tab.svg"
+        },
+        {
+          "rel": "manifest",
+          "url": "/favicons/site.webmanifest"
+        }
+      ]
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Home Title",
+      "description": "Home Description"
+    },
+    "openGraph": {
+      "title": "Dave.nl",
+      "description": "Personal blog of Dave van Hoorn, remote freelance front-end developer",
+      "url": "https://dave.nl",
+      "siteName": "Dave.nl",
+      "images": [
+        {
+          "url": "https://dave.nl/og.png",
+          "width": 800,
+          "height": 600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        },
+        {
+          "url": "https://dave.nl/og-alt.png",
+          "width": 1800,
+          "height": 1600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        }
+      ],
+      "locale": "en",
+      "type": "website"
+    },
+    "alternates": {
+      "canonical": "https://dave.nl/en",
+      "languages": {
+        "en": "https://dave.nl/en",
+        "nl": "https://dave.nl/nl"
+      }
+    },
+    "schema": {
+      "organization": {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dave.nl",
+        "brand": "Dave.nl",
+        "email": "hallo@dave.nl",
+        "url": "https://dave.nl/nl",
+        "logo": "https://dave.nl/images/dave.nl_organization_logo.png"
+      },
+      "localBusiness": {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Dave.nl",
+        "priceRange": "$$$",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.10407,
+          "longitude": 5.09458
+        },
+        "image": [
+          "https://dave.nl/images/dave.nl_organization_office_1.png",
+          "https://dave.nl/images/dave.nl_organization_office_2.png",
+          "https://dave.nl/images/dave.nl_organization_office_3.png"
+        ],
+        "telephone": "0031616910079",
+        "url": "https://dave.nl/nl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Oppenheimplein 1E",
+          "addressLocality": "Utrecht",
+          "addressRegion": "Utrecht",
+          "postalCode": "3551BN",
+          "addressCountry": "NL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "09:00",
+            "closes": "21:00"
+          }
+        ]
+      }
+    }
+  }
+}
