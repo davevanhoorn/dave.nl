@@ -4,6 +4,7 @@ import { FunctionComponent } from "react";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
+import { FaCheck } from "react-icons/fa";
 
 import { Dictionary, i18n, Locale } from "@/config/i18n";
 
@@ -44,7 +45,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
           sideOffset={10}
           className={clsx(
             styles.localeSwitcherContent,
-            "rounded-md p-2 bg-white shadow-lg shadow-gray-200/50"
+            "rounded-md p-1 sm:p-2 bg-white shadow-lg shadow-gray-200/50"
           )}
         >
           {i18n.locales.map((locale) => (
@@ -53,7 +54,19 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
                 className={clsx(styles.localeLink, "p-1")}
                 href={redirectedPathName(locale)}
               >
-                <LocaleSwitcherFlag locale={locale} />
+                <span className="relative mr-3">
+                  <LocaleSwitcherFlag locale={locale} />
+                  {locale === currentLocale && (
+                    <span
+                      className={clsx(
+                        styles.localeCheck,
+                        "absolute text-center rounded-2xl"
+                      )}
+                    >
+                      <FaCheck className="w-1 h-1 sm:w-2 sm:h-2" />
+                    </span>
+                  )}
+                </span>
                 <span className="font-semibold text-base">
                   {dictionary.global.languageSwitcher.locales[locale].name}
                 </span>

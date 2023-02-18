@@ -82,16 +82,19 @@
 
 @keyframes lightbulb-button-hover {
   0% {
-    transform: translateY(0px) scaleY(1) rotate(0);
+    transform: translateY(0) scaleY(1) rotate(0);
   }
+
   25% {
     transform: translateY(1px);
   }
+
   50% {
     transform: translateY(-2px) scaleY(1.1);
   }
+
   100% {
-    transform: translateY(0px) scaleY(1) rotate(0);
+    transform: translateY(0) scaleY(1) rotate(0);
   }
 }
 
@@ -99,9 +102,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(2px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -111,9 +116,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
@@ -123,9 +130,11 @@
   0% {
     transform: rotate(-15deg) scaleX(0);
   }
+
   20% {
     transform: rotate(-15deg) scaleX(1.2);
   }
+
   100% {
     transform: rotate(-15deg) scaleX(0.8);
   }
@@ -135,9 +144,11 @@
   0% {
     transform: rotate(2deg) scaleX(0);
   }
+
   20% {
     transform: rotate(2deg) scaleX(1.5);
   }
+
   100% {
     transform: rotate(2deg) scaleX(1);
   }
@@ -147,9 +158,11 @@
   0% {
     transform: rotate(40deg) scaleX(0);
   }
+
   20% {
     transform: rotate(40deg) scaleX(1.2);
   }
+
   100% {
     transform: rotate(40deg) scaleX(0.8);
   }
@@ -159,9 +172,11 @@
   0% {
     transform: rotate(90deg) scaleX(0);
   }
+
   20% {
     transform: rotate(90deg) scaleX(1.5);
   }
+
   100% {
     transform: rotate(90deg) scaleX(1);
   }
@@ -171,9 +186,11 @@
   0% {
     transform: rotate(140deg) scaleX(0);
   }
+
   20% {
     transform: rotate(140deg) scaleX(1.2);
   }
+
   100% {
     transform: rotate(140deg) scaleX(0.8);
   }
@@ -183,9 +200,11 @@
   0% {
     transform: rotate(178deg) scaleX(0);
   }
+
   20% {
     transform: rotate(178deg) scaleX(1.5);
   }
+
   100% {
     transform: rotate(178deg) scaleX(1);
   }
@@ -195,9 +214,11 @@
   0% {
     transform: rotate(198deg) scaleX(0);
   }
+
   20% {
     transform: rotate(198deg) scaleX(1.2);
   }
+
   100% {
     transform: rotate(198deg) scaleX(0.8);
   }
@@ -245,7 +266,7 @@
 
     background-color: #fa3e3e;
     left: -1px;
-    top: 0px;
+    top: 0;
   }
 
   .lightbulbRay4 {
@@ -260,7 +281,7 @@
 
     background-color: #fa3e3e;
     left: 12px;
-    top: 0px;
+    top: 0;
   }
 
   .lightbulbRay6 {
@@ -371,10 +392,12 @@
   0% {
     transform: scaleY(0) translateY(4px);
   }
+
   20% {
     opacity: 1;
     transform: scaleY(1.1) translateY(-3px);
   }
+
   100% {
     opacity: 1;
     transform: scaleY(1) translateY(0);

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:style": "stylelint \"**/*.(scss|sass)\""
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "0.2.32",
@@ -36,7 +37,13 @@
     "eslint-config-next": "13.1.6",
     "postcss": "^8.4.21",
     "server-only": "0.0.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-css-modules": "4.1.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-webpack-plugin": "^4.0.0",
     "tailwindcss": "^3.2.6",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "webpack": "^5.75.0"
   }
 }

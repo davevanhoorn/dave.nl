@@ -11,46 +11,55 @@
 
 @keyframes logo-hover {
   0% {
-    transform: translateX(0px) scale(1);
+    transform: translateX(0) scale(1);
   }
+
   35% {
     transform: translateX(-4px) scale(0.95);
   }
+
   100% {
-    transform: translateX(0px) scale(1);
+    transform: translateX(0) scale(1);
   }
 }
 
 @keyframes letter {
   0% {
-    transform: translateY(0px) scale(1) rotate(0);
+    transform: translateY(0) scale(1) rotate(0);
   }
+
   25% {
     transform: translateY(-50px) scale(0.8) rotate(-1deg);
   }
+
   50% {
     transform: translateY(-100px) scale(1.1) rotate(-2deg);
   }
+
   75% {
     transform: translateY(-50px) scale(1) rotate(-1deg);
   }
+
   100% {
-    transform: translateY(0px) scale(1) rotate(0);
+    transform: translateY(0) scale(1) rotate(0);
   }
 }
 
 @keyframes dash {
   0% {
-    transform: translateY(0px) scaleX(1);
+    transform: translateY(0) scaleX(1);
   }
+
   25% {
     transform: translateY(-25px) scaleX(0.6);
   }
+
   50% {
     transform: translateY(-50px) scaleX(1.25);
   }
+
   100% {
-    transform: translateY(0px) scaleX(1);
+    transform: translateY(0) scaleX(1);
   }
 }
 
@@ -63,27 +72,27 @@
   &:focus {
     animation-name: logo-hover;
 
-    .letter-d {
+    .letterD {
       @include animation;
 
       animation-name: letter;
     }
 
-    .letter-a {
+    .letterA {
       @include animation;
 
       animation-delay: 0.04s;
       animation-name: letter;
     }
 
-    .letter-v {
+    .letterV {
       @include animation;
 
       animation-delay: 0.08s;
       animation-name: letter;
     }
 
-    .letter-e {
+    .letterE {
       @include animation;
 
       animation-delay: 0.12s;
@@ -97,14 +106,14 @@
       animation-name: letter;
     }
 
-    .dash-1 {
+    .dashOne {
       @include animation;
 
       animation-delay: 0.18s;
       animation-name: dash;
     }
 
-    .dash-2 {
+    .dashTwo {
       @include animation;
 
       animation-delay: 0.25s;

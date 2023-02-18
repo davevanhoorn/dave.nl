@@ -46,7 +46,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               ))}
             </div>
           </div>
-          <div className="ml-2 xs:ml-0 space-x-2 flex">
+          <div className="space-x-1 xs:space-x-2 flex">
             <Button
               className={clsx(styles.lightbulbButton, "hidden sm:inline-flex")}
               element={ButtonTypeEnum.a}

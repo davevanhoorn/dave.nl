@@ -61,7 +61,7 @@ export default async function IndexPage({
           __html: JSON.stringify(dictionary.home.schema.localBusiness),
         }}
       />
-      <h1>Home</h1>
+      <h1>About / Over mij</h1>
     </>
   );
 }

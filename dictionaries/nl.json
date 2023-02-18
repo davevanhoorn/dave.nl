@@ -13,7 +13,7 @@
         },
         {
           "value": "Over mij",
-          "href": "/nl/over-mij",
+          "href": "/nl/about",
           "title": "Navigeer naar de \"Over mij\" pagina van Dave.nl",
           "ariaLabel": "Navigeer naar de \"Over mij\" pagina van Dave.nl"
         },
@@ -38,7 +38,7 @@
           "ariaLabel": "Start een samenwerking met Dave.nl"
         },
         "whatsapp": {
-          "value": "WhatsAppen",
+          "value": "WhatsApp",
           "href": "#whatsapp",
           "title": "Stuur Dave.nl een bericht op WhatsApp",
           "ariaLabel": "Stuur Dave.nl een bericht op WhatsApp"

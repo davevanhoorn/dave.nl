@@ -13,7 +13,7 @@
         },
         {
           "value": "About",
-          "href": "/en/about-me",
+          "href": "/en/about",
           "title": "Navigate to Dave's \"About me\" page",
           "ariaLabel": "Navigate to Dave's \"About me\" page"
         },
@@ -53,7 +53,7 @@
           "code": "EN"
         },
         "nl": {
-          "name": "Dutch",
+          "name": "Netherlands",
           "code": "NL"
         }
       }
