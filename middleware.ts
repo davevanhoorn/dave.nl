@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { i18n } from "@/config/i18n";
-
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
+
+import { i18n, Locale } from "@/config/i18n";
 
 function getLocaleFromHeaders(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -17,16 +17,94 @@ function getLocaleFromHeaders(request: NextRequest): string | undefined {
   return matchLocale(languages, locales, i18n.defaultLocale);
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  const date = new Date();
+  const secure = true;
+  const maxAge = date.setMonth(date.getMonth() + 1);
+  const expires = new Date(date.setMonth(date.getMonth() + 1));
+  const translations = JSON.stringify([
+    { locale: "nl", slug: "/" },
+    { locale: "en", slug: "/" },
+  ]);
+
   const pathname = request.nextUrl.pathname;
+  const requestUrl = new URL(request.url);
+
+  // Check if is homepage request
+  const isIndexPageRequest = !i18n.locales.every(
+    (locale) => pathname !== `/${locale}`
+  );
 
   // Check if there is any supported locale in the pathname, except for NL
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // Redirect if there is no locale
+  // If pathname is not missing locale and is not the index page, check if the slug exists in the translation files
+  if (!isIndexPageRequest && !pathnameIsMissingLocale) {
+    const parameters = requestUrl.pathname.split("/").filter(Boolean);
+    const locale = parameters[0];
+    const slug = parameters[1];
+
+    // because Next.js server components bug
+    const dictionaries = {
+      en: () =>
+        import("@/dictionaries/en.json").then((module) => module.default),
+      nl: () =>
+        import("@/dictionaries/nl.json").then((module) => module.default),
+    };
+
+    // Load current language dictionary
+    const dictionary = await dictionaries[locale as Locale]();
+
+    // Loop over slugs, exclude "global"
+    const dictionarySlugs = Object.keys(dictionary);
+    const folder = dictionarySlugs.find(
+      // eslint-disable-next-line
+      // @ts-ignore
+      (dictionarySlug) => dictionary[dictionarySlug].slug === slug
+    );
+
+    // If slug matches, rewrite to "key", which is the page's folder name, e.g. /app/[lang]/about
+    const url = new URL(`${requestUrl.origin}/${locale}/${folder}`);
+
+    const translations = [];
+
+    for (const locale of i18n.locales) {
+      const dictionary = await dictionaries[locale]();
+      // eslint-disable-next-line
+      // @ts-ignore
+      if (folder && dictionary[folder]?.slug === undefined) return;
+      // eslint-disable-next-line
+      // @ts-ignore
+      translations.push({ locale, slug: dictionary[folder].slug });
+    }
+
+    const response = NextResponse.rewrite(url);
+
+    response.cookies.set("i18n", JSON.stringify(translations), {
+      secure,
+      expires,
+      maxAge,
+    });
+
+    return response;
+  }
+
+  // Only for index pages
+  if (isIndexPageRequest) {
+    const response = NextResponse.next();
+    response.cookies.set("i18n", translations, {
+      secure,
+      expires,
+      maxAge,
+    });
+    return response;
+  }
+
+  // Redirect is pathname is missing locale
   if (pathnameIsMissingLocale) {
+    // Redirect if there is no locale
     const localeFromHeaders = getLocaleFromHeaders(request);
 
     // Redirect to english whenever the locale from headers is not "nl"

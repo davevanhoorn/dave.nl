@@ -5,7 +5,7 @@ import { getDictionary } from "@/utils/get-dictionary";
 
 // generateStaticParams can be used with dynamic route segments - like getStaticPaths and [slug].tsx
 // this is not the same as getStaticProps(!)
-export async function generateStaticParams(params: any) {
+export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 

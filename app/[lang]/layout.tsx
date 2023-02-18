@@ -61,3 +61,6 @@ export default async function Root({
     </html>
   );
 }
+
+// https://nextjs.org/docs/messages/app-static-to-dynamic-error
+export const dynamic = "force-static";

@@ -39,7 +39,7 @@ export async function generateMetadata({
 export default async function IndexPage({
   params,
 }: {
-  params: { lang: Locale };
+  params: { lang: Locale; slug?: string };
 }) {
   const dictionary = await getDictionary(params.lang);
 

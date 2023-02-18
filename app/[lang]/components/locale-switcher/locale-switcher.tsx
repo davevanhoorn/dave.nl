@@ -1,19 +1,18 @@
 "use client";
 
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import clsx from "clsx";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaCheck } from "react-icons/fa";
 
-import { Dictionary, i18n, Locale } from "@/config/i18n";
+import { Dictionary, Locale } from "@/config/i18n";
 
 import Button from "@/components/button/button";
 import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
 
-import useI18n from "@/hooks/use-i18n";
-
-import clsx from "clsx";
 import styles from "./locale-switcher.module.scss";
 
 interface LocaleSwitcherProps {
@@ -25,7 +24,25 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
   currentLocale,
   dictionary,
 }) => {
-  const { redirectedPathName } = useI18n();
+  const pathName = usePathname();
+  const [translations, setTranslations] = useState<
+    [{ locale: Locale; slug: string }] | null
+  >(null);
+
+  useEffect(() => {
+    const cookies = Object.fromEntries(
+      document.cookie.split(/; */).map(function (c) {
+        var index = c.indexOf("="); // Find the index of the first equal sign
+        var key = c.slice(0, index); // Everything upto the index is the key
+        var value = c.slice(index + 1); // Everything after the index is the value
+
+        // Return the key and value
+        return [decodeURIComponent(key), decodeURIComponent(value)];
+      })
+    );
+
+    setTranslations(JSON.parse(cookies.i18n));
+  }, [pathName]);
 
   return (
     <DropdownMenu.Root>
@@ -48,27 +65,31 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
             "rounded-md p-1 sm:p-2 bg-white shadow-lg shadow-gray-200/50"
           )}
         >
-          {i18n.locales.map((locale) => (
-            <DropdownMenu.Item key={locale}>
+          {translations?.map((translation) => (
+            <DropdownMenu.Item key={translation.locale}>
               <Link
                 className={clsx(styles.localeLink, "p-1")}
-                href={redirectedPathName(locale)}
+                href={`/${translation.locale}/${translation.slug}`}
               >
                 <span className="relative mr-3">
-                  <LocaleSwitcherFlag locale={locale} />
-                  {locale === currentLocale && (
+                  <LocaleSwitcherFlag locale={translation.locale} />
+                  {translation.locale === currentLocale && (
                     <span
                       className={clsx(
                         styles.localeCheck,
                         "absolute text-center rounded-2xl"
                       )}
                     >
-                      <FaCheck className="w-1 h-1 sm:w-2 sm:h-2" />
+                      <FaCheck className="w-2 h-2" />
                     </span>
                   )}
                 </span>
                 <span className="font-semibold text-base">
-                  {dictionary.global.languageSwitcher.locales[locale].name}
+                  {
+                    dictionary.global.languageSwitcher.locales[
+                      translation.locale
+                    ].name
+                  }
                 </span>
               </Link>
             </DropdownMenu.Item>

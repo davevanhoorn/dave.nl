@@ -3,6 +3,7 @@ import "server-only";
 import { FunctionComponent } from "react";
 
 import clsx from "clsx";
+import Link from "next/link";
 
 import { Dictionary } from "@/config/i18n";
 
@@ -13,8 +14,17 @@ interface LogoProps {
 }
 
 const Logo: FunctionComponent<LogoProps> = ({ dictionary }) => {
+  const indexLink = dictionary.global.header.navigation.find(
+    (navItem) => navItem.value === "Home"
+  );
+
   return (
-    <a href="#" className="inline-flex shrink-0 focus:rounded-md">
+    <Link
+      className="inline-flex shrink-0 focus:rounded-md"
+      title={indexLink?.title}
+      href={indexLink?.href || "/"}
+      aria-label={indexLink?.ariaLabel}
+    >
       <span className="sr-only">{dictionary.global.header.company}</span>
       <svg
         className={clsx(
@@ -54,7 +64,7 @@ const Logo: FunctionComponent<LogoProps> = ({ dictionary }) => {
           d="m845.3,659.1c5.4.6,11,.8,16.6.5,16.5-1.2,28.8-9.6,31.5-22.1.1-.4.1-.8.2-1.1.1-.4.1-.7.1-1.1.1-.7.1-1.5.1-2.2,0-1.5-.2-2.9-.6-4.3-.7-2.8-2.1-5.3-4-7.6-3.8-4.6-9.8-7.9-17.2-9.3-7.2-1.1-14.6-1.8-22-2-54.3-3.4-108.7-6.6-163-9.5-23-1.2-46.1-2.3-69.2-2.8-12.1-.4-24.2,0-35.9,1-6.7.7-12.5,3-16.7,6.2-2.1,1.6-3.8,3.4-5.1,5.3-.6,1-1.2,2-1.5,3-.2.5-.4,1-.5,1.5-.1.3-.1.5-.2.8,0,.3-.1.5-.1.8-1,8.3,6.6,16.4,19.4,18.9,5.3.8,10.7,1.4,16.3,1.7,41.2,3.3,82.4,6.5,132.8,10.6,33.5,3.3,76.3,7.5,119,11.7h0Z"
         />
       </svg>
-    </a>
+    </Link>
   );
 };
 
