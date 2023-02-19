@@ -11,7 +11,7 @@ import "@/styles/globals.css";
 
 const mulish = Mulish({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "500", "600"],
   style: ["normal"],
   variable: "--font-mulish",
 });
