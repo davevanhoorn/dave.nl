@@ -3,6 +3,7 @@ const StylelintPlugin = require("stylelint-webpack-plugin");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: false,
   reactStrictMode: true,
   experimental: {
     appDir: true,

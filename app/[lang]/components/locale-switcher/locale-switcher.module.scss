@@ -1,5 +1,26 @@
+@import "mixins";
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .localeSwitcherContent {
-  border: solid 2px black;
+  @include transition-transform-with-ease;
+
+  animation-duration: 240ms;
+  animation-name: scale-in;
+  animation-timing-function: cubic-bezier(0.695, 0, 0.065, 0.995);
+  box-shadow: inset 0 0 0 2px black;
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+  will-change: auto;
 }
 
 .localeLink {

@@ -4,6 +4,7 @@ import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 import { i18n, Locale } from "@/config/i18n";
+import { cookieNames } from "./config/generic";
 
 function getLocaleFromHeaders(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -18,15 +19,13 @@ function getLocaleFromHeaders(request: NextRequest): string | undefined {
 }
 
 export async function middleware(request: NextRequest) {
+  // Cookie data
   const date = new Date();
   const secure = true;
-  const maxAge = date.setMonth(date.getMonth() + 1);
   const expires = new Date(date.setMonth(date.getMonth() + 1));
-  const translations = JSON.stringify([
-    { locale: "nl", slug: "/" },
-    { locale: "en", slug: "/" },
-  ]);
+  const sameSite = "strict";
 
+  // Path data
   const pathname = request.nextUrl.pathname;
   const requestUrl = new URL(request.url);
 
@@ -82,22 +81,27 @@ export async function middleware(request: NextRequest) {
 
     const response = NextResponse.rewrite(url);
 
-    response.cookies.set("i18n", JSON.stringify(translations), {
+    response.cookies.set(cookieNames.i18n, JSON.stringify(translations), {
       secure,
       expires,
-      maxAge,
+      sameSite,
     });
 
     return response;
   }
 
   // Only for index pages
+  const translations = JSON.stringify([
+    { locale: "nl", slug: "/" },
+    { locale: "en", slug: "/" },
+  ]);
+
   if (isIndexPageRequest) {
     const response = NextResponse.next();
-    response.cookies.set("i18n", translations, {
+    response.cookies.set(cookieNames.i18n, translations, {
       secure,
       expires,
-      maxAge,
+      sameSite,
     });
     return response;
   }

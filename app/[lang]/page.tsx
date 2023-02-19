@@ -42,7 +42,6 @@ export default async function IndexPage({
   params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(params.lang);
-
   return (
     <>
       {/* Organization schema.org data */}

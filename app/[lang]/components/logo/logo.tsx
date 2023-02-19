@@ -29,7 +29,7 @@ const Logo: FunctionComponent<LogoProps> = ({ dictionary }) => {
       <svg
         className={clsx(
           styles.logo,
-          "h-10 w-auto relative top-1 xs:h-14 xl:h-16s p-1 xs:p-2"
+          "h-10 w-auto relative top-1 xs:h-14 xl:h-16 p-1 xs:p-2"
         )}
         data-name="Dave.nl Logo"
         xmlns="http://www.w3.org/2000/svg"

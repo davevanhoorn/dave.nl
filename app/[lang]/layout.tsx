@@ -2,7 +2,6 @@ import "server-only";
 
 import { Mulish } from "@next/font/google";
 
-import { siteName } from "@/config/generic";
 import { i18n, Locale } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
@@ -25,11 +24,6 @@ export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.lang);
 
   return {
-    title: {
-      default: dictionary.home.seo.title,
-      template: `%s | ${siteName}`,
-    },
-    description: dictionary.home.seo.description,
     keywords: dictionary.global.seo.keywords,
     authors: dictionary.global.seo.authors,
     creator: dictionary.global.seo.creator,
@@ -62,5 +56,4 @@ export default async function Root({
   );
 }
 
-// https://nextjs.org/docs/messages/app-static-to-dynamic-error
 export const dynamic = "force-static";

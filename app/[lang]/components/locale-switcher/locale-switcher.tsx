@@ -9,10 +9,12 @@ import { usePathname } from "next/navigation";
 import { FaCheck } from "react-icons/fa";
 
 import { Dictionary, Locale } from "@/config/i18n";
+import { parseClientSideCookies } from "@/utils/parse-client-side-cookies";
 
 import Button from "@/components/button/button";
 import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
 
+import { cookieNames } from "@/config/generic";
 import styles from "./locale-switcher.module.scss";
 
 interface LocaleSwitcherProps {
@@ -30,18 +32,8 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
   >(null);
 
   useEffect(() => {
-    const cookies = Object.fromEntries(
-      document.cookie.split(/; */).map(function (c) {
-        var index = c.indexOf("="); // Find the index of the first equal sign
-        var key = c.slice(0, index); // Everything upto the index is the key
-        var value = c.slice(index + 1); // Everything after the index is the value
-
-        // Return the key and value
-        return [decodeURIComponent(key), decodeURIComponent(value)];
-      })
-    );
-
-    setTranslations(JSON.parse(cookies.i18n));
+    const cookies = parseClientSideCookies(document.cookie);
+    setTranslations(JSON.parse(cookies[cookieNames.i18n]));
   }, [pathName]);
 
   return (
@@ -62,14 +54,19 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
           sideOffset={10}
           className={clsx(
             styles.localeSwitcherContent,
-            "rounded-md p-1 sm:p-2 bg-white shadow-lg shadow-gray-200/50"
+            "rounded-md p-1 sm:p-2 bg-white"
           )}
         >
+          <DropdownMenu.Arrow />
           {translations?.map((translation) => (
             <DropdownMenu.Item key={translation.locale}>
               <Link
-                className={clsx(styles.localeLink, "p-1")}
-                href={`/${translation.locale}/${translation.slug}`}
+                className={clsx(styles.localeLink, "p-1 sm:p-2")}
+                href={
+                  translation.slug === "/"
+                    ? `/${translation.locale}`
+                    : `/${translation.locale}/${translation.slug}`
+                }
               >
                 <span className="relative mr-3">
                   <LocaleSwitcherFlag locale={translation.locale} />
@@ -84,7 +81,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
                     </span>
                   )}
                 </span>
-                <span className="font-semibold text-base">
+                <span className="font-semibold text-base sm:text-lg">
                   {
                     dictionary.global.languageSwitcher.locales[
                       translation.locale
