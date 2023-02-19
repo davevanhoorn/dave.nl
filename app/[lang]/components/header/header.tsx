@@ -12,6 +12,7 @@ import Button, { ButtonTypeEnum } from "@/components/button/button";
 import LocaleSwitcher from "@/components/locale-switcher/locale-switcher";
 import Logo from "@/components/logo/logo";
 
+import Link from "next/link";
 import styles from "./header.module.scss";
 
 interface HeaderProps {
@@ -31,7 +32,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             <Logo dictionary={dictionary} />
             <div className="sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-3 xl:space-x-5 lg:flex flex-grow justify-center">
               {dictionary.global.header.navigation.map((link, key) => (
-                <a
+                <Link
                   key={`navigation-link-item-${key}`}
                   href={link.href}
                   title={link.title}
@@ -42,7 +43,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                   )}
                 >
                   {link.value}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -103,7 +104,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         </div>
         <div className="flex flex-wrap justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden">
           {dictionary.global.header.navigation.map((link, key) => (
-            <a
+            <Link
               key={`mobile-navigation-link-item-${key}`}
               href={link.href}
               title={link.title}
@@ -114,7 +115,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               )}
             >
               {link.value}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
