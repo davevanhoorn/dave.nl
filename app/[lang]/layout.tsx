@@ -22,17 +22,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: any) {
   const dictionary = await getDictionary(params.lang);
+  const path = dictionary.global;
 
   return {
-    keywords: dictionary.global.seo.keywords,
-    authors: dictionary.global.seo.authors,
-    creator: dictionary.global.seo.creator,
-    publisher: dictionary.global.seo.publisher,
+    keywords: path.seo.keywords,
+    authors: path.seo.authors,
+    creator: path.seo.creator,
+    publisher: path.seo.publisher,
     icons: {
-      icon: dictionary.global.icons.icon,
-      shortcut: dictionary.global.icons.shortcut,
-      apple: dictionary.global.icons.apple,
-      other: dictionary.global.icons.other,
+      icon: path.icons.icon,
+      shortcut: path.icons.shortcut,
+      apple: path.icons.apple,
+      other: path.icons.other,
     },
   };
 }

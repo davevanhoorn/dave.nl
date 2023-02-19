@@ -5,7 +5,7 @@ import { getDictionary } from "@/utils/get-dictionary";
 
 // generateStaticParams can be used with dynamic route segments - like getStaticPaths and [slug].tsx
 // this is not the same as getStaticProps(!)
-export async function generateStaticParams(params: any) {
+export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
@@ -16,20 +16,23 @@ export async function generateMetadata({
   params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(params.lang);
+  const path = dictionary.about;
 
   return {
+    title: path.seo.title,
+    description: path.seo.description,
     openGraph: {
-      title: dictionary.home.openGraph.title,
-      description: dictionary.home.openGraph.description,
-      url: dictionary.home.openGraph.url,
-      siteName: dictionary.home.openGraph.siteName,
-      images: dictionary.home.openGraph.images,
-      locale: dictionary.home.openGraph.locale,
-      type: dictionary.home.openGraph.type,
+      title: path.openGraph.title,
+      description: path.openGraph.description,
+      url: path.openGraph.url,
+      siteName: path.openGraph.siteName,
+      images: path.openGraph.images,
+      locale: path.openGraph.locale,
+      type: path.openGraph.type,
     },
     alternates: {
-      canonical: dictionary.home.alternates.canonical,
-      languages: dictionary.home.alternates.languages,
+      canonical: path.alternates.canonical,
+      languages: path.alternates.languages,
     },
   };
 }
@@ -39,28 +42,12 @@ export async function generateMetadata({
 export default async function IndexPage({
   params,
 }: {
-  params: { lang: Locale; slug?: string };
+  params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(params.lang);
 
   return (
     <>
-      {/* Organization schema.org data */}
-      <script
-        id="schema-organization"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(dictionary.home.schema.organization),
-        }}
-      />
-      {/* Local business schema.org data */}
-      <script
-        id="schema-local-business"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(dictionary.home.schema.localBusiness),
-        }}
-      />
       <h1>About / Over mij</h1>
     </>
   );

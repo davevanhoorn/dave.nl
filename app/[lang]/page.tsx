@@ -16,20 +16,23 @@ export async function generateMetadata({
   params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(params.lang);
+  const path = dictionary.home;
 
   return {
+    title: path.seo.title,
+    description: path.seo.description,
     openGraph: {
-      title: dictionary.home.openGraph.title,
-      description: dictionary.home.openGraph.description,
-      url: dictionary.home.openGraph.url,
-      siteName: dictionary.home.openGraph.siteName,
-      images: dictionary.home.openGraph.images,
-      locale: dictionary.home.openGraph.locale,
-      type: dictionary.home.openGraph.type,
+      title: path.openGraph.title,
+      description: path.openGraph.description,
+      url: path.openGraph.url,
+      siteName: path.openGraph.siteName,
+      images: path.openGraph.images,
+      locale: path.openGraph.locale,
+      type: path.openGraph.type,
     },
     alternates: {
-      canonical: dictionary.home.alternates.canonical,
-      languages: dictionary.home.alternates.languages,
+      canonical: path.alternates.canonical,
+      languages: path.alternates.languages,
     },
   };
 }
@@ -42,6 +45,7 @@ export default async function IndexPage({
   params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(params.lang);
+
   return (
     <>
       {/* Organization schema.org data */}
