@@ -9,12 +9,11 @@ import { usePathname } from "next/navigation";
 import { FaCheck } from "react-icons/fa";
 
 import { Dictionary, Locale } from "@/config/i18n";
-import { parseClientSideCookies } from "@/utils/parse-client-side-cookies";
+import { findNestedObject } from "@/utils/find-nested-object";
 
 import Button from "@/components/button/button";
 import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
 
-import { cookieNames } from "@/config/generic";
 import styles from "./locale-switcher.module.scss";
 
 interface LocaleSwitcherProps {
@@ -27,14 +26,27 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
   dictionary,
 }) => {
   const pathName = usePathname();
-  const [translations, setTranslations] = useState<
-    [{ locale: Locale; slug: string }] | null
-  >(null);
+
+  const [translations, setTranslations] = useState<Array<{
+    locale: Locale;
+    slug: string;
+  }> | null>(null);
 
   useEffect(() => {
-    const cookies = parseClientSideCookies(document.cookie);
-    setTranslations(JSON.parse(cookies[cookieNames.i18n]));
-  }, [pathName]);
+    const pathNames = pathName.split("/");
+    const slug = pathNames[2] ? pathNames[2] : pathNames[1];
+    if (!slug) return;
+
+    const slugs = findNestedObject(dictionary, currentLocale, slug);
+    if (!slugs) return;
+
+    const translations = Object.keys(slugs).map((locale) => ({
+      locale: locale as Locale,
+      slug: slugs[locale] === locale ? "" : (slugs[locale] as string),
+    }));
+
+    setTranslations(translations);
+  }, [pathName, currentLocale, dictionary]);
 
   return (
     <DropdownMenu.Root>

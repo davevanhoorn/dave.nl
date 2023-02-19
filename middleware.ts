@@ -4,7 +4,6 @@ import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 import { i18n, Locale } from "@/config/i18n";
-import { cookieNames } from "./config/generic";
 
 function getLocaleFromHeaders(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -19,12 +18,6 @@ function getLocaleFromHeaders(request: NextRequest): string | undefined {
 }
 
 export async function middleware(request: NextRequest) {
-  // Cookie data
-  const date = new Date();
-  const secure = true;
-  const expires = new Date(date.setMonth(date.getMonth() + 1));
-  const sameSite = "strict";
-
   // Path data
   const pathname = request.nextUrl.pathname;
   const requestUrl = new URL(request.url);
@@ -61,49 +54,16 @@ export async function middleware(request: NextRequest) {
     const folder = dictionarySlugs.find(
       // eslint-disable-next-line
       // @ts-ignore
-      (dictionarySlug) => dictionary[dictionarySlug].slug === slug
+      (dictionarySlug) => dictionary?.[dictionarySlug]?.slug?.[locale] === slug
     );
 
     // If slug matches, rewrite to "key", which is the page's folder name, e.g. /app/[lang]/about
     const url = new URL(`${requestUrl.origin}/${locale}/${folder}`);
-
-    const translations = [];
-
-    for (const locale of i18n.locales) {
-      const dictionary = await dictionaries[locale]();
-      // eslint-disable-next-line
-      // @ts-ignore
-      if (folder && dictionary[folder]?.slug === undefined) return;
-      // eslint-disable-next-line
-      // @ts-ignore
-      translations.push({ locale, slug: dictionary[folder].slug });
-    }
-
-    const response = NextResponse.rewrite(url);
-
-    response.cookies.set(cookieNames.i18n, JSON.stringify(translations), {
-      secure,
-      expires,
-      sameSite,
-    });
-
-    return response;
+    return NextResponse.rewrite(url);
   }
 
-  // Only for index pages
-  const translations = JSON.stringify([
-    { locale: "nl", slug: "/" },
-    { locale: "en", slug: "/" },
-  ]);
-
   if (isIndexPageRequest) {
-    const response = NextResponse.next();
-    response.cookies.set(cookieNames.i18n, translations, {
-      secure,
-      expires,
-      sameSite,
-    });
-    return response;
+    return NextResponse.next();
   }
 
   // Redirect is pathname is missing locale

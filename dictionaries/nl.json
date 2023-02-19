@@ -103,6 +103,7 @@
     }
   },
   "home": {
+    "slug": { "en": "en", "nl": "nl" },
     "seo": {
       "title": "Home Titel",
       "description": "Home Beschrijving"
@@ -191,7 +192,7 @@
     }
   },
   "about": {
-    "slug": "over-mij",
+    "slug": { "en": "about-me", "nl": "over-mij" },
     "seo": {
       "title": "Home Titel",
       "description": "Home Beschrijving"
