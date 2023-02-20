@@ -1,0 +1,94 @@
+@import "mixins";
+
+@mixin bottom-dash {
+  @include transition-transform-with-ease;
+
+  background-image: url("/images/dave-nl_dash.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px auto;
+  bottom: 4px;
+  content: "";
+  height: 2px;
+  left: 25%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  transform-box: fill-box;
+  transform-origin: center;
+  width: 50%;
+
+  @screen xs {
+    background-size: 30px 3px;
+    bottom: 0;
+    height: 6px;
+    left: 0%;
+    width: 100%;
+  }
+}
+
+.link {
+  @include transition-transform-with-ease;
+
+  &:hover,
+  &:focus,
+  &.active {
+    transform: translateY(-3px);
+  }
+
+  &:nth-child(1) {
+    &::after {
+      @include bottom-dash;
+
+      transform: rotate(0deg) scale(0) translateY(-7px);
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &.active::after {
+      transform: rotate(-1deg) scale(1) translateY(0);
+    }
+  }
+
+  &:nth-child(2) {
+    &::after {
+      @include bottom-dash;
+
+      transform: rotate(0deg) scale(0) translateY(-7px);
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &.active::after {
+      transform: rotate(2deg) scale(1) translateY(0);
+    }
+  }
+
+  &:nth-child(3) {
+    &::after {
+      @include bottom-dash;
+
+      transform: rotate(0deg) scale(0) translateY(-7px);
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &.active::after {
+      transform: rotate(-1deg) scale(1) translateY(0);
+    }
+  }
+
+  &:nth-child(4) {
+    &::after {
+      @include bottom-dash;
+
+      transform: rotate(0deg) scale(0) translateY(-7px);
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &.active::after {
+      transform: rotate(1deg) scale(1) translateY(0);
+    }
+  }
+}

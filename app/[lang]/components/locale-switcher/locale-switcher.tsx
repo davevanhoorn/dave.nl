@@ -73,7 +73,10 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
           {translations?.map((translation) => (
             <DropdownMenu.Item key={translation.locale}>
               <Link
-                className={clsx(styles.localeLink, "p-1 sm:p-2")}
+                className={clsx(
+                  styles.localeLink,
+                  "p-1 sm:p-2 hover:underline hover:decoration-wavy hover:decoration-1"
+                )}
                 href={
                   translation.slug === "/"
                     ? `/${translation.locale}`
@@ -93,7 +96,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
                     </span>
                   )}
                 </span>
-                <span className="font-semibold text-base sm:text-lg">
+                <span className="font-bold text-base">
                   {
                     dictionary.global.languageSwitcher.locales[
                       translation.locale

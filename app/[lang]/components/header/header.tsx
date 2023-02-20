@@ -12,9 +12,9 @@ import Button, { ButtonTypeEnum } from "@/components/button/button";
 import LocaleSwitcher from "@/components/locale-switcher/locale-switcher";
 import Logo from "@/components/logo/logo";
 
-import Link from "next/link";
-import styles from "./header.module.scss";
+import HeaderLink from "./header-link";
 
+import styles from "./header.module.scss";
 interface HeaderProps {
   currentLocale: Locale;
   dictionary: Dictionary;
@@ -32,18 +32,15 @@ const Header: FunctionComponent<HeaderProps> = ({
             <Logo dictionary={dictionary} />
             <div className="sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-3 xl:space-x-5 lg:flex flex-grow justify-center">
               {dictionary.global.header.navigation.map((link, key) => (
-                <Link
+                <HeaderLink
                   key={`navigation-link-item-${key}`}
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className={clsx(
-                    styles.link,
-                    "relative text-lg font-semibold text-black md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
-                  )}
+                  className="relative text-lg font-semibold text-black md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
                 >
                   {link.value}
-                </Link>
+                </HeaderLink>
               ))}
             </div>
           </div>
@@ -104,18 +101,15 @@ const Header: FunctionComponent<HeaderProps> = ({
         </div>
         <div className="flex flex-wrap justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden">
           {dictionary.global.header.navigation.map((link, key) => (
-            <Link
+            <HeaderLink
               key={`mobile-navigation-link-item-${key}`}
               href={link.href}
               title={link.title}
               aria-label={link.ariaLabel}
-              className={clsx(
-                styles.link,
-                "text-base xs:text-xl font-semibold text-black p-2"
-              )}
+              className={"text-base xs:text-xl font-semibold text-black p-2"}
             >
               {link.value}
-            </Link>
+            </HeaderLink>
           ))}
         </div>
       </nav>
