@@ -13,7 +13,7 @@
         },
         {
           "value": "Over mij",
-          "href": "/nl/over-mij",
+          "href": "/nl/about",
           "title": "Navigeer naar de \"Over mij\" pagina van Dave.nl",
           "ariaLabel": "Navigeer naar de \"Over mij\" pagina van Dave.nl"
         }
@@ -180,7 +180,7 @@
     }
   },
   "about": {
-    "slug": { "en": "about-me", "nl": "over-mij" },
+    "slug": { "en": "about", "nl": "about" },
     "seo": {
       "title": "Over mij Titel",
       "description": "Over mij Beschrijving"
@@ -208,10 +208,10 @@
       "type": "website"
     },
     "alternates": {
-      "canonical": "https://dave.nl/nl/over-mij",
+      "canonical": "https://dave.nl/nl/about",
       "languages": {
-        "en": "https://dave.nl/en/about-me",
-        "nl": "https://dave.nl/nl/over-mij"
+        "en": "https://dave.nl/en/about",
+        "nl": "https://dave.nl/nl/about"
       }
     }
   }
