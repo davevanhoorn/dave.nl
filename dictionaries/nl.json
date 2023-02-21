@@ -16,18 +16,6 @@
           "href": "/nl/over-mij",
           "title": "Navigeer naar de \"Over mij\" pagina van Dave.nl",
           "ariaLabel": "Navigeer naar de \"Over mij\" pagina van Dave.nl"
-        },
-        {
-          "value": "Blog",
-          "href": "/nl/blog",
-          "title": "Navigeer naar het overzicht van blog-artikelen door Dave.nl",
-          "ariaLabel": "Navigeer naar het overzicht van blog-artikelen door Dave.nl"
-        },
-        {
-          "value": "Contact",
-          "href": "/nl/contact",
-          "title": "Navigeer naar de contact pagina van Dave.nl",
-          "ariaLabel": "Navigeer naar de contact pagina van Dave.nl"
         }
       ],
       "callToAction": {

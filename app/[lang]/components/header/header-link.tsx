@@ -1,14 +1,16 @@
 "use client";
 
-import clsx from "clsx";
-import { Url } from "next/dist/shared/lib/router/router";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   AnchorHTMLAttributes,
   FunctionComponent,
   PropsWithChildren,
 } from "react";
+
+import { Url } from "next/dist/shared/lib/router/router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import clsx from "clsx";
 
 import styles from "./header-link.module.scss";
 

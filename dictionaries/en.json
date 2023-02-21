@@ -16,18 +16,6 @@
           "href": "/en/about-me",
           "title": "Navigate to Dave's \"About me\" page",
           "ariaLabel": "Navigate to Dave's \"About me\" page"
-        },
-        {
-          "value": "Blog",
-          "href": "/en/blog",
-          "title": "Navigate to the blog articles overview page of Dave.nl",
-          "ariaLabel": "Navigate to the blog articles overview page of Dave.nl"
-        },
-        {
-          "value": "Contact",
-          "href": "/en/contact",
-          "title": "Navigate to Dave.nl's contact page",
-          "ariaLabel": "Navigate to Dave.nl's contact page"
         }
       ],
       "callToAction": {
