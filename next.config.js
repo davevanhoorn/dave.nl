@@ -9,7 +9,7 @@ const nextConfig = {
     appDir: true,
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, "app/styles")],
+    includePaths: [path.join(__dirname, "app/styles/scss")],
   },
   async headers() {
     return [
@@ -26,7 +26,7 @@ const nextConfig = {
   },
   webpack(config) {
     // Stylelint
-    // config.plugins.push(new StylelintPlugin());
+    config.plugins.push(new StylelintPlugin());
 
     // SVGR
     config.module.rules.push({
