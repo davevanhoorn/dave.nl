@@ -1,3 +1,5 @@
+"server-only";
+
 import { ButtonHTMLAttributes, forwardRef, HTMLProps, Ref } from "react";
 
 import clsx from "clsx";
@@ -8,8 +10,8 @@ import ButtonLink from "./button-link";
 import styles from "./button.module.scss";
 
 export enum ButtonTypeEnum {
-  "button",
-  "a",
+  A,
+  BUTTON,
 }
 
 type ButtonProps = {
@@ -19,38 +21,29 @@ type ButtonProps = {
   ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  (
-    {
-      element = ButtonTypeEnum.button,
-      type = "button",
-      icon,
-      children,
-      className,
-      ...props
-    },
-    ref
-  ) => {
+  ({ ...props }, ref) => {
     const defaultButtonStyles =
       "inline-flex items-center rounded-md bg-white py-1 xs:py-2 px-2 xs:px-3 sm:px-4 text-base xl:text-lg font-bold text-black whitespace-nowrap border-2 border-black outline-offset-8";
+    const { className, icon, children, type, element } = props;
 
-    if (element === ButtonTypeEnum.a) {
+    if (element === ButtonTypeEnum.A) {
       return (
         <ButtonLink
-          className={clsx(className, styles.button, defaultButtonStyles)}
           {...(props as HTMLProps<HTMLAnchorElement>)}
+          className={clsx(className, styles.button, defaultButtonStyles)}
         >
           <ButtonContent icon={icon}>{children}</ButtonContent>
         </ButtonLink>
       );
     }
 
-    if (element === ButtonTypeEnum.button) {
+    if (element === ButtonTypeEnum.BUTTON) {
       return (
         <button
+          {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
           ref={ref as Ref<HTMLButtonElement>}
           type={type}
           className={clsx(className, styles.button, defaultButtonStyles)}
-          {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
         >
           <ButtonContent icon={icon}>{children}</ButtonContent>
         </button>

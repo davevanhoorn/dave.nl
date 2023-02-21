@@ -1,3 +1,5 @@
+"server-only";
+
 import { FunctionComponent, ReactElement, ReactNode } from "react";
 
 export interface ButtonContentProps {

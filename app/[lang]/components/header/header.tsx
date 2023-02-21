@@ -47,7 +47,7 @@ const Header: FunctionComponent<HeaderProps> = ({
           <div className="space-x-1 xs:space-x-2 flex">
             <Button
               className={clsx(styles.lightbulbButton, "hidden sm:inline-flex")}
-              element={ButtonTypeEnum.a}
+              element={ButtonTypeEnum.A}
               href={dictionary.global.header.callToAction.project.href}
               title={dictionary.global.header.callToAction.project.title}
               aria-label={
@@ -75,7 +75,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             </Button>
             <Button
               className={clsx(styles.whatsappButton)}
-              element={ButtonTypeEnum.a}
+              element={ButtonTypeEnum.A}
               href={dictionary.global.header.callToAction.whatsapp.href}
               title={dictionary.global.header.callToAction.whatsapp.title}
               aria-label={

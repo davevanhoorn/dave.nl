@@ -11,7 +11,7 @@ import { FaCheck } from "react-icons/fa";
 import { Dictionary, Locale } from "@/config/i18n";
 import { findNestedObject } from "@/utils/find-nested-object";
 
-import Button from "@/components/button/button";
+import Button, { ButtonTypeEnum } from "@/components/button/button";
 import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
 
 import styles from "./locale-switcher.module.scss";
@@ -52,6 +52,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <Button
+          element={ButtonTypeEnum.BUTTON}
           className="lg:px-4"
           aria-label={dictionary.global.languageSwitcher.label}
         >
@@ -73,6 +74,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
           {translations?.map((translation) => (
             <DropdownMenu.Item key={translation.locale}>
               <Link
+                replace
                 className={clsx(
                   styles.localeLink,
                   "p-1 sm:p-2 hover:underline hover:decoration-wavy hover:decoration-1"

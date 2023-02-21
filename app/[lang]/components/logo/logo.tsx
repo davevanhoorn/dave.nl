@@ -1,4 +1,4 @@
-import "server-only";
+"use client";
 
 import { FunctionComponent } from "react";
 
@@ -22,7 +22,7 @@ const Logo: FunctionComponent<LogoProps> = ({ dictionary }) => {
     <Link
       className="inline-flex shrink-0 focus:rounded-md"
       title={indexLink?.title}
-      href={indexLink?.href || "/"}
+      href={indexLink?.href as string}
       aria-label={indexLink?.ariaLabel}
     >
       <span className="sr-only">{dictionary.global.header.company}</span>
