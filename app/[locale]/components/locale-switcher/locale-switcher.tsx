@@ -12,9 +12,11 @@ import { FaCheck } from "react-icons/fa";
 import { Locale } from "@/config/i18n";
 import { findNestedObject } from "@/utils/find-nested-object";
 
-import Button, { ButtonTypeEnum } from "@/components/button/button";
-import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
-import { DictionaryContext } from "@/context/dictionary-context";
+import Button, {
+  ButtonTypeEnum,
+} from "@/app/[locale]/components/button/button";
+import LocaleSwitcherFlag from "@/app/[locale]/components/locale-switcher/locale-switcher-flag";
+import { DictionaryContext } from "@/app/[locale]/context/dictionary-context";
 
 import styles from "./locale-switcher.module.scss";
 

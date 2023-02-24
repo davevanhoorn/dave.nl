@@ -2,22 +2,20 @@ import "server-only";
 
 import { Metadata } from "next/types";
 
-import { i18n, Locale } from "@/config/i18n";
+import { i18n, LocaleParams } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
-// generateStaticParams can be used with dynamic route segments - like getStaticPaths and [slug].tsx
-// this is not the same as getStaticProps(!)
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+  return i18n.locales.map((locale) => ({ locale }));
 }
 
-// generateMetadata creates the metadata (seo, opengraph, canonicals) for this page
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: Locale };
+  params: LocaleParams;
 }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang);
+  const { locale } = params;
+  const dictionary = await getDictionary(locale);
   const path = dictionary.about;
 
   return {
@@ -39,18 +37,13 @@ export async function generateMetadata({
   };
 }
 
-// the default exported function is what we actually "see" on the page
-// this is a server component (layout.tsx and page.tsx), so we can make it async and await in here
-export default async function IndexPage({
-  params,
-}: {
-  params: { lang: Locale };
-}) {
-  const dictionary = await getDictionary(params.lang);
+export default async function AboutPage({ params }: { params: LocaleParams }) {
+  const { locale } = params;
+  const dictionary = await getDictionary(locale);
 
   return (
     <>
-      <h1>About / Over mij</h1>
+      <h1>{dictionary.about.seo.title}</h1>
     </>
   );
 }

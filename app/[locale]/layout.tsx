@@ -1,14 +1,13 @@
 import "server-only";
 
+import { Mulish } from "next/font/google";
 import { Metadata } from "next/types";
 
-import { Mulish } from "next/font/google";
-
-import { Dictionary, i18n, Locale } from "@/config/i18n";
+import { i18n, LocaleParams } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
-import Header from "@/components/header/header";
-import DictionaryContext from "@/context/dictionary-context";
+import Header from "@/app/[locale]/components/header/header";
+import DictionaryContext from "@/app/[locale]/context/dictionary-context";
 
 import "@/styles/globals.css";
 
@@ -20,15 +19,15 @@ const mulish = Mulish({
 });
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+  return i18n.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: Locale };
+  params: LocaleParams;
 }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang);
+  const dictionary = await getDictionary(params.locale);
   const path = dictionary.global;
 
   return {
@@ -51,20 +50,19 @@ export default async function Root({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: LocaleParams;
 }) {
-  const { lang: locale } = params;
-  const lang = locale === "nl" ? "nl-NL" : "en-US";
-  const dictionary: Dictionary = await getDictionary(locale).then((data) => {
-    const serialized = JSON.stringify(data);
-    return JSON.parse(serialized);
-  });
+  const { locale } = params;
+  const dictionary = await getDictionary(locale);
 
   return (
-    <html lang={lang} className={`${mulish.variable} font-sans`}>
+    <html
+      lang={locale === "nl" ? "nl-NL" : "en-US"}
+      className={`${mulish.variable} font-sans`}
+    >
       <body>
         <DictionaryContext currentLocale={locale} dictionary={dictionary}>
-          <Header />
+          <Header dictionary={dictionary} />
           {children}
         </DictionaryContext>
       </body>

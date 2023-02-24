@@ -22,8 +22,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/components/*": ["app/[lang]/components/*"],
-      "@/context/*": ["app/[lang]/context/*"],
+      "@/components/*": ["app/[locale]/components/*"],
+      "@/context/*": ["app/[locale]/context/*"],
       "@/assets/*": ["assets/*"],
       "@/styles/*": ["app/styles/*"]
     }

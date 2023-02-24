@@ -2,19 +2,19 @@ import "server-only";
 
 import { Metadata } from "next/types";
 
-import { i18n, Locale } from "@/config/i18n";
+import { i18n, LocaleParams } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+  return i18n.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: Locale };
+  params: LocaleParams;
 }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang);
+  const dictionary = await getDictionary(params.locale);
   const path = dictionary.home;
 
   return {
@@ -36,14 +36,9 @@ export async function generateMetadata({
   };
 }
 
-// the default exported function is what we actually "see" on the page
-// this is a server component (layout.tsx and page.tsx), so we can make it async and await in here
-export default async function IndexPage({
-  params,
-}: {
-  params: { lang: Locale };
-}) {
-  const dictionary = await getDictionary(params.lang);
+export default async function IndexPage({ params }: { params: LocaleParams }) {
+  const { locale } = params;
+  const dictionary = await getDictionary(locale);
 
   return (
     <>
@@ -63,7 +58,7 @@ export default async function IndexPage({
           __html: JSON.stringify(dictionary.home.schema.localBusiness),
         }}
       />
-      <h1>Home</h1>
+      <h1>{dictionary.home.seo.title}</h1>
     </>
   );
 }
