@@ -42,6 +42,7 @@ export async function generateMetadata({
       apple: path.icons.apple,
       other: path.icons.other,
     },
+    other: { ["test"]: "test" },
   };
 }
 
@@ -60,6 +61,9 @@ export default async function Root({
       lang={locale === "nl" ? "nl-NL" : "en-US"}
       className={`${mulish.variable} font-sans`}
     >
+      <head>
+        <meta httpEquiv="content-language" content={locale} />
+      </head>
       <body>
         <DictionaryContext currentLocale={locale} dictionary={dictionary}>
           <Header dictionary={dictionary} />

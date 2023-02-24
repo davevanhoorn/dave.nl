@@ -8,14 +8,32 @@
         {
           "value": "Home",
           "href": "/en",
-          "title": "Navigate to Dave.nl's homepage",
-          "ariaLabel": "Navigate to Dave.nl's homepage"
+          "title": "Navigate back to my homepage",
+          "ariaLabel": "Navigate back to my homepage"
+        },
+        {
+          "value": "Portfolio",
+          "href": "/en/portfolio",
+          "title": "Check out my freelance portfolio",
+          "ariaLabel": "Check out my freelance portfolio"
+        },
+        {
+          "value": "Blog",
+          "href": "/en/blog",
+          "title": "Read my blog about development, traveling and remote working",
+          "ariaLabel": "Read my blog about development, traveling and remote working"
         },
         {
           "value": "About",
           "href": "/en/about",
-          "title": "Navigate to Dave's 'About me' page",
-          "ariaLabel": "Navigate to Dave's 'About me' page"
+          "title": "Get to know me a little better",
+          "ariaLabel": "Get to know me a little better"
+        },
+        {
+          "value": "Contact",
+          "href": "/en/contact",
+          "title": "Get in touch with me through WhatsApp, e-mail, telephone or fill out my contact form",
+          "ariaLabel": "Get in touch with me through WhatsApp, e-mail, telephone or fill out my contact form"
         }
       ],
       "callToAction": {

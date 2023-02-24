@@ -42,7 +42,6 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
 
   return (
     <>
-      {/* Organization schema.org data */}
       <script
         id="schema-organization"
         type="application/ld+json"
@@ -50,7 +49,6 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
           __html: JSON.stringify(dictionary.home.schema.organization),
         }}
       />
-      {/* Local business schema.org data */}
       <script
         id="schema-local-business"
         type="application/ld+json"

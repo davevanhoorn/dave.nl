@@ -47,18 +47,44 @@
 
 @keyframes dash {
   0% {
+    opacity: 0.125;
     transform: translateY(0) scaleX(1);
   }
 
   25% {
-    transform: translateY(-25px) scaleX(0.6);
+    opacity: 0.125;
+    transform: translateY(-20px) scaleX(0.9);
   }
 
   50% {
-    transform: translateY(-50px) scaleX(1.25);
+    opacity: 1;
+    transform: translateY(-40px) scaleX(1.0625);
   }
 
   100% {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+  }
+}
+
+@keyframes dash-reverse {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateY(-20px) scaleX(1.125);
+  }
+
+  50% {
+    opacity: 0.125;
+    transform: translateY(-10px) scaleX(0.8);
+  }
+
+  100% {
+    opacity: 0.125;
     transform: translateY(0) scaleX(1);
   }
 }
@@ -105,19 +131,38 @@
       animation-delay: 0.18s;
       animation-name: letter;
     }
-
-    .dashOne {
-      @include animation;
-
-      animation-delay: 0.18s;
-      animation-name: dash;
-    }
-
-    .dashTwo {
-      @include animation;
-
-      animation-delay: 0.25s;
-      animation-name: dash;
-    }
   }
+}
+
+.dashOneInactive {
+  @include animation;
+
+  animation-delay: 0.18s;
+  animation-fill-mode: forwards;
+  animation-name: dash-reverse;
+}
+
+.dashTwoInactive {
+  @include animation;
+
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+  animation-name: dash-reverse;
+}
+
+.dashOneActive {
+  @include animation;
+
+  animation-fill-mode: forwards;
+  animation-name: dash;
+  opacity: 0.125;
+}
+
+.dashTwoActive {
+  @include animation;
+
+  animation-delay: 100ms;
+  animation-fill-mode: forwards;
+  animation-name: dash;
+  opacity: 0.125;
 }

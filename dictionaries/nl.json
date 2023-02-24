@@ -8,14 +8,32 @@
         {
           "value": "Home",
           "href": "/nl",
-          "title": "Navigeer naar homepage van Dave.nl",
-          "ariaLabel": "Navigeer naar de homepage van Dave.nl"
+          "title": "Navigeer terug naar mijn homepage",
+          "ariaLabel": "Navigeer terug naar mijn homepage"
+        },
+        {
+          "value": "Portfolio",
+          "href": "/nl/portfolio",
+          "title": "Bekijk mijn freelance portfolio",
+          "ariaLabel": "Bekijk mijn freelance portfolio"
+        },
+        {
+          "value": "Blog",
+          "href": "/nl/blog",
+          "title": "Lees mijn blog over reizen, werken op afstand en werken als freelance ontwikkelaar",
+          "ariaLabel": "Lees mijn blog over reizen, werken op afstand en werken als freelance ontwikkelaar"
         },
         {
           "value": "Over mij",
           "href": "/nl/about",
-          "title": "Navigeer naar de 'Over mij' pagina van Dave.nl",
-          "ariaLabel": "Navigeer naar de 'Over mij' pagina van Dave.nl"
+          "title": "Leer mij een beetje beter kennen",
+          "ariaLabel": "Leer mij een beetje beter kennen"
+        },
+        {
+          "value": "Contact",
+          "href": "/nl/contact",
+          "title": "Neem contact op met mij via WhatsApp, de telefoon of vul mijn contactformulier in",
+          "ariaLabel": "Neem contact op met mij via WhatsApp, de telefoon of vul mijn contactformulier in"
         }
       ],
       "callToAction": {
