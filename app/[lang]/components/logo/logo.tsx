@@ -1,20 +1,17 @@
 "use client";
 
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 
 import clsx from "clsx";
 import Link from "next/link";
 
-import { Dictionary } from "@/config/i18n";
-
+import { DictionaryContext } from "../../context/dictionary-context";
 import styles from "./logo.module.scss";
 
-interface LogoProps {
-  dictionary: Dictionary;
-}
+const Logo: FunctionComponent = () => {
+  const { dictionary } = useContext(DictionaryContext);
 
-const Logo: FunctionComponent<LogoProps> = ({ dictionary }) => {
-  const indexLink = dictionary.global.header.navigation.find(
+  const indexLink = dictionary?.global.header.navigation.find(
     (navItem) => navItem.value === "Home"
   );
 
@@ -22,10 +19,10 @@ const Logo: FunctionComponent<LogoProps> = ({ dictionary }) => {
     <Link
       className="inline-flex shrink-0 focus:rounded-md"
       title={indexLink?.title}
-      href={indexLink?.href as string}
+      href={indexLink?.href as {}} //TODO
       aria-label={indexLink?.ariaLabel}
     >
-      <span className="sr-only">{dictionary.global.header.company}</span>
+      <span className="sr-only">{dictionary?.global.header.company}</span>
       <svg
         className={clsx(
           styles.logo,

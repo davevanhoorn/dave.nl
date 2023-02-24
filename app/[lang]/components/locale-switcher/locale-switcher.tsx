@@ -1,30 +1,25 @@
 "use client";
 
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
+
+import Link from "next/link";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import clsx from "clsx";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaCheck } from "react-icons/fa";
 
-import { Dictionary, Locale } from "@/config/i18n";
+import { Locale } from "@/config/i18n";
 import { findNestedObject } from "@/utils/find-nested-object";
 
 import Button, { ButtonTypeEnum } from "@/components/button/button";
 import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
+import { DictionaryContext } from "@/context/dictionary-context";
 
 import styles from "./locale-switcher.module.scss";
 
-interface LocaleSwitcherProps {
-  currentLocale: Locale;
-  dictionary: Dictionary;
-}
-
-const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
-  currentLocale,
-  dictionary,
-}) => {
+const LocaleSwitcher: FunctionComponent = () => {
+  const { currentLocale, dictionary } = useContext(DictionaryContext);
   const pathName = usePathname();
 
   const [translations, setTranslations] = useState<Array<{
@@ -37,7 +32,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
     const slug = pathNames[2] ? pathNames[2] : pathNames[1];
     if (!slug) return;
 
-    const slugs = findNestedObject(dictionary, currentLocale, slug);
+    const slugs = findNestedObject(dictionary, currentLocale as Locale, slug);
     if (!slugs) return;
 
     const translations = Object.keys(slugs).map((locale) => ({
@@ -54,9 +49,9 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
         <Button
           element={ButtonTypeEnum.BUTTON}
           className="lg:px-4"
-          aria-label={dictionary.global.languageSwitcher.label}
+          aria-label={dictionary?.global.languageSwitcher.label}
         >
-          <LocaleSwitcherFlag locale={currentLocale} />
+          <LocaleSwitcherFlag locale={currentLocale as Locale} />
         </Button>
       </DropdownMenu.Trigger>
 
@@ -82,7 +77,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
                 href={
                   translation.slug === "/"
                     ? `/${translation.locale}`
-                    : `/${translation.locale}/${translation.slug}`
+                    : (`/${translation.locale}/${translation.slug}` as {})
                 }
               >
                 <span className="relative mr-3">
@@ -100,7 +95,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
                 </span>
                 <span className="font-bold text-base">
                   {
-                    dictionary.global.languageSwitcher.locales[
+                    dictionary?.global.languageSwitcher.locales[
                       translation.locale
                     ].name
                   }

@@ -23,6 +23,7 @@
     "paths": {
       "@/*": ["./*"],
       "@/components/*": ["app/[lang]/components/*"],
+      "@/context/*": ["app/[lang]/context/*"],
       "@/assets/*": ["assets/*"],
       "@/styles/*": ["app/styles/*"]
     }

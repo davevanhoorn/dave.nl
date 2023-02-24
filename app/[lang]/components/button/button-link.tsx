@@ -6,7 +6,6 @@ import {
   PropsWithChildren,
 } from "react";
 
-import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 
 import { isAbsoluteURL } from "@/utils/is-absolute-url";
@@ -31,7 +30,7 @@ const ButtonLink: FunctionComponent<
       {children}
     </a>
   ) : (
-    <Link href={props.href as Url} className={className} {...props}>
+    <Link href={props.href as {}} className={className} {...props}>
       {children}
     </Link>
   );

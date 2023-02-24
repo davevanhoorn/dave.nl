@@ -1,5 +1,7 @@
 import "server-only";
 
+import { Metadata } from "next/types";
+
 import { i18n, Locale } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
@@ -14,7 +16,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { lang: Locale };
-}) {
+}): Promise<Metadata> {
   const dictionary = await getDictionary(params.lang);
   const path = dictionary.about;
 
@@ -24,11 +26,11 @@ export async function generateMetadata({
     openGraph: {
       title: path.openGraph.title,
       description: path.openGraph.description,
-      url: path.openGraph.url,
+      url: new URL(path.openGraph.url),
       siteName: path.openGraph.siteName,
       images: path.openGraph.images,
       locale: path.openGraph.locale,
-      type: path.openGraph.type,
+      type: path.openGraph.type as "video.other", // TODO
     },
     alternates: {
       canonical: path.alternates.canonical,

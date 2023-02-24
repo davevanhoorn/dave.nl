@@ -14,8 +14,8 @@
         {
           "value": "About",
           "href": "/en/about",
-          "title": "Navigate to Dave's \"About me\" page",
-          "ariaLabel": "Navigate to Dave's \"About me\" page"
+          "title": "Navigate to Dave's 'About me' page",
+          "ariaLabel": "Navigate to Dave's 'About me' page"
         }
       ],
       "callToAction": {
@@ -37,12 +37,10 @@
       "label": "Change language",
       "locales": {
         "en": {
-          "name": "English",
-          "code": "EN"
+          "name": "English"
         },
         "nl": {
-          "name": "Netherlands",
-          "code": "NL"
+          "name": "Netherlands"
         }
       }
     },
@@ -56,7 +54,7 @@
         "career",
         "digital nomad"
       ],
-      "authors": ["Dave van Hoorn"],
+      "authors": { "url": "https://dave.nl/en", "name": "Dave van Hoorn" },
       "creator": "Dave van Hoorn",
       "publisher": "Dave van Hoorn",
       "formatDetection": {
@@ -99,30 +97,30 @@
     "openGraph": {
       "title": "Dave.nl",
       "description": "Personal blog of Dave van Hoorn, remote freelance front-end developer",
-      "url": "https://dave.nl",
+      "url": "https://dave.nl/en",
       "siteName": "Dave.nl",
       "images": [
         {
-          "url": "https://dave.nl/og.png",
+          "url": "/og.png",
           "width": 800,
           "height": 600,
           "alt": "Dave.nl - Freelance front-end developer"
         },
         {
-          "url": "https://dave.nl/og-alt.png",
+          "url": "/og-alt.png",
           "width": 1800,
           "height": 1600,
           "alt": "Dave.nl - Freelance front-end developer"
         }
       ],
-      "locale": "en",
+      "locale": "en-US",
       "type": "website"
     },
     "alternates": {
       "canonical": "https://dave.nl/en",
       "languages": {
-        "en": "https://dave.nl/en",
-        "nl": "https://dave.nl/nl"
+        "en-US": "https://dave.nl/en",
+        "nl-NL": "https://dave.nl/nl"
       }
     },
     "schema": {
@@ -188,30 +186,30 @@
     "openGraph": {
       "title": "Dave.nl",
       "description": "Personal blog of Dave van Hoorn, remote freelance front-end developer",
-      "url": "https://dave.nl",
+      "url": "https://dave.nl/en",
       "siteName": "Dave.nl",
       "images": [
         {
-          "url": "https://dave.nl/og.png",
+          "url": "/og.png",
           "width": 800,
           "height": 600,
           "alt": "Dave.nl - Freelance front-end developer"
         },
         {
-          "url": "https://dave.nl/og-alt.png",
+          "url": "/og-alt.png",
           "width": 1800,
           "height": 1600,
           "alt": "Dave.nl - Freelance front-end developer"
         }
       ],
-      "locale": "en",
+      "locale": "en-US",
       "type": "website"
     },
     "alternates": {
       "canonical": "https://dave.nl/en/about",
       "languages": {
-        "en": "https://dave.nl/en/about",
-        "nl": "https://dave.nl/nl/about"
+        "en-US": "https://dave.nl/en/about",
+        "nl-NL": "https://dave.nl/nl/about"
       }
     }
   }

@@ -1,20 +1,19 @@
 import "server-only";
 
+import { Metadata } from "next/types";
+
 import { i18n, Locale } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
-// generateStaticParams can be used with dynamic route segments - like getStaticPaths and [slug].tsx
-// this is not the same as getStaticProps(!)
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-// generateMetadata creates the metadata (seo, opengraph, canonicals) for this page
 export async function generateMetadata({
   params,
 }: {
   params: { lang: Locale };
-}) {
+}): Promise<Metadata> {
   const dictionary = await getDictionary(params.lang);
   const path = dictionary.home;
 
@@ -28,7 +27,7 @@ export async function generateMetadata({
       siteName: path.openGraph.siteName,
       images: path.openGraph.images,
       locale: path.openGraph.locale,
-      type: path.openGraph.type,
+      type: path.openGraph.type as "video.other", // TODO
     },
     alternates: {
       canonical: path.alternates.canonical,
