@@ -19,6 +19,7 @@
   transform-box: fill-box;
   transform-origin: center;
   width: 50%;
+  will-change: auto;
 
   @screen xs {
     background-size: 30px 3px;
