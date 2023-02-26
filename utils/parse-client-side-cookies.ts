@@ -1,4 +1,4 @@
-"use client";
+import "client-only";
 
 export const parseClientSideCookies = (cookies: Document["cookie"]) =>
   Object.fromEntries(

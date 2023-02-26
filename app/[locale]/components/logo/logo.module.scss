@@ -48,44 +48,44 @@
 
 @keyframes dash {
   0% {
-    opacity: 0.125;
+    fill: #dfdfdf;
     transform: translateY(0) scaleX(1);
   }
 
   25% {
-    opacity: 0.125;
+    fill: #dfdfdf;
     transform: translateY(-20px) scaleX(0.9);
   }
 
   50% {
-    opacity: 1;
+    fill: black;
     transform: translateY(-40px) scaleX(1.0625);
   }
 
   100% {
-    opacity: 1;
+    fill: black;
     transform: translateY(0) scaleX(1);
   }
 }
 
 @keyframes dash-reverse {
   0% {
-    opacity: 1;
+    fill: black;
     transform: translateY(0) scaleX(1);
   }
 
   25% {
-    opacity: 1;
+    fill: black;
     transform: translateY(-20px) scaleX(1.125);
   }
 
   50% {
-    opacity: 0.125;
+    fill: #dfdfdf;
     transform: translateY(-10px) scaleX(0.8);
   }
 
   100% {
-    opacity: 0.125;
+    fill: #dfdfdf;
     transform: translateY(0) scaleX(1);
   }
 }
@@ -136,7 +136,7 @@
 }
 
 .dashGreyedOut {
-  opacity: 0.125;
+  fill: #dfdfdf;
 }
 
 .dashOneInactive {
@@ -160,7 +160,6 @@
 
   animation-fill-mode: forwards;
   animation-name: dash;
-  opacity: 0.125;
 }
 
 .dashTwoActive {
@@ -169,5 +168,4 @@
   animation-delay: 100ms;
   animation-fill-mode: forwards;
   animation-name: dash;
-  opacity: 0.125;
 }

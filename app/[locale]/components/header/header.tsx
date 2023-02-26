@@ -1,11 +1,11 @@
-"server-only";
+import "server-only";
 
 import { FunctionComponent } from "react";
 
 import clsx from "clsx";
 import { RiWhatsappFill } from "react-icons/ri";
 
-import { Dictionary } from "@/config/i18n";
+import { Dictionary, Locale } from "@/config/i18n";
 
 import Button, {
   ButtonTypeEnum,
@@ -16,13 +16,18 @@ import LightbulbIcon from "@/assets/images/font-awesome-5_solid-lightbulb.svg";
 
 import HeaderLink from "./header-link";
 
+import LocaleSwitcherFlag from "../locale-switcher/locale-switcher-flag";
 import styles from "./header.module.scss";
 
 type HeaderProps = {
+  currentLocale: Locale;
   dictionary: Dictionary;
 };
 
-const Header: FunctionComponent<HeaderProps> = ({ dictionary }) => {
+const Header: FunctionComponent<HeaderProps> = ({
+  currentLocale,
+  dictionary,
+}) => {
   const links = dictionary.global.header.navigation.filter(
     (link) => link.value !== "Home"
   );
@@ -96,7 +101,17 @@ const Header: FunctionComponent<HeaderProps> = ({ dictionary }) => {
             >
               {dictionary.global.header.callToAction.whatsapp.value}
             </Button>
-            <LocaleSwitcher />
+            <LocaleSwitcher
+              trigger={
+                <Button
+                  element={ButtonTypeEnum.BUTTON}
+                  className="lg:px-4"
+                  aria-label={dictionary?.global.languageSwitcher.label}
+                >
+                  <LocaleSwitcherFlag locale={currentLocale as Locale} />
+                </Button>
+              }
+            ></LocaleSwitcher>
           </div>
         </div>
         <div className="flex flex-wrap justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden flex-nowrap">

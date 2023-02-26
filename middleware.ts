@@ -1,14 +1,12 @@
-"server only";
-
 import { NextRequest } from "next/server";
 
-import { getLocaleFromHeaders, i18n, redirectToLocale } from "@/config/i18n";
+import { getLocaleFromHeaders, redirectToLocale } from "@/utils/redirects";
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const locale = getLocaleFromHeaders(request);
 
-  const pathnameIsMissingLocale = i18n.locales.every(
+  const pathnameIsMissingLocale = ["nl", "en"].every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 

@@ -1,4 +1,4 @@
-"server-only";
+import "server-only";
 
 import { FunctionComponent, ReactElement, ReactNode } from "react";
 

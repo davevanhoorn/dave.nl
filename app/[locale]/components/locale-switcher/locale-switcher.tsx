@@ -1,6 +1,14 @@
 "use client";
 
-import { FunctionComponent, useContext, useEffect, useState } from "react";
+import "client-only";
+
+import {
+  FunctionComponent,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 import Link from "next/link";
 
@@ -9,18 +17,21 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { FaCheck } from "react-icons/fa";
 
-import { Locale } from "@/config/i18n";
+import type { Locale } from "@/config/i18n";
 import { findNestedObject } from "@/utils/find-nested-object";
 
-import Button, {
-  ButtonTypeEnum,
-} from "@/app/[locale]/components/button/button";
 import LocaleSwitcherFlag from "@/app/[locale]/components/locale-switcher/locale-switcher-flag";
 import { DictionaryContext } from "@/app/[locale]/context/dictionary-context";
 
 import styles from "./locale-switcher.module.scss";
 
-const LocaleSwitcher: FunctionComponent = () => {
+type LocaleSwitcherProps = {
+  trigger: ReactNode;
+};
+
+const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
+  trigger,
+}) => {
   const { currentLocale, dictionary } = useContext(DictionaryContext);
   const pathName = usePathname();
 
@@ -47,15 +58,7 @@ const LocaleSwitcher: FunctionComponent = () => {
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <Button
-          element={ButtonTypeEnum.BUTTON}
-          className="lg:px-4"
-          aria-label={dictionary?.global.languageSwitcher.label}
-        >
-          <LocaleSwitcherFlag locale={currentLocale as Locale} />
-        </Button>
-      </DropdownMenu.Trigger>
+      <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content

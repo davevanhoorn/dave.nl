@@ -66,7 +66,7 @@ export default async function Root({
       </head>
       <body>
         <DictionaryContext currentLocale={locale} dictionary={dictionary}>
-          <Header dictionary={dictionary} />
+          <Header currentLocale={locale} dictionary={dictionary} />
           {children}
         </DictionaryContext>
       </body>

@@ -1,8 +1,10 @@
 "use client";
 
+import "client-only";
+
 import { createContext, FunctionComponent, PropsWithChildren } from "react";
 
-import { Dictionary, Locale } from "@/config/i18n";
+import type { Dictionary, Locale } from "@/config/i18n";
 
 export type DictionaryContext = {
   currentLocale?: Locale;

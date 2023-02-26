@@ -1,5 +1,7 @@
 "use client";
 
+import "client-only";
+
 import { usePathname } from "next/navigation";
 
 const useI18n = () => {

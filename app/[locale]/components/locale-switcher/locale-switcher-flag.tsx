@@ -1,9 +1,13 @@
+"use client";
+
+import "client-only";
+
 import { FunctionComponent } from "react";
 
 import clsx from "clsx";
 import { GB, NL } from "country-flag-icons/react/3x2";
 
-import { Locale } from "@/config/i18n";
+import type { Locale } from "@/config/i18n";
 
 import styles from "./locale-switcher.module.scss";
 

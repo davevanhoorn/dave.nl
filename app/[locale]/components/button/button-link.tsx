@@ -1,4 +1,4 @@
-"use client";
+import "server-only";
 
 import {
   AnchorHTMLAttributes,
@@ -14,15 +14,17 @@ import { isHashTag } from "@/utils/is-hash-tag";
 const ButtonLink: FunctionComponent<
   PropsWithChildren & AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({ className, children, ...props }) => {
-  if (!props.href) return null;
+  const href = props?.href;
 
-  const isAbsoluteUrl = isAbsoluteURL(props.href);
-  const isHashtag = isHashTag(props.href);
+  if (!href) return null;
+
+  const isAbsoluteUrl = isAbsoluteURL(href);
+  const isHashtag = isHashTag(href);
 
   return isAbsoluteUrl || isHashtag ? (
     <a
       {...props}
-      href={props.href as string}
+      href={href as string}
       target={isHashtag ? undefined : "_blank"}
       rel={isHashtag ? undefined : "noopener noreferrer"}
       className={className}
@@ -30,7 +32,7 @@ const ButtonLink: FunctionComponent<
       {children}
     </a>
   ) : (
-    <Link href={props.href as {}} className={className} {...props}>
+    <Link href={href as {}} className={className} {...props}>
       {children}
     </Link>
   );

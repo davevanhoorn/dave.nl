@@ -1,8 +1,8 @@
-"server only";
+import "server-only";
 
 import { NextRequest } from "next/server";
 
-import { getLocaleFromHeaders, redirectToLocale } from "@/config/i18n";
+import { getLocaleFromHeaders, redirectToLocale } from "@/utils/redirects";
 
 export async function GET(request: NextRequest) {
   const locale = getLocaleFromHeaders(request);

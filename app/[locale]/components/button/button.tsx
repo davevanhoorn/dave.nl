@@ -1,4 +1,4 @@
-"server-only";
+import "server-only";
 
 import { ButtonHTMLAttributes, forwardRef, HTMLProps, Ref } from "react";
 
