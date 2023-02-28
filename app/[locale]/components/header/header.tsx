@@ -34,7 +34,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   return (
     <header className="dark:bg-black">
       <nav className="mx-auto max-w-screen-2xl px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between border-b border-black pt-6 pb-4 lg:py-6 lg:border-none">
+        <div className="flex w-full items-center justify-between border-b border-black dark:border-white pt-6 pb-4 lg:py-6 lg:border-none">
           <div className="flex items-center w-full">
             <Logo />
             <div className="sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-3 xl:space-x-5 lg:flex flex-grow justify-center">
@@ -44,7 +44,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className="relative text-lg font-semibold text-black dark:text-white md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
+                  className="text-text relative text-lg font-semibold md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
                 >
                   {link.value}
                 </HeaderLink>
@@ -120,7 +120,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               title={link.title}
               aria-label={link.ariaLabel}
               className={
-                "text-base xs:text-xl font-semibold text-black dark:text-white p-2 whitespace-nowrap"
+                "text-text text-base xs:text-xl font-semibold p-2 whitespace-nowrap"
               }
             >
               {link.value}

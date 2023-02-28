@@ -48,44 +48,44 @@
 
 @keyframes dash {
   0% {
-    fill: #dfdfdf;
+    opacity: 0.2;
     transform: translateY(0) scaleX(1);
   }
 
   25% {
-    fill: #dfdfdf;
+    opacity: 0.2;
     transform: translateY(-20px) scaleX(0.9);
   }
 
   50% {
-    fill: black;
+    opacity: 1;
     transform: translateY(-40px) scaleX(1.0625);
   }
 
   100% {
-    fill: black;
+    opacity: 1;
     transform: translateY(0) scaleX(1);
   }
 }
 
 @keyframes dash-reverse {
   0% {
-    fill: black;
+    opacity: 1;
     transform: translateY(0) scaleX(1);
   }
 
   25% {
-    fill: black;
+    opacity: 1;
     transform: translateY(-20px) scaleX(1.125);
   }
 
   50% {
-    fill: #dfdfdf;
+    opacity: 0.2;
     transform: translateY(-10px) scaleX(0.8);
   }
 
   100% {
-    fill: #dfdfdf;
+    opacity: 0.2;
     transform: translateY(0) scaleX(1);
   }
 }

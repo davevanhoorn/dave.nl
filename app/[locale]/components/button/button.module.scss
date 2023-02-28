@@ -1,15 +1,24 @@
 .button {
-  background-color: white;
-  border-color: black !important;
-  box-shadow: 1px 1px 0 0 black !important;
+  box-shadow: 1px 1px 0 0 black;
   position: relative;
   transition: all 100ms ease-out;
   z-index: 1;
 
   &:hover,
   &:focus {
-    box-shadow: 2px 2px 0 0 black !important;
+    box-shadow: 2px 2px 0 0 black;
     transform: translateX(-1px) translateY(-1px);
+  }
+}
+
+:global(.dark) {
+  .button {
+    box-shadow: 1px 1px 0 0 white;
+
+    &:hover,
+    &:focus {
+      box-shadow: 2px 2px 0 0 white;
+    }
   }
 }
 
@@ -17,8 +26,17 @@
   .button {
     &:hover,
     &:focus {
-      box-shadow: 3px 3px 0 0 black !important;
+      box-shadow: 3px 3px 0 0 black;
       transform: translateX(-2px) translateY(-2px);
+    }
+  }
+
+  :global(.dark) {
+    .button {
+      &:hover,
+      &:focus {
+        box-shadow: 3px 3px 0 0 white;
+      }
     }
   }
 }
