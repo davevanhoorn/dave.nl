@@ -37,14 +37,14 @@ const Header: FunctionComponent<HeaderProps> = ({
         <div className="flex w-full items-center justify-between border-b border-black dark:border-white pt-6 pb-4 lg:py-6 lg:border-none">
           <div className="flex items-center w-full">
             <Logo />
-            <div className="sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-3 xl:space-x-5 lg:flex flex-grow justify-center">
+            <div className="sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-7 xl:space-x-10 lg:flex flex-grow justify-center">
               {links.map((link, key) => (
                 <HeaderLink
                   key={`navigation-link-item-${key}`}
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className="text-text relative text-lg font-semibold md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
+                  className="text-text relative text-lg font-semibold md:text-xl focus:rounded-md"
                 >
                   {link.value}
                 </HeaderLink>
@@ -90,7 +90,14 @@ const Header: FunctionComponent<HeaderProps> = ({
               }
               icon={
                 <span className={styles.whatsappWrapper}>
-                  <span className={styles.whatsappDot}>1</span>
+                  <span
+                    className={clsx(
+                      styles.whatsappDot,
+                      "dark:border-black border-white"
+                    )}
+                  >
+                    1
+                  </span>
                   <RiWhatsappFill
                     data-id="whatsapp-icon"
                     className="mr-1 xs:mr-2 text-base xs:text-lg sm:text-xl"

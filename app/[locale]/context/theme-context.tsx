@@ -21,14 +21,21 @@ export enum ThemeEnum {
 }
 
 export type ThemeContextType = {
-  theme: ThemeEnum | null;
+  theme: ThemeEnum | undefined;
   toggleTheme?: (theme: ThemeEnum, override?: boolean) => void;
 };
 
-export const ThemeContext = createContext<ThemeContextType>({ theme: null });
+type ThemeProps = { theme: ThemeEnum };
 
-const Theme: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.LIGHT);
+export const ThemeContext = createContext<ThemeContextType>({
+  theme: ThemeEnum.LIGHT,
+});
+
+const Theme: FunctionComponent<PropsWithChildren<ThemeProps>> = ({
+  theme: initialTheme,
+  children,
+}) => {
+  const [theme, setTheme] = useState<ThemeEnum>(initialTheme);
   const { isInitialVisit } = useLocation();
 
   const setThemeCookie = (theme: ThemeEnum) =>

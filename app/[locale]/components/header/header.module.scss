@@ -147,7 +147,7 @@
 @mixin lightbulb-ray {
   @include transition-opacity-with-ease;
 
-  background-color: black;
+  background-color: currentcolor;
   border-radius: 10px;
   height: 2px;
   position: absolute;
@@ -362,8 +362,9 @@
 
 .whatsappDot {
   background-color: #fa3e3e;
-  border: solid 0.12rem white;
   border-radius: 70px;
+  border-style: solid;
+  border-width: 0.12rem;
   color: white;
   display: flex;
   font-size: 9px;

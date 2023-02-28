@@ -4,33 +4,22 @@
 @mixin bottom-dash {
   @include transition-transform-with-ease;
 
-  background-image: url("/images/dave-nl_dash.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 22px auto;
   bottom: 4px;
-  content: "";
   height: 2px;
-  left: 25%;
-  opacity: 0.125;
-  position: absolute;
+  opacity: 0.2;
   text-align: center;
-  transform: translateX(-50%);
-  transform-box: fill-box;
   transform-origin: center;
-  width: 50%;
+  width: 30px;
   will-change: auto;
 
   @screen xs {
-    background-size: 30px 3px;
     bottom: 0;
     height: 6px;
-    left: 0%;
-    width: 100%;
   }
 }
 
 .link {
+  display: block;
   transition-duration: 250ms;
   transition-property: opacity, transform;
   transition-timing-function: cubic-bezier(0.695, 0, 0.065, 0.995);
@@ -38,7 +27,7 @@
   &:nth-child(1) {
     transform-origin: center right;
 
-    &::after {
+    & svg {
       @include bottom-dash;
 
       transform: rotate(0deg) scale(0) translateY(-7px);
@@ -49,8 +38,8 @@
       transform: translateY(-3px) rotate(2deg);
     }
 
-    &:hover::after,
-    &:focus::after {
+    &:hover svg,
+    &:focus svg {
       transform: rotate(-1deg) scale(1) translateY(0);
     }
   }
@@ -58,7 +47,7 @@
   &:nth-child(2) {
     transform-origin: center left;
 
-    &::after {
+    & svg {
       @include bottom-dash;
 
       transform: rotate(0deg) scale(0) translateY(-7px);
@@ -69,8 +58,8 @@
       transform: translateY(-3px) rotate(-2deg);
     }
 
-    &:hover::after,
-    &:focus::after {
+    &:hover svg,
+    &:focus svg {
       transform: rotate(2deg) scale(1) translateY(0);
     }
   }
@@ -78,7 +67,7 @@
   &:nth-child(3) {
     transform-origin: center right;
 
-    &::after {
+    & svg {
       @include bottom-dash;
 
       transform: rotate(0deg) scale(0) translateY(-7px);
@@ -89,8 +78,8 @@
       transform: translateY(-3px) rotate(2deg);
     }
 
-    &:hover::after,
-    &:focus::after {
+    &:hover svg,
+    &:focus svg {
       transform: rotate(-1deg) scale(1) translateY(0);
     }
   }
@@ -98,7 +87,7 @@
   &:nth-child(4) {
     transform-origin: center left;
 
-    &::after {
+    & svg {
       @include bottom-dash;
 
       transform: rotate(0deg) scale(0) translateY(-7px);
@@ -109,8 +98,8 @@
       transform: translateY(-3px) rotate(-2deg);
     }
 
-    &:hover::after,
-    &:focus::after {
+    &:hover svg,
+    &:focus svg {
       transform: rotate(1deg) scale(1) translateY(0);
     }
   }
@@ -120,7 +109,7 @@
   &:nth-child(1) {
     transform: translateY(-3px) rotate(2deg);
 
-    &::after {
+    svg {
       opacity: 1;
       transform: rotate(-1deg) scale(1) translateY(0);
       transition-duration: 250ms;
@@ -132,7 +121,7 @@
   &:nth-child(2) {
     transform: translateY(-3px) rotate(-2deg);
 
-    &::after {
+    svg {
       opacity: 1;
       transform: rotate(2deg) scale(1) translateY(0);
       transition-duration: 250ms;
@@ -144,7 +133,7 @@
   &:nth-child(3) {
     transform: translateY(-3px) rotate(2deg);
 
-    &::after {
+    svg {
       opacity: 1;
       transform: rotate(-1deg) scale(1) translateY(0);
       transition-duration: 250ms;
@@ -156,7 +145,7 @@
   &:nth-child(4) {
     transform: translateY(-3px) rotate(-2deg);
 
-    &::after {
+    svg {
       opacity: 1;
       transform: rotate(1deg) scale(1) translateY(0);
       transition-duration: 250ms;

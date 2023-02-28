@@ -14,9 +14,6 @@ const ThemeSwitcher: FunctionComponent = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isClicked, setIsClicked] = useState(false);
 
-  console.log({ theme });
-  console.log({ isClicked });
-
   return (
     <button
       className={clsx(styles.button, "flex justify-center items-center")}

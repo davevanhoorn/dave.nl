@@ -11,15 +11,19 @@ export const addThemeCookieToResponse = (
   request: NextRequest,
   response: NextResponse
 ): NextResponse => {
-  const theme = request.cookies.get(cookieNames.theme)?.value;
+  const themeFromCookie = request.cookies.get(cookieNames.theme)?.value;
 
-  response.cookies.set(cookieNames.theme, theme || ThemeEnumServer.LIGHT, {
-    path: "/",
-    sameSite: "strict",
-    maxAge: 60 * 60 * 24 * 7,
-    secure: true,
-    httpOnly: false,
-  });
+  response.cookies.set(
+    cookieNames.theme,
+    themeFromCookie || ThemeEnumServer.LIGHT,
+    {
+      path: "/",
+      sameSite: "strict",
+      maxAge: 60 * 60 * 24 * 7,
+      secure: true,
+      httpOnly: false,
+    }
+  );
 
   return response;
 };

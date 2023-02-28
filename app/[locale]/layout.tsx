@@ -9,7 +9,7 @@ import { getDictionary } from "@/utils/get-dictionary";
 
 import Header from "@/components/header/header";
 import DictionaryContext from "@/context/dictionary-context";
-import ThemeContext from "@/context/theme-context";
+import ThemeContext, { ThemeEnum } from "@/context/theme-context";
 
 import { cookieNames } from "@/config/generic";
 import { ThemeEnumServer } from "@/utils/theme-cookie";
@@ -61,7 +61,7 @@ export default async function Root({
   const dictionary = await getDictionary(locale);
 
   const cookies = NextCookies();
-  const theme = cookies.get(cookieNames.theme)?.value;
+  const theme = cookies.get(cookieNames.theme)?.value || ThemeEnumServer.LIGHT;
   const useDarkMode = theme === ThemeEnumServer.DARK && `dark`; // Enables Tailwind dark mode
 
   return (
@@ -73,7 +73,7 @@ export default async function Root({
         <meta httpEquiv="content-language" content={locale} />
       </head>
       <body className="dark:bg-black">
-        <ThemeContext>
+        <ThemeContext theme={theme as ThemeEnum}>
           <DictionaryContext currentLocale={locale} dictionary={dictionary}>
             <Header currentLocale={locale} dictionary={dictionary} />
             {children}
