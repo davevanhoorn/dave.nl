@@ -1,6 +1,7 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import { getLocaleFromHeaders, redirectToLocale } from "@/utils/redirects";
+import { addThemeCookieToResponse } from "@/utils/theme-cookie";
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -14,6 +15,11 @@ export async function middleware(request: NextRequest) {
   if (pathnameIsMissingLocale && pathname !== "/") {
     return redirectToLocale(request, locale);
   }
+
+  const response = NextResponse.next();
+  const responseWithThemeCookie = addThemeCookieToResponse(request, response);
+
+  return responseWithThemeCookie;
 }
 
 export const config = {

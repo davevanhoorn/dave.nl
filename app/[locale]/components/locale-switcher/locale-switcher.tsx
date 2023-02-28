@@ -4,7 +4,7 @@ import "client-only";
 
 import {
   FunctionComponent,
-  ReactNode,
+  PropsWithChildren,
   useContext,
   useEffect,
   useState,
@@ -20,18 +20,12 @@ import { FaCheck } from "react-icons/fa";
 import type { Locale } from "@/config/i18n";
 import { findNestedObject } from "@/utils/find-nested-object";
 
-import LocaleSwitcherFlag from "@/app/[locale]/components/locale-switcher/locale-switcher-flag";
-import { DictionaryContext } from "@/app/[locale]/context/dictionary-context";
+import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
+import { DictionaryContext } from "@/context/dictionary-context";
 
 import styles from "./locale-switcher.module.scss";
 
-type LocaleSwitcherProps = {
-  trigger: ReactNode;
-};
-
-const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
-  trigger,
-}) => {
+const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const { currentLocale, dictionary } = useContext(DictionaryContext);
   const pathName = usePathname();
 
@@ -58,7 +52,7 @@ const LocaleSwitcher: FunctionComponent<LocaleSwitcherProps> = ({
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
+      <DropdownMenu.Trigger asChild>{children}</DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content

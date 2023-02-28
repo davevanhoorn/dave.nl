@@ -7,16 +7,15 @@ import { RiWhatsappFill } from "react-icons/ri";
 
 import { Dictionary, Locale } from "@/config/i18n";
 
-import Button, {
-  ButtonTypeEnum,
-} from "@/app/[locale]/components/button/button";
-import LocaleSwitcher from "@/app/[locale]/components/locale-switcher/locale-switcher";
-import Logo from "@/app/[locale]/components/logo/logo";
 import LightbulbIcon from "@/assets/images/font-awesome-5_solid-lightbulb.svg";
+import Button, { ButtonTypeEnum } from "@/components/button/button";
+import LocaleSwitcher from "@/components/locale-switcher/locale-switcher";
+import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
+import Logo from "@/components/logo/logo";
+import ThemeSwitcher from "@/components/theme-switcher/theme-switcher";
 
 import HeaderLink from "./header-link";
 
-import LocaleSwitcherFlag from "../locale-switcher/locale-switcher-flag";
 import styles from "./header.module.scss";
 
 type HeaderProps = {
@@ -33,7 +32,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   );
 
   return (
-    <header>
+    <header className="dark:bg-black">
       <nav className="mx-auto max-w-screen-2xl px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between border-b border-black pt-6 pb-4 lg:py-6 lg:border-none">
           <div className="flex items-center w-full">
@@ -45,14 +44,14 @@ const Header: FunctionComponent<HeaderProps> = ({
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className="relative text-lg font-semibold text-black md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
+                  className="relative text-lg font-semibold text-black dark:text-white md:text-xl py-2 px-3 md:px-2 lg:px-3 focus:rounded-md"
                 >
                   {link.value}
                 </HeaderLink>
               ))}
             </div>
           </div>
-          <div className="space-x-1 xs:space-x-2 flex">
+          <div className="space-x-2 md:space-x-3 flex">
             <Button
               className={clsx(styles.lightbulbButton, "hidden sm:inline-flex")}
               element={ButtonTypeEnum.A}
@@ -101,20 +100,19 @@ const Header: FunctionComponent<HeaderProps> = ({
             >
               {dictionary.global.header.callToAction.whatsapp.value}
             </Button>
-            <LocaleSwitcher
-              trigger={
-                <Button
-                  element={ButtonTypeEnum.BUTTON}
-                  className="lg:px-4"
-                  aria-label={dictionary?.global.languageSwitcher.label}
-                >
-                  <LocaleSwitcherFlag locale={currentLocale as Locale} />
-                </Button>
-              }
-            ></LocaleSwitcher>
+            <LocaleSwitcher>
+              <Button
+                element={ButtonTypeEnum.BUTTON}
+                className="lg:px-4"
+                aria-label={dictionary?.global.languageSwitcher.label}
+              >
+                <LocaleSwitcherFlag locale={currentLocale as Locale} />
+              </Button>
+            </LocaleSwitcher>
+            <ThemeSwitcher />
           </div>
         </div>
-        <div className="flex flex-wrap justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden flex-nowrap">
+        <div className="flex justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden flex-nowrap">
           {links.map((link, key) => (
             <HeaderLink
               key={`mobile-navigation-link-item-${key}`}
@@ -122,7 +120,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               title={link.title}
               aria-label={link.ariaLabel}
               className={
-                "text-base xs:text-xl font-semibold text-black p-2 whitespace-nowrap"
+                "text-base xs:text-xl font-semibold text-black dark:text-white p-2 whitespace-nowrap"
               }
             >
               {link.value}

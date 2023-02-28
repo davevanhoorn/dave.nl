@@ -1,13 +1,18 @@
 import "server-only";
 
 import { Mulish } from "next/font/google";
+import { cookies as NextCookies } from "next/headers";
 import { Metadata } from "next/types";
 
 import { i18n, LocaleParams } from "@/config/i18n";
 import { getDictionary } from "@/utils/get-dictionary";
 
-import Header from "@/app/[locale]/components/header/header";
-import DictionaryContext from "@/app/[locale]/context/dictionary-context";
+import Header from "@/components/header/header";
+import DictionaryContext from "@/context/dictionary-context";
+import ThemeContext from "@/context/theme-context";
+
+import { cookieNames } from "@/config/generic";
+import { ThemeEnumServer } from "@/utils/theme-cookie";
 
 import "@/styles/globals.css";
 
@@ -42,7 +47,6 @@ export async function generateMetadata({
       apple: path.icons.apple,
       other: path.icons.other,
     },
-    other: { ["test"]: "test" },
   };
 }
 
@@ -56,22 +60,29 @@ export default async function Root({
   const { locale } = params;
   const dictionary = await getDictionary(locale);
 
+  const cookies = NextCookies();
+  const theme = cookies.get(cookieNames.theme)?.value;
+  const useDarkMode = theme === ThemeEnumServer.DARK && `dark`; // Enables Tailwind dark mode
+
   return (
     <html
       lang={locale === "nl" ? "nl-NL" : "en-US"}
-      className={`${mulish.variable} font-sans`}
+      className={`${mulish.variable} ${useDarkMode} font-sans`}
     >
       <head>
         <meta httpEquiv="content-language" content={locale} />
       </head>
-      <body>
-        <DictionaryContext currentLocale={locale} dictionary={dictionary}>
-          <Header currentLocale={locale} dictionary={dictionary} />
-          {children}
-        </DictionaryContext>
+      <body className="dark:bg-black">
+        <ThemeContext>
+          <DictionaryContext currentLocale={locale} dictionary={dictionary}>
+            <Header currentLocale={locale} dictionary={dictionary} />
+            {children}
+          </DictionaryContext>
+        </ThemeContext>
       </body>
     </html>
   );
 }
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
+export const dynamic = "force-dynamic";

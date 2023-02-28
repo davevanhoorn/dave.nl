@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
+import { addThemeCookieToResponse } from "@/utils/theme-cookie";
+
 export const getLocaleFromHeaders = (
   request: NextRequest
 ): string | undefined => {
@@ -30,5 +32,8 @@ export const redirectToLocale = (
     url = new URL(`/en${pathname}`, request.url);
   }
 
-  return NextResponse.redirect(url);
+  const response = NextResponse.redirect(url);
+  const responseWithThemeCookie = addThemeCookieToResponse(request, response);
+
+  return responseWithThemeCookie;
 };

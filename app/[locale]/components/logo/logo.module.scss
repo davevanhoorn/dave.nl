@@ -135,26 +135,6 @@
   }
 }
 
-.dashGreyedOut {
-  fill: #dfdfdf;
-}
-
-.dashOneInactive {
-  @include animation;
-
-  animation-delay: 0.18s;
-  animation-fill-mode: forwards;
-  animation-name: dash-reverse;
-}
-
-.dashTwoInactive {
-  @include animation;
-
-  animation-delay: 0.25s;
-  animation-fill-mode: forwards;
-  animation-name: dash-reverse;
-}
-
 .dashOneActive {
   @include animation;
 
@@ -162,10 +142,25 @@
   animation-name: dash;
 }
 
+.dashOneInactive {
+  @include animation;
+
+  animation-fill-mode: forwards;
+  animation-name: dash-reverse;
+}
+
 .dashTwoActive {
   @include animation;
 
-  animation-delay: 100ms;
+  animation-delay: 0.03s;
   animation-fill-mode: forwards;
   animation-name: dash;
+}
+
+.dashTwoInactive {
+  @include animation;
+
+  animation-delay: 0.03s;
+  animation-fill-mode: forwards;
+  animation-name: dash-reverse;
 }

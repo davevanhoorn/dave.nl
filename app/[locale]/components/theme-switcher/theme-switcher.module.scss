@@ -1,0 +1,55 @@
+.button {
+  height: 48px;
+  margin-left: 0 !important;
+  width: 56px;
+}
+
+.sun {
+  height: 26px;
+  width: 26px;
+}
+
+@keyframes rotate-sun {
+  0% {
+    opacity: 0.25;
+    transform: rotate(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+}
+
+.rotateSun {
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-name: rotate-sun;
+  animation-timing-function: cubic-bezier(0.695, 0, 0.065, 0.995);
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+@keyframes flicker-stars {
+  0% {
+    opacity: 0.25;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flickerStars {
+  & path:last-of-type {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: flicker-stars;
+    animation-timing-function: cubic-bezier(0.695, 0, 0.065, 0.995);
+    transform-box: fill-box;
+    transform-origin: center center;
+  }
+}
