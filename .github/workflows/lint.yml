@@ -68,12 +68,20 @@ jobs:
           node-version: "18"
           cache: "pnpm"
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm global add vercel@latest
-      - run: vercel env pull --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-      - run: pnpm global add @lhci/cli@0.11.x
-      - run: pnpm --prefer-offline
-      - run: pnpm build
+      - name: Install Vercel CLI
+        run: pnpm i -g vercel@latest
+
+      - name: Install Lighthouse CI
+        run: pnpm i -g @lhci/cli@0.11.x
+
+      - name: Pull Vercel Environment Information
+        run: vercel env pull --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js
+        run: pnpm build
 
       - name: Run Lighthouse CI
         env:
