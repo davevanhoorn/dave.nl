@@ -58,11 +58,6 @@ jobs:
   web-vitals:
     name: Run Lighthouse CI
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18]
-
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -73,20 +68,12 @@ jobs:
           node-version: "18"
           cache: "pnpm"
 
-      - name: Install Vercel CLI
-        run: pnpm global add vercel@latest
-
-      - name: Pull Vercel Environment Information
-        run: vercel env pull --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Install Lighthouse CI
-        run: pnpm global add @lhci/cli@0.11.x
-
-      - name: Install dependencies
-        run: pnpm --prefer-offline
-
-      - name: Build Next.js
-        run: pnpm build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm global add vercel@latest
+      - run: vercel env pull --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - run: pnpm global add @lhci/cli@0.11.x
+      - run: pnpm --prefer-offline
+      - run: pnpm build
 
       - name: Run Lighthouse CI
         env:
