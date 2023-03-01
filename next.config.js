@@ -12,6 +12,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     appDir: true,
+    legacyBrowsers: false,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "app/styles/scss")],
