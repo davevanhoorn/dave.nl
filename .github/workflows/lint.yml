@@ -14,48 +14,60 @@ jobs:
     name: Run ESLint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.27.0
+      - uses: actions/setup-node@v3
         with:
           node-version: "18"
           cache: "pnpm"
-      - run: pnpm
+      - run: pnpm install --frozen-lockfile
       - run: pnpm lint:strict
 
   tsc:
     name: Run Type Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.27.0
+      - uses: actions/setup-node@v3
         with:
           node-version: "18"
           cache: "pnpm"
-      - run: pnpm
+      - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
 
   prettier:
     name: Run Prettier Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.27.0
+      - uses: actions/setup-node@v3
         with:
           node-version: "18"
           cache: "pnpm"
-      - run: pnpm
+      - run: pnpm install --frozen-lockfile
       - run: pnpm format:check
 
   test:
     name: Run Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.27.0
+      - uses: actions/setup-node@v3
         with:
           node-version: "18"
           cache: "pnpm"
-      - run: pnpm
+      - run: pnpm install --frozen-lockfile
       - run: pnpm test
 
   web-vitals:
@@ -67,10 +79,13 @@ jobs:
         node-version: [18]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.27.0
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
           cache: "pnpm"
 
       - name: Install Vercel CLI
@@ -80,7 +95,7 @@ jobs:
         run: vercel env pull --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Install Lighthouse CI
-        run: pnpm global add @lhci/cli@0.9.x
+        run: pnpm global add @lhci/cli@0.11.x
 
       - name: Install dependencies
         run: pnpm --prefer-offline

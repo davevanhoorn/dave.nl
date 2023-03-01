@@ -3,6 +3,10 @@ const StylelintPlugin = require("stylelint-webpack-plugin");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compiler: {
+    reactRemoveProperties: true,
+    removeConsole: true,
+  },
   trailingSlash: false,
   reactStrictMode: true,
   experimental: {

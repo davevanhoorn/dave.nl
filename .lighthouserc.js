@@ -3,7 +3,7 @@ module.exports = {
     collect: {
       startServerCommand: "pnpm start",
       startServerReadyPattern: "started server on",
-      url: ["http://localhost:3000"],
+      url: ["http://localhost:3000/en"],
       numberOfRuns: 3,
     },
     assert: {
@@ -11,7 +11,7 @@ module.exports = {
     },
     upload: {
       target: "temporary-public-storage",
-      target: "lhci",
+      // target: "lhci",
     },
   },
 };
