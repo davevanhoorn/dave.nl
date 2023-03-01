@@ -10,6 +10,7 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   experimental: {
+    optimizeCss: true,
     appDir: true,
   },
   sassOptions: {
