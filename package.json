@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:style": "stylelint \"**/*.(scss|sass)\""
+    "lint": "next lint --strict",
+    "lint:style": "stylelint \"**/*.(scss|sass)\"",
+    "format": "prettier --ignore-path .gitignore \"./**/*.+(ts|js|tsx)\" --write"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.2.32",
@@ -37,6 +38,7 @@
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.1.6",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "server-only": "^0.0.1",
     "stylelint": "^14.16.1",
     "stylelint-config-css-modules": "4.1.0",

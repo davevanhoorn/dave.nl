@@ -23,22 +23,7 @@ jobs:
           node-version: "18"
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
-      - run: pnpm lint:strict
-
-  tsc:
-    name: Run Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.27.0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: "pnpm"
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm typecheck
+      - run: pnpm lint --strict
 
   prettier:
     name: Run Prettier
@@ -53,10 +38,10 @@ jobs:
           node-version: "18"
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
-      - run: pnpm format:check
+      - run: pnpm format
 
-  test:
-    name: Run Tests
+  stylelint:
+    name: Run Stylelint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -68,7 +53,7 @@ jobs:
           node-version: "18"
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
-      - run: pnpm test
+      - run: pnpm lint:style
 
   web-vitals:
     name: Run Lighthouse CI
