@@ -56,7 +56,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
           __html: JSON.stringify(dictionary.home.schema.localBusiness),
         }}
       />
-      <h1>{dictionary.home.seo.title}</h1>
+      <h1>{dictionary.home.seo.title} test</h1>
     </>
   );
 }

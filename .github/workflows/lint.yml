@@ -1,5 +1,3 @@
-# Variables VERCEL_TOKEN, VERCEL_ORG_ID and VERCEL_PROJECT_ID can be found in Vercel
-
 name: PR Source Code Check
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
