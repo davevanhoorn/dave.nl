@@ -1,5 +1,5 @@
-const path = require("path");
-const StylelintPlugin = require("stylelint-webpack-plugin");
+const path = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -15,16 +15,16 @@ const nextConfig = {
     legacyBrowsers: false,
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, "app/styles/scss")],
+    includePaths: [path.join(__dirname, 'app/styles/scss')],
   },
   async headers() {
     return [
       {
-        source: "/:path*",
+        source: '/:path*',
         headers: [
           {
-            key: "X-Robots-Tag",
-            value: "none",
+            key: 'X-Robots-Tag',
+            value: 'none',
           },
         ],
       },
@@ -38,7 +38,7 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
 
     return config;

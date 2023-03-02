@@ -1,26 +1,26 @@
-import "server-only";
+import 'server-only';
 
-import { Mulish } from "next/font/google";
-import { cookies as NextCookies } from "next/headers";
-import { Metadata } from "next/types";
+import { Mulish } from 'next/font/google';
+import { cookies as NextCookies } from 'next/headers';
+import { Metadata } from 'next/types';
 
-import { i18n, LocaleParams } from "@/config/i18n";
-import { getDictionary } from "@/utils/get-dictionary";
+import { i18n, LocaleParams } from '@/config/i18n';
+import { getDictionary } from '@/utils/get-dictionary';
 
-import Header from "@/components/header/header";
-import DictionaryContext from "@/context/dictionary-context";
-import ThemeContext, { ThemeEnum } from "@/context/theme-context";
+import Header from '@/components/header/header';
+import DictionaryContext from '@/context/dictionary-context';
+import ThemeContext, { ThemeEnum } from '@/context/theme-context';
 
-import { cookieNames } from "@/config/generic";
-import { ThemeEnumServer } from "@/utils/theme-cookie";
+import { cookieNames } from '@/config/generic';
+import { ThemeEnumServer } from '@/utils/theme-cookie';
 
-import "@/styles/globals.css";
+import '@/styles/globals.css';
 
 const mulish = Mulish({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  style: ["normal"],
-  variable: "--font-mulish",
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  style: ['normal'],
+  variable: '--font-mulish',
 });
 
 export async function generateStaticParams() {
@@ -66,13 +66,19 @@ export default async function Root({
 
   return (
     <html
-      lang={locale === "nl" ? "nl-NL" : "en-US"}
+      lang={locale === 'nl' ? 'nl-NL' : 'en-US'}
       className={`${mulish.variable} ${useDarkMode} font-sans`}
     >
       <head>
-        <meta httpEquiv="content-language" content={locale} />
+        <meta httpEquiv='content-language' content={locale} />
+        <meta name='theme-color' content='white' />
+        <meta
+          name='theme-color'
+          media='(prefers-color-scheme: dark)'
+          content='black'
+        />
       </head>
-      <body className="dark:bg-black">
+      <body className='dark:bg-black'>
         <ThemeContext theme={theme as ThemeEnum}>
           <DictionaryContext currentLocale={locale} dictionary={dictionary}>
             <Header currentLocale={locale} dictionary={dictionary} />
@@ -84,5 +90,5 @@ export default async function Root({
   );
 }
 
-// export const dynamic = "force-static";
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-static';
+// export const dynamic = "force-dynamic";

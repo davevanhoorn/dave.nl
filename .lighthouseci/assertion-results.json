@@ -10,23 +10,6 @@
     ],
     "operator": ">=",
     "passed": false,
-    "auditId": "button-name",
-    "level": "error",
-    "url": "http://localhost:3000/en",
-    "auditTitle": "Buttons do not have an accessible name",
-    "auditDocumentationLink": "https://web.dev/button-name/"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0,
-    "values": [
-      0,
-      0,
-      0
-    ],
-    "operator": ">=",
-    "passed": false,
     "auditId": "csp-xss",
     "level": "error",
     "url": "http://localhost:3000/en",
@@ -85,23 +68,6 @@
     "auditDocumentationLink": "https://philipwalton.com/articles/deploying-es2015-code-in-production-today/"
   },
   {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0,
-    "values": [
-      0,
-      0,
-      0
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditId": "maskable-icon",
-    "level": "error",
-    "url": "http://localhost:3000/en",
-    "auditTitle": "Manifest doesn't have a maskable icon",
-    "auditDocumentationLink": "https://web.dev/maskable-icon-audit/"
-  },
-  {
     "name": "maxLength",
     "expected": 0,
     "actual": 5,
@@ -134,40 +100,6 @@
     "url": "http://localhost:3000/en",
     "auditTitle": "Does not register a service worker that controls page and `start_url`",
     "auditDocumentationLink": "https://web.dev/service-worker/"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0,
-    "values": [
-      0,
-      0,
-      0
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditId": "splash-screen",
-    "level": "error",
-    "url": "http://localhost:3000/en",
-    "auditTitle": "Is not configured for a custom splash screen",
-    "auditDocumentationLink": "https://web.dev/splash-screen/"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0,
-    "values": [
-      0,
-      0,
-      0
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditId": "themed-omnibox",
-    "level": "error",
-    "url": "http://localhost:3000/en",
-    "auditTitle": "Does not set a theme color for the address bar.",
-    "auditDocumentationLink": "https://web.dev/themed-omnibox/"
   },
   {
     "name": "maxLength",

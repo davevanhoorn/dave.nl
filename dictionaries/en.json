@@ -62,6 +62,10 @@
         }
       }
     },
+    "themeSwitcher": {
+      "dark": "Switch to the dark theme",
+      "light": "Switch to the light theme"
+    },
     "seo": {
       "keywords": [
         "javascript",
@@ -228,6 +232,114 @@
       "languages": {
         "en-US": "https://dave.nl/en/about",
         "nl-NL": "https://dave.nl/nl/about"
+      }
+    }
+  },
+  "blog": {
+    "slug": { "en": "blog", "nl": "blog" },
+    "seo": {
+      "title": "Blog Title",
+      "description": "Blog Description"
+    },
+    "openGraph": {
+      "title": "Dave.nl",
+      "description": "Personal blog of Dave van Hoorn, remote freelance front-end developer",
+      "url": "https://dave.nl/en/blog",
+      "siteName": "Dave.nl",
+      "images": [
+        {
+          "url": "/og.png",
+          "width": 800,
+          "height": 600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        },
+        {
+          "url": "/og-alt.png",
+          "width": 1800,
+          "height": 1600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        }
+      ],
+      "locale": "en-US",
+      "type": "website"
+    },
+    "alternates": {
+      "canonical": "https://dave.nl/en/blog",
+      "languages": {
+        "en-US": "https://dave.nl/en/blog",
+        "nl-NL": "https://dave.nl/nl/blog"
+      }
+    }
+  },
+  "portfolio": {
+    "slug": { "en": "portfolio", "nl": "portfolio" },
+    "seo": {
+      "title": "Portfolio Title",
+      "description": "Portfolio Description"
+    },
+    "openGraph": {
+      "title": "Dave.nl",
+      "description": "Portfolio of Dave.nl, remote freelance front-end developer from The Netherlands",
+      "url": "https://dave.nl/en/portfolio",
+      "siteName": "Dave.nl",
+      "images": [
+        {
+          "url": "/og.png",
+          "width": 800,
+          "height": 600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        },
+        {
+          "url": "/og-alt.png",
+          "width": 1800,
+          "height": 1600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        }
+      ],
+      "locale": "en-US",
+      "type": "website"
+    },
+    "alternates": {
+      "canonical": "https://dave.nl/en/portfolio",
+      "languages": {
+        "en-US": "https://dave.nl/en/portfolio",
+        "nl-NL": "https://dave.nl/nl/portfolio"
+      }
+    }
+  },
+  "contact": {
+    "slug": { "en": "contact", "nl": "contact" },
+    "seo": {
+      "title": "Contact Title",
+      "description": "Contact Description"
+    },
+    "openGraph": {
+      "title": "Dave.nl",
+      "description": "Get in touch with Dave.nl, a freelance React, TypeScript, Next.js developer from the Netherlands",
+      "url": "https://dave.nl/en/contact",
+      "siteName": "Dave.nl",
+      "images": [
+        {
+          "url": "/og.png",
+          "width": 800,
+          "height": 600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        },
+        {
+          "url": "/og-alt.png",
+          "width": 1800,
+          "height": 1600,
+          "alt": "Dave.nl - Freelance front-end developer"
+        }
+      ],
+      "locale": "en-US",
+      "type": "website"
+    },
+    "alternates": {
+      "canonical": "https://dave.nl/en/contact",
+      "languages": {
+        "en-US": "https://dave.nl/en/contact",
+        "nl-NL": "https://dave.nl/nl/contact"
       }
     }
   }
