@@ -1,4 +1,4 @@
-@import "mixins";
+@import 'mixins';
 
 @keyframes scale-in {
   from {
@@ -38,6 +38,12 @@
   padding: 2px;
   right: -6px;
   z-index: 2;
+}
+
+:global(.dark) {
+  .localeCheck {
+    border-color: black;
+  }
 }
 
 .localeSwitcherFlag {

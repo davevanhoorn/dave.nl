@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import "client-only";
+import 'client-only';
 
 import {
   FunctionComponent,
@@ -8,22 +8,22 @@ import {
   useContext,
   useEffect,
   useState,
-} from "react";
+} from 'react';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import clsx from "clsx";
-import { usePathname } from "next/navigation";
-import { FaCheck } from "react-icons/fa";
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
+import { FaCheck } from 'react-icons/fa';
 
-import type { Locale } from "@/config/i18n";
-import { findNestedObject } from "@/utils/find-nested-object";
+import type { Locale } from '@/config/i18n';
+import { findNestedObject } from '@/utils/find-nested-object';
 
-import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
-import { DictionaryContext } from "@/context/dictionary-context";
+import LocaleSwitcherFlag from '@/components/locale-switcher/locale-switcher-flag';
+import { DictionaryContext } from '@/context/dictionary-context';
 
-import styles from "./locale-switcher.module.scss";
+import styles from './locale-switcher.module.scss';
 
 const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const { currentLocale, dictionary } = useContext(DictionaryContext);
@@ -35,7 +35,7 @@ const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
   }> | null>(null);
 
   useEffect(() => {
-    const pathNames = pathName.split("/");
+    const pathNames = pathName.split('/');
     const slug = pathNames[2] ? pathNames[2] : pathNames[1];
     if (!slug) return;
 
@@ -44,7 +44,7 @@ const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
     const translations = Object.keys(slugs).map((locale) => ({
       locale: locale as Locale,
-      slug: slugs[locale] === locale ? "" : (slugs[locale] as string),
+      slug: slugs[locale] === locale ? '' : (slugs[locale] as string),
     }));
 
     setTranslations(translations);
@@ -56,12 +56,12 @@ const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          align="end"
+          align='end'
           collisionPadding={10}
           sideOffset={10}
           className={clsx(
             styles.localeSwitcherContent,
-            "rounded-md p-1 sm:p-2 bg-white"
+            'rounded-md p-1 sm:p-2 bg-white dark:bg-black text-text dark:border-white dark:border'
           )}
         >
           <DropdownMenu.Arrow />
@@ -71,28 +71,28 @@ const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
                 replace
                 className={clsx(
                   styles.localeLink,
-                  "p-1 sm:p-2 hover:underline hover:decoration-wavy hover:decoration-1"
+                  'p-1 sm:p-2 hover:underline hover:decoration-wavy hover:decoration-1'
                 )}
                 href={
-                  translation.slug === "/"
+                  translation.slug === '/'
                     ? `/${translation.locale}`
                     : (`/${translation.locale}/${translation.slug}` as {})
                 }
               >
-                <span className="relative mr-3">
+                <span className='relative mr-3'>
                   <LocaleSwitcherFlag locale={translation.locale} />
                   {translation.locale === currentLocale && (
                     <span
                       className={clsx(
                         styles.localeCheck,
-                        "absolute text-center rounded-2xl"
+                        'absolute text-center rounded-2xl'
                       )}
                     >
-                      <FaCheck className="w-2 h-2" />
+                      <FaCheck className='w-2 h-2' />
                     </span>
                   )}
                 </span>
-                <span className="font-bold text-base">
+                <span className='font-bold text-base'>
                   {
                     dictionary?.global.languageSwitcher.locales[
                       translation.locale
