@@ -37,13 +37,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function AboutPage({ params }: { params: LocaleParams }) {
+export default async function Page({ params }: { params: LocaleParams }) {
   const { locale } = params;
   const dictionary = await getDictionary(locale);
 
-  return (
-    <>
-      <h1>{dictionary.portfolio.seo.title}</h1>
-    </>
-  );
+  return <h1>{dictionary.portfolio.seo.title}</h1>;
 }

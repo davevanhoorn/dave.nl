@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import "client-only";
+import 'client-only';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { i18n } from "@/config/i18n";
-import { usePathname } from "next/navigation";
+import { i18n } from '@/config/i18n';
+import { usePathname } from 'next/navigation';
 
 const useLocation = () => {
   const pathname = usePathname();

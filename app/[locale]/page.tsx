@@ -1,9 +1,9 @@
-import "server-only";
+import 'server-only';
 
-import { Metadata } from "next/types";
+import { Metadata } from 'next/types';
 
-import { i18n, LocaleParams } from "@/config/i18n";
-import { getDictionary } from "@/utils/get-dictionary";
+import { i18n, LocaleParams } from '@/config/i18n';
+import { getDictionary } from '@/utils/get-dictionary';
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
@@ -27,7 +27,7 @@ export async function generateMetadata({
       siteName: path.openGraph.siteName,
       images: path.openGraph.images,
       locale: path.openGraph.locale,
-      type: path.openGraph.type as "video.other", // TODO
+      type: path.openGraph.type as 'video.other', // TODO
     },
     alternates: {
       canonical: path.alternates.canonical,
@@ -43,15 +43,15 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
   return (
     <>
       <script
-        id="schema-organization"
-        type="application/ld+json"
+        id='schema-organization'
+        type='application/ld+json'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(dictionary.home.schema.organization),
         }}
       />
       <script
-        id="schema-local-business"
-        type="application/ld+json"
+        id='schema-local-business'
+        type='application/ld+json'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(dictionary.home.schema.localBusiness),
         }}
