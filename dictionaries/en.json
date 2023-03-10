@@ -197,7 +197,8 @@
           }
         ]
       }
-    }
+    },
+    "hero": {}
   },
   "about": {
     "slug": { "en": "about", "nl": "about" },

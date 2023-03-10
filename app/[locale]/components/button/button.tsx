@@ -23,7 +23,7 @@ type ButtonProps = {
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ ...props }, ref) => {
     const defaultButtonStyles =
-      'text-text inline-flex items-center rounded-md bg-primary py-1 xs:py-2 px-2 xs:px-3 sm:px-4 text-base xl:text-lg font-bold whitespace-nowrap border-2 sm:border-2 border-black outline-offset-8 dark:border-white';
+      'text-text inline-flex items-center rounded-md bg-primary py-1 xs:py-2 px-2 xs:px-3 sm:px-4 text-base lg:text-lg font-bold whitespace-nowrap border-2 sm:border-2 border-black outline-offset-8 dark:border-white';
     const { className, icon, children, type, element } = props;
 
     if (element === ButtonTypeEnum.A) {

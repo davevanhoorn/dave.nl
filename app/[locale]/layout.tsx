@@ -18,7 +18,7 @@ import '@/styles/globals.css';
 
 const mulish = Mulish({
   subsets: ['latin'],
-  weight: ['600', '700'],
+  weight: ['600', '700', '800'],
   style: ['normal'],
   variable: '--font-mulish',
 });
@@ -90,5 +90,5 @@ export default async function Root({
   );
 }
 
-// export const dynamic = 'force-static';
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
+// export const dynamic = 'force-dynamic';

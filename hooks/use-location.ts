@@ -12,6 +12,7 @@ const useLocation = () => {
   const [pathnameQueries, setPathnameQueries] = useState<Array<string>>([]);
   const isInitialVisit = pathnameQueries.length <= 1;
   const [isHome, setIsHome] = useState<boolean | null>(null);
+  const [navigatedFromHome, setNavigatedFromHome] = useState<boolean>(false);
 
   useEffect(() => {
     setPathnameQueries((prevPathnames) => {
@@ -28,7 +29,20 @@ const useLocation = () => {
     setIsHome(isHome);
   }, [pathname]);
 
-  return { isInitialVisit, isHome };
+  useEffect(() => {
+    if (!pathnameQueries.length) return;
+
+    if (
+      pathnameQueries[0] === `/${i18n.locales[0]}` ||
+      pathnameQueries[0] === `/${i18n.locales[1]}`
+    ) {
+      setNavigatedFromHome(true);
+    } else {
+      setNavigatedFromHome(false);
+    }
+  }, [pathnameQueries]);
+
+  return { isInitialVisit, isHome, navigatedFromHome };
 };
 
 export default useLocation;

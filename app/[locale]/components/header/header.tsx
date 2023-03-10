@@ -1,22 +1,22 @@
-import "server-only";
+import 'server-only';
 
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
-import clsx from "clsx";
-import { RiWhatsappFill } from "react-icons/ri";
+import clsx from 'clsx';
+import { RiWhatsappFill } from 'react-icons/ri';
 
-import { Dictionary, Locale } from "@/config/i18n";
+import { Dictionary, Locale } from '@/config/i18n';
 
-import LightbulbIcon from "@/assets/images/font-awesome-5_solid-lightbulb.svg";
-import Button, { ButtonTypeEnum } from "@/components/button/button";
-import LocaleSwitcher from "@/components/locale-switcher/locale-switcher";
-import LocaleSwitcherFlag from "@/components/locale-switcher/locale-switcher-flag";
-import Logo from "@/components/logo/logo";
-import ThemeSwitcher from "@/components/theme-switcher/theme-switcher";
+import LightbulbIcon from '@/assets/images/font-awesome-5_solid-lightbulb.svg';
+import Button, { ButtonTypeEnum } from '@/components/button/button';
+import LocaleSwitcher from '@/components/locale-switcher/locale-switcher';
+import LocaleSwitcherFlag from '@/components/locale-switcher/locale-switcher-flag';
+import Logo from '@/components/logo/logo';
+import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
 
-import HeaderLink from "./header-link";
+import HeaderLink from './header-link';
 
-import styles from "./header.module.scss";
+import styles from './header.module.scss';
 
 type HeaderProps = {
   currentLocale: Locale;
@@ -28,32 +28,37 @@ const Header: FunctionComponent<HeaderProps> = ({
   dictionary,
 }) => {
   const links = dictionary.global.header.navigation.filter(
-    (link) => link.value !== "Home"
+    (link) => link.value !== 'Home'
   );
 
   return (
-    <header className="dark:bg-black">
-      <nav className="mx-auto max-w-screen-2xl px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between border-b border-black dark:border-white pt-6 pb-4 lg:py-6 lg:border-none">
-          <div className="flex items-center w-full">
+    <header className={clsx(styles.header, 'fixed w-full')}>
+      <nav className='mx-auto max-w-screen-2xl px-6 lg:px-8' aria-label='Top'>
+        <div
+          className={clsx(
+            styles.divider,
+            'flex w-full items-center justify-between py-3 lg:border-none'
+          )}
+        >
+          <div className='flex items-center w-full'>
             <Logo />
-            <div className="sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-7 xl:space-x-10 lg:flex flex-grow justify-center">
+            <div className='sm:px-4 md:px-0 hidden md:space-x-0 lg:space-x-7 xl:space-x-10 lg:flex flex-grow justify-center'>
               {links.map((link, key) => (
                 <HeaderLink
                   key={`navigation-link-item-${key}`}
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className="text-text relative text-lg font-semibold md:text-xl focus:rounded-md"
+                  className='text-text relative text-lg font-semibold md:text-xl focus:rounded-md'
                 >
                   {link.value}
                 </HeaderLink>
               ))}
             </div>
           </div>
-          <div className="space-x-2 md:space-x-3 flex">
+          <div className='space-x-2 md:space-x-3 flex'>
             <Button
-              className={clsx(styles.lightbulbButton, "hidden sm:inline-flex")}
+              className={clsx(styles.lightbulbButton, 'hidden sm:inline-flex')}
               element={ButtonTypeEnum.A}
               href={dictionary.global.header.callToAction.project.href}
               title={dictionary.global.header.callToAction.project.title}
@@ -61,10 +66,10 @@ const Header: FunctionComponent<HeaderProps> = ({
                 dictionary.global.header.callToAction.project.ariaLabel
               }
               icon={
-                <span className={clsx(styles.lightbulbWrapper, "relative")}>
+                <span className={clsx(styles.lightbulbWrapper, 'relative')}>
                   <LightbulbIcon
-                    data-id="lightbulb-icon"
-                    className="mr-1 xs:mr-2 text-base w-4 h-4 xs:w-5 xs:h-5"
+                    data-id='lightbulb-icon'
+                    className='mr-1 xs:mr-2 text-base w-4 h-4 xs:w-5 xs:h-5'
                   />
                   <span className={styles.lightbulbRays}>
                     <span className={clsx(styles.lightbulbRay1)} />
@@ -93,14 +98,14 @@ const Header: FunctionComponent<HeaderProps> = ({
                   <span
                     className={clsx(
                       styles.whatsappDot,
-                      "dark:border-black border-white"
+                      'dark:border-black border-white'
                     )}
                   >
                     1
                   </span>
                   <RiWhatsappFill
-                    data-id="whatsapp-icon"
-                    className="mr-1 xs:mr-2 text-base xs:text-lg sm:text-xl"
+                    data-id='whatsapp-icon'
+                    className='mr-1 xs:mr-2 text-base xs:text-lg sm:text-xl'
                   />
                 </span>
               }
@@ -110,7 +115,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             <LocaleSwitcher>
               <Button
                 element={ButtonTypeEnum.BUTTON}
-                className="lg:px-4"
+                className='lg:px-4'
                 aria-label={dictionary?.global.languageSwitcher.label}
               >
                 <LocaleSwitcherFlag locale={currentLocale as Locale} />
@@ -119,7 +124,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             <ThemeSwitcher />
           </div>
         </div>
-        <div className="flex justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden flex-nowrap">
+        <div className='flex justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden flex-nowrap'>
           {links.map((link, key) => (
             <HeaderLink
               key={`mobile-navigation-link-item-${key}`}
@@ -127,7 +132,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               title={link.title}
               aria-label={link.ariaLabel}
               className={
-                "text-text text-base xs:text-xl font-semibold p-2 whitespace-nowrap"
+                'text-text text-base xs:text-xl font-semibold p-2 whitespace-nowrap'
               }
             >
               {link.value}

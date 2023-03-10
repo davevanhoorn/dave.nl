@@ -1,0 +1,15 @@
+.heroWrapper {
+  background: rgb(17 255 190);
+  background: linear-gradient(
+    194deg,
+    rgba(17 255 190 / var(--background-color-opacity)) 0%,
+    rgba(173 98 168 / var(--background-color-opacity)) 45%,
+    rgba(255 0 20 / 0%) 100%
+  );
+  z-index: -1;
+}
+
+.hero {
+  min-height: calc(100vh - var(--menu-height));
+  position: relative;
+}

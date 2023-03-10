@@ -1,4 +1,4 @@
-@import "mixins";
+@import 'mixins';
 
 @mixin animation {
   @include transition-transform-with-ease;
@@ -135,32 +135,20 @@
   }
 }
 
-.dashOneActive {
+.dashFaded {
+  opacity: 0.2;
+}
+
+.dashActive {
   @include animation;
 
   animation-fill-mode: forwards;
   animation-name: dash;
 }
 
-.dashOneInactive {
+.dashInactive {
   @include animation;
 
-  animation-fill-mode: forwards;
-  animation-name: dash-reverse;
-}
-
-.dashTwoActive {
-  @include animation;
-
-  animation-delay: 0.03s;
-  animation-fill-mode: forwards;
-  animation-name: dash;
-}
-
-.dashTwoInactive {
-  @include animation;
-
-  animation-delay: 0.03s;
   animation-fill-mode: forwards;
   animation-name: dash-reverse;
 }
