@@ -12,7 +12,6 @@ import heroImage from '@/public/images/dave-nl_hero.webp';
 import LogoBankai from '@/public/images/logos/dave-nl_logo-bankai.svg';
 import LogoCapgemini from '@/public/images/logos/dave-nl_logo-capgemini.svg';
 import LogoDept from '@/public/images/logos/dave-nl_logo-dept.svg';
-import LogoEuroclear from '@/public/images/logos/dave-nl_logo-euroclear.svg';
 import LogoExpatfile from '@/public/images/logos/dave-nl_logo-expatfile.svg';
 import LogoNoten from '@/public/images/logos/dave-nl_logo-noten-nl.svg';
 import LogoSchiphol from '@/public/images/logos/dave-nl_logo-schiphol.svg';
@@ -74,7 +73,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
       <div
         className={clsx(
           styles.hero,
-          'mx-auto pt-8 lg:pt-12 px-4 lg:px-6 flex justify-center items-center flex-wrap'
+          'mx-auto pt-4 lg:pt-12 px-4 lg:px-6 flex justify-center items-center flex-wrap'
         )}
       >
         <div className='max-w-2xl lg:pr-10'>
@@ -99,7 +98,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
             {` `}
             <span
               className='relative text-text font-display font-normal'
-              style={{ color: '#e88860' }}
+              style={{ color: '#849862' }}
             >
               razendsnel
             </span>
@@ -108,7 +107,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
             {` `}
             <span
               className='relative text-text font-display font-normal'
-              style={{ color: '#e88860' }}
+              style={{ color: '#849862' }}
             >
               converteren.
             </span>
@@ -122,15 +121,12 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
           priority
           src={heroImage}
           alt='Dave.nl'
-          width={500}
-          height={531}
-          className='mt-10'
+          className={clsx(styles.heroImage, `mt-6 lg:mt-0`)}
         />
         <div className={styles.logos}>
           <LogoSchiphol className={styles.logoSchiphol} />
           <LogoNoten className={styles.logoNoten} />
           <LogoDept className={styles.logoDept} />
-          <LogoEuroclear className={styles.logoEuroclear} />
           <LogoCapgemini className={styles.logoCapgemini} />
           <LogoExpatfile className={styles.logoExpatfile} />
           <LogoBankai className={styles.logoBankai} />

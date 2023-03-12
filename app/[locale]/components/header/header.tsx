@@ -32,11 +32,16 @@ const Header: FunctionComponent<HeaderProps> = ({
   );
 
   return (
-    <header className={clsx(styles.header, 'fixed w-full')}>
+    <header
+      className={clsx(
+        styles.header,
+        'fixed w-full backdrop-blur-sm bg-white/90 dark:bg-black/90'
+      )}
+    >
       <nav className='mx-auto max-w-screen-2xl lg:px-8' aria-label='Top'>
         <div
           className={
-            'flex w-full items-center justify-between py-3 lg:border-none'
+            'flex w-full items-center justify-between pt-3 lg:py-3 lg:border-none'
           }
         >
           <div className='flex items-center w-full'>

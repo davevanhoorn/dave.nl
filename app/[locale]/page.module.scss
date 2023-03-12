@@ -4,24 +4,32 @@
   position: relative;
 }
 
+.heroImage {
+  height: 346px;
+  width: 328px;
+}
+
 .logos {
   align-items: center;
-  bottom: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  height: 120px;
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   justify-content: center;
-  left: 0;
-  position: absolute;
+  margin-top: 2rem;
+  text-align: center;
   width: 100%;
 }
 
 @mixin logo {
   flex-shrink: 0;
   height: auto;
-  mix-blend-mode: difference;
+  margin: 0 auto;
   position: relative;
+
+  @screen xl {
+    margin: initial;
+  }
 }
 
 @mixin fill {
@@ -31,7 +39,7 @@
 .logoSchiphol {
   @include logo;
 
-  width: 130px;
+  width: 100px;
 
   & path {
     @include fill;
@@ -42,7 +50,7 @@
   @include logo;
 
   top: -2px;
-  width: 110px;
+  width: 80px;
 
   & path {
     @include fill;
@@ -53,7 +61,7 @@
   @include logo;
 
   top: -2px;
-  width: 100px;
+  width: 70px;
 
   & path {
     @include fill;
@@ -64,7 +72,7 @@
   @include logo;
 
   top: -4px;
-  width: 80px;
+  width: 50px;
 
   & path:nth-child(1) {
     @include fill;
@@ -80,7 +88,7 @@
   @include logo;
 
   top: 1px;
-  width: 170px;
+  width: 140px;
 
   & path {
     @include fill;
@@ -91,7 +99,7 @@
   @include logo;
 
   top: -4px;
-  width: 170px;
+  width: 140px;
 
   & path {
     @include fill;
@@ -102,10 +110,71 @@
   @include logo;
 
   top: -5px;
-  width: 160px;
+  width: 130px;
 
   & path {
     @include fill;
+  }
+}
+
+@screen sm {
+  .logos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@screen xl {
+  .heroImage {
+    height: 566px;
+    width: 535px;
+  }
+
+  .logos {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4rem;
+    height: 120px;
+    justify-content: center;
+    left: 0;
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .logoSchiphol {
+    width: 130px;
+  }
+
+  .logoNoten {
+    top: -2px;
+    width: 110px;
+  }
+
+  .logoDept {
+    top: -2px;
+    width: 100px;
+  }
+
+  .logoEuroclear {
+    top: -4px;
+    width: 80px;
+  }
+
+  .logoCapgemini {
+    top: 1px;
+    width: 170px;
+  }
+
+  .logoExpatfile {
+    top: -4px;
+    width: 170px;
+  }
+
+  .logoBankai {
+    top: -5px;
+    width: 160px;
   }
 }
 
