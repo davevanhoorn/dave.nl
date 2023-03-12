@@ -33,12 +33,11 @@ const Header: FunctionComponent<HeaderProps> = ({
 
   return (
     <header className={clsx(styles.header, 'fixed w-full')}>
-      <nav className='mx-auto max-w-screen-2xl px-6 lg:px-8' aria-label='Top'>
+      <nav className='mx-auto max-w-screen-2xl lg:px-8' aria-label='Top'>
         <div
-          className={clsx(
-            styles.divider,
+          className={
             'flex w-full items-center justify-between py-3 lg:border-none'
-          )}
+          }
         >
           <div className='flex items-center w-full'>
             <Logo />
@@ -49,14 +48,14 @@ const Header: FunctionComponent<HeaderProps> = ({
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className='text-text relative text-lg font-semibold md:text-xl focus:rounded-md'
+                  className='text-text relative text-lg md:text-xl focus:rounded-md'
                 >
                   {link.value}
                 </HeaderLink>
               ))}
             </div>
           </div>
-          <div className='space-x-2 md:space-x-3 flex'>
+          <div className='space-x-2 md:space-x-3 flex mr-3 lg:mr-0'>
             <Button
               className={clsx(styles.lightbulbButton, 'hidden sm:inline-flex')}
               element={ButtonTypeEnum.A}
@@ -132,7 +131,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               title={link.title}
               aria-label={link.ariaLabel}
               className={
-                'text-text text-base xs:text-xl font-semibold p-2 whitespace-nowrap'
+                'text-text text-base xs:text-lg lg:text-xl p-2 whitespace-nowrap'
               }
             >
               {link.value}

@@ -38,7 +38,7 @@
       ],
       "callToAction": {
         "project": {
-          "value": "Start a project",
+          "value": "Start your project",
           "href": "#start-project",
           "title": "Start a project with Dave.nl",
           "ariaLabel": "Start a project with Dave.nl"

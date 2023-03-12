@@ -13,6 +13,9 @@ const nextConfig = {
     optimizeCss: true,
     appDir: true,
     legacyBrowsers: false,
+    fontLoaders: [
+      { loader: 'next/font/google', options: { subsets: ['latin'] } },
+    ],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'app/styles/scss')],

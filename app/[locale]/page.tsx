@@ -1,11 +1,21 @@
 import 'server-only';
 
+import Image from 'next/image';
 import { Metadata } from 'next/types';
 
 import clsx from 'clsx';
 
 import { i18n, LocaleParams } from '@/config/i18n';
 import { getDictionary } from '@/utils/get-dictionary';
+
+import heroImage from '@/public/images/dave-nl_hero.webp';
+import LogoBankai from '@/public/images/logos/dave-nl_logo-bankai.svg';
+import LogoCapgemini from '@/public/images/logos/dave-nl_logo-capgemini.svg';
+import LogoDept from '@/public/images/logos/dave-nl_logo-dept.svg';
+import LogoEuroclear from '@/public/images/logos/dave-nl_logo-euroclear.svg';
+import LogoExpatfile from '@/public/images/logos/dave-nl_logo-expatfile.svg';
+import LogoNoten from '@/public/images/logos/dave-nl_logo-noten-nl.svg';
+import LogoSchiphol from '@/public/images/logos/dave-nl_logo-schiphol.svg';
 
 import styles from './page.module.scss';
 
@@ -60,32 +70,70 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
           __html: JSON.stringify(dictionary.home.schema.localBusiness),
         }}
       />
-      <div className={clsx(styles.heroWrapper)}>
-        <div
-          className={clsx(
-            styles.hero,
-            'mx-auto max-w-3xl py-12 px-6 flex items-center flex-col justify-center'
-          )}
-        >
-          <h1 className='text-text text-5xl font-extrabold leading-tight mb-6 pt-12'>
-            Hallo! Dave hier. Ik maak graag razendsnelle websites.
+
+      <div
+        className={clsx(
+          styles.hero,
+          'mx-auto pt-8 lg:pt-12 px-4 lg:px-6 flex justify-center items-center flex-wrap'
+        )}
+      >
+        <div className='max-w-2xl lg:pr-10'>
+          <h1 className='text-text text-5xl lg:text-6xl font-extrabold leading-none lg:leading-tight mb-4 font-display'>
+            Ik maak{' '}
+            <span className={styles.fast}>
+              <span className={styles.fast1}>s</span>
+              <span className={styles.fast2}>n</span>
+              <span className={styles.fast3}>e</span>
+              <span className={styles.fast4}>l</span>
+              <span className={styles.fast5}>l</span>
+              <span className={styles.fast6}>e</span>
+            </span>{' '}
+            sites.
           </h1>
-          <p className='text-text text-xl leading-relaxed mb-6'>
-            Voor opdrachtgevers als Schiphol, Noten.nl, Formule1.nl, Euroclear,
-            Capgemini, DEPT en Expatfile maakte ik websites op maat. Soms zijn
-            dit korte trajecten (3 maanden), soms zijn dit lange trajecten (24
-            maanden).
+          <p className='text-text text-lg lg:text-2xl leading-relaxed mb-6 font-semibold'>
+            Voor o.a. Schiphol, Noten.nl, Formule1.nl, Euroclear, Capgemini,
+            DEPT en Expatfile.
           </p>
-          <p className='text-text text-xl leading-relaxed mb-6'>
-            Opdrachtgevers huren mij in om websites te maken die zijn gericht op
-            snelheid, gebruiksvriendelijkheid en niet onbelangrijk, optimale
-            conversie.
+          <p className='text-text text-lg lg:text-2xl leading-relaxed mb-6 font-semibold'>
+            Websites die ik maak zijn
+            {` `}
+            <span
+              className='relative text-text font-display font-normal'
+              style={{ color: '#e88860' }}
+            >
+              razendsnel
+            </span>
+            {` `}
+            en
+            {` `}
+            <span
+              className='relative text-text font-display font-normal'
+              style={{ color: '#e88860' }}
+            >
+              converteren.
+            </span>
           </p>
-          <p className='text-text text-xl leading-relaxed'>
-            Ben je op zoek naar een communicatieve, oplossinggerichte
-            ontwikkelaar? Neem contact op en laten we samen voor een optimaal
-            resultaat gaan!
+          <p className='text-text text-lg lg:text-2xl leading-relaxed font-semibold'>
+            Hulp nodig? Beschrijf jouw project zodat we samen kunnen werken aan
+            het perfecte resultaat.
           </p>
+        </div>
+        <Image
+          priority
+          src={heroImage}
+          alt='Dave.nl'
+          width={500}
+          height={531}
+          className='mt-10'
+        />
+        <div className={styles.logos}>
+          <LogoSchiphol className={styles.logoSchiphol} />
+          <LogoNoten className={styles.logoNoten} />
+          <LogoDept className={styles.logoDept} />
+          <LogoEuroclear className={styles.logoEuroclear} />
+          <LogoCapgemini className={styles.logoCapgemini} />
+          <LogoExpatfile className={styles.logoExpatfile} />
+          <LogoBankai className={styles.logoBankai} />
         </div>
       </div>
     </>

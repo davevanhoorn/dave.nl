@@ -54,7 +54,7 @@ const HeaderLink: FunctionComponent<
     >
       {isAbsoluteUrl ? (
         <a
-          className='flex justify-center items-center flex-col lg:pt-2'
+          className='flex justify-center items-center flex-col lg:pt-2 font-display'
           target='_blank'
           rel='noreferrer noopener'
           href={props.href as string}
@@ -67,7 +67,7 @@ const HeaderLink: FunctionComponent<
         </a>
       ) : (
         <Link
-          className='flex justify-center items-center flex-col lg:pt-2'
+          className='flex justify-center items-center flex-col lg:pt-2 font-display'
           href={props.href as {}}
           title={props.title}
           aria-label={props?.['aria-label'] ? props['aria-label'] : undefined}

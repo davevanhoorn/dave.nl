@@ -1,15 +1,176 @@
-.heroWrapper {
-  background: rgb(17 255 190);
-  background: linear-gradient(
-    194deg,
-    rgba(17 255 190 / var(--background-color-opacity)) 0%,
-    rgba(173 98 168 / var(--background-color-opacity)) 45%,
-    rgba(255 0 20 / 0%) 100%
-  );
-  z-index: -1;
-}
-
 .hero {
   min-height: calc(100vh - var(--menu-height));
+  padding-bottom: calc(6rem + 120px);
   position: relative;
+}
+
+.logos {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  height: 120px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin logo {
+  flex-shrink: 0;
+  height: auto;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+@mixin fill {
+  fill: rgba(var(--color-text) / 100%);
+}
+
+.logoSchiphol {
+  @include logo;
+
+  width: 130px;
+
+  & path {
+    @include fill;
+  }
+}
+
+.logoNoten {
+  @include logo;
+
+  top: -2px;
+  width: 110px;
+
+  & path {
+    @include fill;
+  }
+}
+
+.logoDept {
+  @include logo;
+
+  top: -2px;
+  width: 100px;
+
+  & path {
+    @include fill;
+  }
+}
+
+.logoEuroclear {
+  @include logo;
+
+  top: -4px;
+  width: 80px;
+
+  & path:nth-child(1) {
+    @include fill;
+  }
+
+  & path:nth-child(3),
+  & path:nth-child(2) {
+    fill: rgba(var(--color-primary) / 100%);
+  }
+}
+
+.logoCapgemini {
+  @include logo;
+
+  top: 1px;
+  width: 170px;
+
+  & path {
+    @include fill;
+  }
+}
+
+.logoExpatfile {
+  @include logo;
+
+  top: -4px;
+  width: 170px;
+
+  & path {
+    @include fill;
+  }
+}
+
+.logoBankai {
+  @include logo;
+
+  top: -5px;
+  width: 160px;
+
+  & path {
+    @include fill;
+  }
+}
+
+@mixin fast-animation {
+  animation: fast;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.605, 0.005, 0, 1.065);
+  display: inline-block;
+  transform-origin: center bottom;
+}
+
+@keyframes fast {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-5px) scaleY(0.7);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.12);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fast {
+  display: inline-block;
+}
+
+.fast1 {
+  @include fast-animation;
+}
+
+.fast2 {
+  @include fast-animation;
+
+  animation-delay: 50ms;
+}
+
+.fast3 {
+  @include fast-animation;
+
+  animation-delay: 100ms;
+}
+
+.fast4 {
+  @include fast-animation;
+
+  animation-delay: 150ms;
+}
+
+.fast5 {
+  @include fast-animation;
+
+  animation-delay: 200ms;
+}
+
+.fast6 {
+  @include fast-animation;
+
+  animation-delay: 250ms;
 }

@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { Mulish } from 'next/font/google';
+import localFont from 'next/font/local';
 import { cookies as NextCookies } from 'next/headers';
 import { Metadata } from 'next/types';
 
@@ -18,9 +19,15 @@ import '@/styles/globals.css';
 
 const mulish = Mulish({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800'],
   style: ['normal'],
   variable: '--font-mulish',
+});
+
+const salongbeach = localFont({
+  src: '../../public/fonts/SALongBeach.woff',
+  display: 'swap',
+  variable: '--font-sa-long-beach',
 });
 
 export async function generateStaticParams() {
@@ -67,7 +74,7 @@ export default async function Root({
   return (
     <html
       lang={locale === 'nl' ? 'nl-NL' : 'en-US'}
-      className={`${mulish.variable} ${useDarkMode} font-sans`}
+      className={`${mulish.variable} ${salongbeach.variable} ${useDarkMode} font-sans`}
     >
       <head>
         <meta httpEquiv='content-language' content={locale} />
@@ -90,5 +97,5 @@ export default async function Root({
   );
 }
 
-// export const dynamic = 'force-static';
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
+// export const dynamic = 'force-dynamic';
