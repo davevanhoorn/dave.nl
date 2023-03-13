@@ -5,16 +5,12 @@ import { Metadata } from 'next/types';
 
 import clsx from 'clsx';
 
+import ButtonStartProject from '@/components/button/button-start-project';
 import { i18n, LocaleParams } from '@/config/i18n';
 import { getDictionary } from '@/utils/get-dictionary';
+import Logos from './components/logos/logos';
 
 import heroImage from '@/public/images/dave-nl_hero.webp';
-import LogoBankai from '@/public/images/logos/dave-nl_logo-bankai.svg';
-import LogoCapgemini from '@/public/images/logos/dave-nl_logo-capgemini.svg';
-import LogoDept from '@/public/images/logos/dave-nl_logo-dept.svg';
-import LogoExpatfile from '@/public/images/logos/dave-nl_logo-expatfile.svg';
-import LogoNoten from '@/public/images/logos/dave-nl_logo-noten-nl.svg';
-import LogoSchiphol from '@/public/images/logos/dave-nl_logo-schiphol.svg';
 
 import styles from './page.module.scss';
 
@@ -77,7 +73,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
         )}
       >
         <div className='max-w-2xl lg:pr-10'>
-          <h1 className='text-text text-5xl lg:text-6xl font-extrabold leading-none lg:leading-tight mb-4 font-display'>
+          <h1 className='text-secondary text-5xl lg:text-6xl font-extrabold leading-none lg:leading-tight mb-4 font-display'>
             Ik maak{' '}
             <span className={styles.fast}>
               <span className={styles.fast1}>s</span>
@@ -89,33 +85,31 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
             </span>{' '}
             sites.
           </h1>
-          <p className='text-text text-lg lg:text-2xl leading-relaxed mb-6 font-semibold'>
+          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed mb-6 font-semibold'>
             Voor o.a. Schiphol, Noten.nl, Formule1.nl, Euroclear, Capgemini,
             DEPT en Expatfile.
           </p>
-          <p className='text-text text-lg lg:text-2xl leading-relaxed mb-6 font-semibold'>
+          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed mb-6 font-semibold'>
             Websites die ik maak zijn
             {` `}
-            <span
-              className='relative text-text font-display font-normal'
-              style={{ color: '#849862' }}
-            >
+            <span className='relative text-secondary font-display font-normal'>
               razendsnel
             </span>
             {` `}
             en
             {` `}
-            <span
-              className='relative text-text font-display font-normal'
-              style={{ color: '#849862' }}
-            >
+            <span className='relative text-secondary font-display font-normal'>
               converteren.
             </span>
           </p>
-          <p className='text-text text-lg lg:text-2xl leading-relaxed font-semibold'>
+          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed font-semibold mb-8'>
             Hulp nodig? Beschrijf jouw project zodat we samen kunnen werken aan
             het perfecte resultaat.
           </p>
+          <ButtonStartProject
+            dictionary={dictionary}
+            className='lg:text-xl lg:py-3 lg:px-5'
+          />
         </div>
         <Image
           priority
@@ -123,14 +117,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
           alt='Dave.nl'
           className={clsx(styles.heroImage, `mt-6 lg:mt-0`)}
         />
-        <div className={styles.logos}>
-          <LogoSchiphol className={styles.logoSchiphol} />
-          <LogoNoten className={styles.logoNoten} />
-          <LogoDept className={styles.logoDept} />
-          <LogoCapgemini className={styles.logoCapgemini} />
-          <LogoExpatfile className={styles.logoExpatfile} />
-          <LogoBankai className={styles.logoBankai} />
-        </div>
+        <Logos />
       </div>
     </>
   );

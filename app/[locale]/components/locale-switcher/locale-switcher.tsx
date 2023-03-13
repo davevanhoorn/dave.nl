@@ -61,7 +61,7 @@ const LocaleSwitcher: FunctionComponent<PropsWithChildren> = ({ children }) => {
           sideOffset={10}
           className={clsx(
             styles.localeSwitcherContent,
-            'rounded-md p-1 sm:p-2 bg-white dark:bg-black text-text dark:border-white dark:border z-10'
+            'rounded-md p-1 sm:p-2 bg-white dark:bg-black text-secondary dark:border-white dark:border z-10'
           )}
         >
           <DropdownMenu.Arrow />

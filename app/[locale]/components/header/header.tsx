@@ -7,8 +7,8 @@ import { RiWhatsappFill } from 'react-icons/ri';
 
 import { Dictionary, Locale } from '@/config/i18n';
 
-import LightbulbIcon from '@/assets/images/font-awesome-5_solid-lightbulb.svg';
 import Button, { ButtonTypeEnum } from '@/components/button/button';
+import ButtonStartProject from '@/components/button/button-start-project';
 import LocaleSwitcher from '@/components/locale-switcher/locale-switcher';
 import LocaleSwitcherFlag from '@/components/locale-switcher/locale-switcher-flag';
 import Logo from '@/components/logo/logo';
@@ -32,12 +32,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   );
 
   return (
-    <header
-      className={clsx(
-        styles.header,
-        'fixed w-full backdrop-blur-sm bg-white/90 dark:bg-black/90'
-      )}
-    >
+    <header className={clsx(styles.header, 'fixed w-full backdrop-blur-sm')}>
       <nav className='mx-auto max-w-screen-2xl lg:px-8' aria-label='Top'>
         <div
           className={
@@ -53,7 +48,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                   href={link.href}
                   title={link.title}
                   aria-label={link.ariaLabel}
-                  className='text-text relative text-lg md:text-xl focus:rounded-md'
+                  className='text-secondary relative text-lg md:text-xl focus:rounded-md'
                 >
                   {link.value}
                 </HeaderLink>
@@ -61,34 +56,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             </div>
           </div>
           <div className='space-x-2 md:space-x-3 flex mr-3 lg:mr-0'>
-            <Button
-              className={clsx(styles.lightbulbButton, 'hidden sm:inline-flex')}
-              element={ButtonTypeEnum.A}
-              href={dictionary.global.header.callToAction.project.href}
-              title={dictionary.global.header.callToAction.project.title}
-              aria-label={
-                dictionary.global.header.callToAction.project.ariaLabel
-              }
-              icon={
-                <span className={clsx(styles.lightbulbWrapper, 'relative')}>
-                  <LightbulbIcon
-                    data-id='lightbulb-icon'
-                    className='mr-1 xs:mr-2 text-base w-4 h-4 xs:w-5 xs:h-5'
-                  />
-                  <span className={styles.lightbulbRays}>
-                    <span className={clsx(styles.lightbulbRay1)} />
-                    <span className={clsx(styles.lightbulbRay2)} />
-                    <span className={clsx(styles.lightbulbRay3)} />
-                    <span className={clsx(styles.lightbulbRay4)} />
-                    <span className={clsx(styles.lightbulbRay5)} />
-                    <span className={clsx(styles.lightbulbRay6)} />
-                    <span className={clsx(styles.lightbulbRay7)} />
-                  </span>
-                </span>
-              }
-            >
-              {dictionary.global.header.callToAction.project.value}
-            </Button>
+            <ButtonStartProject dictionary={dictionary} />
             <Button
               className={clsx(styles.whatsappButton)}
               element={ButtonTypeEnum.A}
@@ -114,7 +82,9 @@ const Header: FunctionComponent<HeaderProps> = ({
                 </span>
               }
             >
-              {dictionary.global.header.callToAction.whatsapp.value}
+              <span className={clsx(styles.whatsappText, 'relative')}>
+                {dictionary.global.header.callToAction.whatsapp.value}
+              </span>
             </Button>
             <LocaleSwitcher>
               <Button
@@ -136,7 +106,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               title={link.title}
               aria-label={link.ariaLabel}
               className={
-                'text-text text-base xs:text-lg lg:text-xl p-2 whitespace-nowrap'
+                'text-secondary text-base xs:text-lg lg:text-xl p-2 whitespace-nowrap'
               }
             >
               {link.value}

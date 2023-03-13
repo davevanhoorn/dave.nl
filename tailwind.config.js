@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
-        text: 'rgb(var(--color-text) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
       },
     },
     screens: {

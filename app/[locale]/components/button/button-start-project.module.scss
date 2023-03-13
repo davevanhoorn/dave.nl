@@ -1,0 +1,313 @@
+@import 'mixins';
+
+@keyframes lightbulb-button-hover {
+  0% {
+    transform: translateY(0) scaleY(1) rotate(0);
+  }
+
+  25% {
+    transform: translateY(1px);
+  }
+
+  50% {
+    transform: translateY(-2px) scaleY(1.1);
+  }
+
+  100% {
+    transform: translateY(0) scaleY(1) rotate(0);
+  }
+}
+
+@keyframes lightbulb-wrapper-hover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes lightbulb-rays-hover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lightbulb-ray-1-hover {
+  0% {
+    transform: rotate(-15deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(-15deg) scaleX(1.2);
+  }
+
+  100% {
+    transform: rotate(-15deg) scaleX(0.8);
+  }
+}
+
+@keyframes lightbulb-ray-2-hover {
+  0% {
+    transform: rotate(2deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(2deg) scaleX(1.5);
+  }
+
+  100% {
+    transform: rotate(2deg) scaleX(1);
+  }
+}
+
+@keyframes lightbulb-ray-3-hover {
+  0% {
+    transform: rotate(40deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(40deg) scaleX(1.2);
+  }
+
+  100% {
+    transform: rotate(40deg) scaleX(0.8);
+  }
+}
+
+@keyframes lightbulb-ray-4-hover {
+  0% {
+    transform: rotate(90deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(90deg) scaleX(1.5);
+  }
+
+  100% {
+    transform: rotate(90deg) scaleX(1);
+  }
+}
+
+@keyframes lightbulb-ray-5-hover {
+  0% {
+    transform: rotate(140deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(140deg) scaleX(1.2);
+  }
+
+  100% {
+    transform: rotate(140deg) scaleX(0.8);
+  }
+}
+
+@keyframes lightbulb-ray-6-hover {
+  0% {
+    transform: rotate(178deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(178deg) scaleX(1.5);
+  }
+
+  100% {
+    transform: rotate(178deg) scaleX(1);
+  }
+}
+
+@keyframes lightbulb-ray-7-hover {
+  0% {
+    transform: rotate(198deg) scaleX(0);
+  }
+
+  20% {
+    transform: rotate(198deg) scaleX(1.2);
+  }
+
+  100% {
+    transform: rotate(198deg) scaleX(0.8);
+  }
+}
+
+@mixin lightbulb-ray {
+  @include transition-opacity-with-ease;
+
+  background-color: currentcolor;
+  border-radius: 10px;
+  height: 2px;
+  position: absolute;
+  transform: scaleX(0);
+  transform-box: border-box;
+  transform-origin: center right;
+  width: 4px;
+}
+
+.lightbulbButton {
+  .lightbulbRays {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+  }
+
+  .lightbulbRay1 {
+    @include lightbulb-ray;
+
+    background-color: #fa3e3e;
+    left: -1.5px;
+    top: 11px;
+  }
+
+  .lightbulbRay2 {
+    @include lightbulb-ray;
+
+    left: -3px;
+    top: 5px;
+  }
+
+  .lightbulbRay3 {
+    @include lightbulb-ray;
+
+    background-color: #fa3e3e;
+    left: -1px;
+    top: 0;
+  }
+
+  .lightbulbRay4 {
+    @include lightbulb-ray;
+
+    left: 5.5px;
+    top: -3px;
+  }
+
+  .lightbulbRay5 {
+    @include lightbulb-ray;
+
+    background-color: #fa3e3e;
+    left: 12px;
+    top: 0;
+  }
+
+  .lightbulbRay6 {
+    @include lightbulb-ray;
+
+    left: 14.5px;
+    top: 5px;
+  }
+
+  .lightbulbRay7 {
+    @include lightbulb-ray;
+
+    background-color: #fa3e3e;
+    left: 12.5px;
+    top: 11px;
+  }
+
+  [data-id='lightbulb-icon'] {
+    @include transition-transform-with-ease;
+
+    transform-origin: center bottom;
+  }
+
+  &:hover {
+    [data-id='lightbulb-icon'] {
+      animation: lightbulb-button-hover;
+      animation-delay: 100ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbWrapper {
+      animation: lightbulb-wrapper-hover;
+      animation-delay: 300ms;
+      animation-duration: 3000ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+
+    .lightbulbRays {
+      animation: lightbulb-rays-hover;
+      animation-delay: 50ms;
+      animation-duration: 1400ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+
+    .lightbulbRay1 {
+      animation: lightbulb-ray-1-hover;
+      animation-delay: 240ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbRay2 {
+      animation: lightbulb-ray-2-hover;
+      animation-delay: 280ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbRay3 {
+      animation: lightbulb-ray-3-hover;
+      animation-delay: 320ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbRay4 {
+      animation: lightbulb-ray-4-hover;
+      animation-delay: 360ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbRay5 {
+      animation: lightbulb-ray-5-hover;
+      animation-delay: 400ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbRay6 {
+      animation: lightbulb-ray-6-hover;
+      animation-delay: 440ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    .lightbulbRay7 {
+      animation: lightbulb-ray-7-hover;
+      animation-delay: 480ms;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+.text {
+  top: -0.05rem;
+}

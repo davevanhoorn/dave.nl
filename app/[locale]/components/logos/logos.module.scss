@@ -1,0 +1,281 @@
+.logos {
+  align-items: center;
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+@mixin logo {
+  flex-shrink: 0;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+
+  @screen xl {
+    margin: initial;
+  }
+}
+
+.logoSchiphol {
+  @include logo;
+
+  width: 100px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoNoten {
+  @include logo;
+
+  top: -2px;
+  width: 80px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoDept {
+  @include logo;
+
+  top: -2px;
+  width: 70px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoEuroclear {
+  @include logo;
+
+  top: -12px;
+  width: 72px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoOrangeTribes {
+  @include logo;
+
+  top: -11px;
+  width: 72px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoCapgemini {
+  @include logo;
+
+  top: 1px;
+  width: 140px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoExpatfile {
+  @include logo;
+
+  top: -4px;
+  width: 140px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+.logoBankai {
+  @include logo;
+
+  top: -5px;
+  width: 130px;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+@screen sm {
+  .logos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@screen xl {
+  .heroImage {
+    height: 566px;
+    width: 535px;
+  }
+
+  .logos {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4rem;
+    height: 120px;
+    justify-content: center;
+    left: 0;
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .logoSchiphol {
+    width: 130px;
+  }
+
+  .logoNoten {
+    top: -2px;
+    width: 110px;
+  }
+
+  .logoDept {
+    top: -2px;
+    width: 100px;
+  }
+
+  .logoEuroclear {
+    top: -4px;
+    width: 85px;
+  }
+
+  .logoCapgemini {
+    top: 1px;
+    width: 170px;
+  }
+
+  .logoExpatfile {
+    top: -4px;
+    width: 170px;
+  }
+
+  .logoBankai {
+    top: -5px;
+    width: 160px;
+  }
+
+  .logoOrangeTribes {
+    top: -3px;
+    width: 80px;
+  }
+}
+
+@keyframes fade-in-animation {
+  0% {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+
+  100% {
+    fill: rgba(var(--color-secondary) / 100%);
+  }
+}
+
+@keyframes fade-out-animation {
+  0% {
+    fill: rgba(var(--color-secondary) / 100%);
+  }
+
+  100% {
+    fill: rgba(var(--color-secondary) / 20%);
+  }
+}
+
+@mixin fade-in {
+  animation: fade-in-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@mixin fade-out {
+  animation: fade-out-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.fadeIn1 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 50ms;
+  }
+}
+
+.fadeOut1 {
+  & path {
+    @include fade-out;
+
+    animation-delay: 50ms;
+  }
+}
+
+.fadeIn2 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 100ms;
+  }
+}
+
+.fadeIn3 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 150ms;
+  }
+}
+
+.fadeIn4 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 200ms;
+  }
+}
+
+.fadeIn5 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 250ms;
+  }
+}
+
+.fadeIn6 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 300ms;
+  }
+}
+
+.fadeIn7 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 350ms;
+  }
+}
+
+.fadeIn8 {
+  & path {
+    @include fade-in;
+
+    animation-delay: 400ms;
+  }
+}
