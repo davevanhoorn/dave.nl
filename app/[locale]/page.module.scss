@@ -74,3 +74,10 @@
 
   animation-delay: 250ms;
 }
+
+@screen xl {
+  .heroImage {
+    height: 506px;
+    width: 475px;
+  }
+}
