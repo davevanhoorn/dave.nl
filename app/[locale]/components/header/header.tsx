@@ -33,7 +33,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 
   return (
     <header
-      className={clsx(styles.header, 'fixed w-full backdrop-blur-sm z-10')}
+      className={clsx(styles.header, 'fixed w-full backdrop-blur-sm z-20')}
     >
       <nav className='mx-auto max-w-screen-2xl lg:px-8' aria-label='Top'>
         <div
