@@ -58,7 +58,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             </div>
           </div>
           <div className='space-x-2 md:space-x-3 flex mr-3 lg:mr-0'>
-            <ButtonStartProject dictionary={dictionary} />
+            <ButtonStartProject dictionary={dictionary} className="hidden sm:inline-flex"/>
             <Button
               className={clsx(styles.whatsappButton)}
               element={ButtonTypeEnum.A}

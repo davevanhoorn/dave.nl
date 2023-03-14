@@ -47,7 +47,7 @@ const Logos: FunctionComponent = () => {
   }, [windowAtTop]);
 
   return (
-    <div className={styles.logos}>
+    <div className={clsx(styles.logos, 'mt-16')}>
       <LogoSchiphol
         className={clsx(styles.logoSchiphol, { [styles.fadeIn1]: fadeIn })}
       />

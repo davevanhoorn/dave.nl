@@ -21,7 +21,7 @@ const ButtonStartProject: FunctionComponent<ButtonStartProjectProps> = ({
   dictionary,
 }) => (
   <Button
-    className={clsx(styles.lightbulbButton, 'hidden sm:inline-flex', className)}
+    className={clsx(styles.lightbulbButton, className)}
     element={ButtonTypeEnum.A}
     href={dictionary.global.header.callToAction.project.href}
     title={dictionary.global.header.callToAction.project.title}

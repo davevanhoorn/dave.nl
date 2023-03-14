@@ -69,12 +69,12 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
       <div
         className={clsx(
           styles.hero,
-          'mx-auto pt-4 lg:pt-12 px-4 lg:px-6 flex justify-center items-center flex-wrap'
+          'mx-auto pt-6 lg:pt-12 px-4 lg:px-6 flex justify-center items-center flex-wrap'
         )}
       >
         <div className='max-w-2xl lg:pr-10'>
-          <h1 className='text-secondary text-5xl lg:text-6xl font-extrabold leading-none lg:leading-tight mb-4 font-display'>
-            Ik maak{' '}
+          <h1 className='text-secondary text-3xl xs:text-4xl lg:text-6xl font-extrabold leading-none lg:leading-tight mb-4 font-display'>
+            Maakt{' '}
             <span className={styles.fast}>
               <span className={styles.fast1}>s</span>
               <span className={styles.fast2}>n</span>
@@ -102,20 +102,20 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
               converteren.
             </span>
           </p>
-          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed font-semibold mb-8'>
+          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed font-semibold mb-6 md:mb-10'>
             Hulp nodig? Beschrijf jouw project zodat we samen kunnen werken aan
             het perfecte resultaat.
           </p>
           <ButtonStartProject
             dictionary={dictionary}
-            className='lg:text-xl lg:py-3 lg:px-5'
+            className='lg:text-xl lg:py-3 lg:px-5 inline-flex'
           />
         </div>
         <Image
           priority
           src={heroImage}
           alt='Dave.nl'
-          className={clsx(styles.heroImage, `mt-6 lg:mt-0`)}
+          className={clsx(styles.heroImage, `mt-8 lg:mt-0`)}
         />
         <Logos />
       </div>
