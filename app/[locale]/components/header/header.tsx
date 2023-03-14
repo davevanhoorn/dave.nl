@@ -100,7 +100,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             <ThemeSwitcher />
           </div>
         </div>
-        <div className='flex justify-center xs:gap-x-3 py-1 xs:py-2 lg:hidden flex-nowrap'>
+        <div className='flex justify-center xs:gap-x-3 pt-2 pb-1 xs:py-2 lg:hidden flex-nowrap'>
           {links.map((link, key) => (
             <HeaderLink
               key={`mobile-navigation-link-item-${key}`}

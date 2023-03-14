@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --menu-height: 115px;
+    --menu-height: 107px;
     --color-primary: 255 255 255;
     --color-secondary: 0 0 0;
     --color-tertiary: 250 252 253;
@@ -21,7 +21,7 @@
 
 @screen xs {
   :root {
-    --menu-height: 147px;
+    --menu-height: 135px;
   }
 }
 

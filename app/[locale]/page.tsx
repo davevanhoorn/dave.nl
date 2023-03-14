@@ -73,7 +73,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
         )}
       >
         <div className='max-w-2xl lg:pr-10'>
-          <h1 className='text-secondary text-3xl xs:text-4xl lg:text-6xl font-extrabold leading-none lg:leading-tight mb-4 font-display'>
+          <h1 className='text-secondary text-3xl xs:text-4xl lg:text-6xl leading-none lg:leading-tight mb-4 font-display'>
             Maakt{' '}
             <span className={styles.fast}>
               <span className={styles.fast1}>s</span>
@@ -90,13 +90,7 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
             DEPT en Expatfile.
           </p>
           <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed mb-6 font-semibold'>
-            Websites die ik maak zijn
-            {` `}
-            <span className='relative text-secondary font-display font-normal'>
-              razendsnel
-            </span>
-            {` `}
-            en
+            Websites die ik maak
             {` `}
             <span className='relative text-secondary font-display font-normal'>
               converteren.
