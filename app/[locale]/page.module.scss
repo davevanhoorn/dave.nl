@@ -43,36 +43,38 @@
 
 .fast1 {
   @include fast-animation;
+
+  animation-delay: 250ms;
 }
 
 .fast2 {
   @include fast-animation;
 
-  animation-delay: 50ms;
+  animation-delay: 300ms;
 }
 
 .fast3 {
   @include fast-animation;
 
-  animation-delay: 100ms;
+  animation-delay: 350ms;
 }
 
 .fast4 {
   @include fast-animation;
 
-  animation-delay: 150ms;
+  animation-delay: 400ms;
 }
 
 .fast5 {
   @include fast-animation;
 
-  animation-delay: 200ms;
+  animation-delay: 450ms;
 }
 
 .fast6 {
   @include fast-animation;
 
-  animation-delay: 250ms;
+  animation-delay: 500ms;
 }
 
 @screen xl {
