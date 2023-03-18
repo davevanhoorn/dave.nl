@@ -48,9 +48,11 @@ const Logos: FunctionComponent = () => {
 
   return (
     <div className={clsx(styles.logos, 'mt-16')}>
-      <LogoSchiphol
-        className={clsx(styles.logoSchiphol, { [styles.fadeIn1]: fadeIn })}
-      />
+      <div ref={logoRef}>
+        <LogoSchiphol
+          className={clsx(styles.logoSchiphol, { [styles.fadeIn1]: fadeIn })}
+        />
+      </div>
       <LogoNoten
         className={clsx(styles.logoNoten, { [styles.fadeIn2]: fadeIn })}
       />
@@ -60,11 +62,11 @@ const Logos: FunctionComponent = () => {
       <LogoCapgemini
         className={clsx(styles.logoCapgemini, { [styles.fadeIn4]: fadeIn })}
       />
-      <div ref={logoRef}>
-        <LogoExpatfile
-          className={clsx(styles.logoExpatfile, { [styles.fadeIn5]: fadeIn })}
-        />
-      </div>
+
+      <LogoExpatfile
+        className={clsx(styles.logoExpatfile, { [styles.fadeIn5]: fadeIn })}
+      />
+
       <LogoBankai
         className={clsx(styles.logoBankai, { [styles.fadeIn6]: fadeIn })}
       />

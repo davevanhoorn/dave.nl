@@ -77,6 +77,172 @@
   animation-delay: 500ms;
 }
 
+@keyframes blob-html-fly {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-4deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@mixin blob {
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.695, 0, 0.065, 0.995);
+  height: auto;
+  position: absolute;
+
+  & path {
+    fill: rgba(var(--color-secondary) / 100%);
+  }
+}
+
+.blobHtml {
+  @include blob;
+
+  animation-name: blob-html-fly;
+  left: 45px;
+  top: 17px;
+  transform-origin: right bottom;
+  width: 50px;
+}
+
+@keyframes blob-react-fly {
+  0% {
+    transform: rotate(-14deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(-14deg) scale(1);
+  }
+}
+
+.blobReact {
+  @include blob;
+
+  animation-delay: 1s;
+  animation-name: blob-react-fly;
+  left: -4px;
+  top: 53px;
+  transform: rotate(-14deg);
+  transform-origin: right bottom;
+  width: 60px;
+}
+
+@keyframes blob-javascript-fly {
+  0% {
+    transform: rotate(-19deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-25deg) scale(0.9);
+  }
+
+  100% {
+    transform: rotate(-19deg) scale(1);
+  }
+}
+
+.blobJavaScript {
+  @include blob;
+
+  animation-delay: 2s;
+  animation-name: blob-javascript-fly;
+  bottom: 10px;
+  left: -20px;
+  transform: rotate(-19deg);
+  transform-origin: right top;
+  width: 60px;
+}
+
+@keyframes blob-css-fly {
+  0% {
+    transform: rotate(14deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(18deg) scale(0.9);
+  }
+
+  100% {
+    transform: rotate(14deg) scale(1);
+  }
+}
+
+.blobCss {
+  @include blob;
+
+  animation-delay: 3s;
+  animation-name: blob-css-fly;
+  right: -4px;
+  top: 80px;
+  transform: rotate(14deg);
+  transform-origin: left bottom;
+  width: 50px;
+}
+
+@screen lg {
+  .blobHtml {
+    left: 15px;
+    top: 10px;
+    width: 50px;
+  }
+
+  .blobReact {
+    left: -70px;
+    top: 120px;
+    width: 70px;
+  }
+
+  .blobJavaScript {
+    bottom: 0;
+    left: -20px;
+    width: 70px;
+  }
+
+  .blobCss {
+    right: -32px;
+    top: 120px;
+    width: 50px;
+  }
+}
+
+@screen xl {
+  .blobHtml {
+    left: 75px;
+    top: 10px;
+    width: 45px;
+  }
+
+  .blobReact {
+    left: -30px;
+    top: 120px;
+    width: 65px;
+  }
+
+  .blobJavaScript {
+    left: -10px;
+    top: 430px;
+    width: 55px;
+  }
+
+  .blobCss {
+    right: 12px;
+    top: 120px;
+    width: 45px;
+  }
+}
+
 @screen xl {
   .heroImage {
     height: 506px;

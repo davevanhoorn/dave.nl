@@ -3,19 +3,12 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compiler: {
-    reactRemoveProperties: true,
-    // removeConsole: true,
-  },
   trailingSlash: false,
   reactStrictMode: true,
   experimental: {
     optimizeCss: true,
     appDir: true,
     legacyBrowsers: false,
-    fontLoaders: [
-      { loader: 'next/font/google', options: { subsets: ['latin'] } },
-    ],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'app/styles/scss')],
