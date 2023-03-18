@@ -41,7 +41,7 @@ specifiers:
   stylelint-webpack-plugin: ^4.1.0
   tailwindcss: ^3.2.7
   typescript: 5.0.2
-  webpack: 5.76.1
+  webpack: 5.76.2
 
 dependencies:
   '@formatjs/intl-localematcher': 0.2.32
@@ -83,10 +83,10 @@ devDependencies:
   stylelint-config-css-modules: 4.2.0_stylelint@15.3.0
   stylelint-config-prettier-scss: 0.0.1_stylelint@15.3.0
   stylelint-config-standard-scss: 7.0.1_xd434hbhlikjpobg3rgppuzh3e
-  stylelint-webpack-plugin: 4.1.0_riryrimozgtu7pkfk7adzix76i
+  stylelint-webpack-plugin: 4.1.0_csnjbyhpnhchs7jbhy7uirxz6i
   tailwindcss: 3.2.7_postcss@8.4.21
   typescript: 5.0.2
-  webpack: 5.76.1
+  webpack: 5.76.2
 
 packages:
 
@@ -7162,7 +7162,7 @@ packages:
       stylelint: 15.3.0
     dev: true
 
-  /stylelint-webpack-plugin/4.1.0_riryrimozgtu7pkfk7adzix76i:
+  /stylelint-webpack-plugin/4.1.0_csnjbyhpnhchs7jbhy7uirxz6i:
     resolution: {integrity: sha512-Vm8H2uYflIiF9m4BjSBEn9cpqY2zZ0wDHgBxOVM6aWFDd0FvfNoymrSYYOIG5/ZST0NO/0NCXPWcpRVpv79Uew==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -7175,7 +7175,7 @@ packages:
       normalize-path: 3.0.0
       schema-utils: 4.0.0
       stylelint: 15.3.0
-      webpack: 5.76.1
+      webpack: 5.76.2
     dev: true
 
   /stylelint/15.3.0:
@@ -7361,7 +7361,7 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.1
 
-  /terser-webpack-plugin/5.3.6_webpack@5.76.1:
+  /terser-webpack-plugin/5.3.6_webpack@5.76.2:
     resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -7382,7 +7382,7 @@ packages:
       schema-utils: 3.1.1
       serialize-javascript: 6.0.1
       terser: 5.16.3
-      webpack: 5.76.1
+      webpack: 5.76.2
     dev: true
 
   /terser/5.16.3:
@@ -7704,8 +7704,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /webpack/5.76.1:
-    resolution: {integrity: sha512-4+YIK4Abzv8172/SGqObnUjaIHjLEuUasz9EwQj/9xmPPkYJy2Mh03Q/lJfSD3YLzbxy5FeTq5Uw0323Oh6SJQ==}
+  /webpack/5.76.2:
+    resolution: {integrity: sha512-Th05ggRm23rVzEOlX8y67NkYCHa9nTNcwHPBhdg+lKG+mtiW7XgggjAeeLnADAe7mLjJ6LUNfgHAuRRh+Z6J7w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -7735,7 +7735,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.6_webpack@5.76.1
+      terser-webpack-plugin: 5.3.6_webpack@5.76.2
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
