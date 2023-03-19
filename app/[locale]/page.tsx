@@ -9,6 +9,7 @@ import ButtonStartProject from '@/components/button/button-start-project';
 import { i18n, LocaleParams } from '@/config/i18n';
 import { getDictionary } from '@/utils/get-dictionary';
 import Logos from './components/logos/logos';
+import ScrollDown from './components/scroll-down/scroll-down';
 
 import heroImage from '@/public/images/dave-nl_hero.webp';
 
@@ -65,62 +66,87 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
           __html: JSON.stringify(dictionary.home.schema.localBusiness),
         }}
       />
-
       <div
         className={clsx(
           styles.hero,
-          'mx-auto pt-6 lg:pt-12 px-4 lg:px-6 flex justify-center items-center flex-wrap'
+          'mx-auto pt-10 lg:pt-24 px-4 lg:px-6 flex justify-center items-center flex-wrap'
         )}
       >
         <div className='max-w-2xl lg:pr-10'>
           <h1 className='text-secondary text-3xl xs:text-4xl lg:text-6xl leading-none lg:leading-tight mb-4 font-display'>
-            Maakt{' '}
-            <span className={styles.fast}>
-              <span className={styles.fast1}>s</span>
-              <span className={styles.fast2}>n</span>
-              <span className={styles.fast3}>e</span>
-              <span className={styles.fast4}>l</span>
-              <span className={styles.fast5}>l</span>
-              <span className={styles.fast6}>e</span>
-            </span>{' '}
-            sites.
+            {locale === 'nl' ? (
+              <>
+                Maakt{' '}
+                <span className={styles.fast}>
+                  <span className={styles.fast1}>s</span>
+                  <span className={styles.fast2}>n</span>
+                  <span className={styles.fast3}>e</span>
+                  <span className={styles.fast4}>l</span>
+                  <span className={styles.fast5}>l</span>
+                  <span className={styles.fast6}>e</span>
+                </span>{' '}
+                sites.
+              </>
+            ) : (
+              <>
+                I build{` `}
+                <span className={styles.fast}>
+                  <span className={clsx(styles.fast1, styles.fast1Margin)}>
+                    f
+                  </span>
+                  <span className={styles.fast2}>a</span>
+                  <span className={styles.fast3}>s</span>
+                  <span className={styles.fast4}>t</span>
+                </span>{' '}
+                websites.
+              </>
+            )}
           </h1>
           <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed mb-6 font-semibold'>
             Voor o.a. Schiphol, Noten.nl, Formule1.nl, Euroclear, Capgemini,
             DEPT en Expatfile.
           </p>
-          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed mb-6 font-semibold'>
-            Websites die ik maak zijn gericht op
-            {` `}
-            <span
-              className='relative text-secondary font-display font-normal'
-              style={{ color: '#ff3f34' }}
-            >
-              conversie.
-            </span>
-          </p>
-          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed font-semibold mb-6 md:mb-10'>
+          <p className='text-secondary text-lg lg:text-2xl lg:leading-relaxed font-semibold mb-6 lg:mb-10'>
             Hulp nodig? Beschrijf jouw project zodat we samen kunnen werken aan
             het
             {` `}
-            <span
-              className='relative text-secondary font-display font-normal'
-              style={{ color: '#ff3f34' }}
-            >
+            <span className='relative text-quaternary font-display font-normal'>
               perfecte resultaat.
             </span>
           </p>
-          <ButtonStartProject
-            dictionary={dictionary}
-            className='lg:text-xl lg:py-3 lg:px-5 inline-flex'
-          />
+
+          <div className='relative inline-block'>
+            <ButtonStartProject
+              dictionary={dictionary}
+              className='lg:text-xl lg:py-3 lg:px-5 inline-flex'
+            />
+            <svg
+              className={clsx(styles.arrow, 'hidden lg:block')}
+              version='1.1'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+              x='0px'
+              y='0px'
+              viewBox='0 0 81.3 60.2'
+              xmlSpace='preserve'
+            >
+              <g>
+                <path
+                  d='M65.3,0c5,4.6,9.6,9.9,12.5,16.1c3,6.2,4.3,13.3,2.9,20.1c-1.3,6.1-5,11.2-9.9,15c-5.1,3.9-11.1,6.2-17.4,7.2
+		c-7.6,1.2-15.2,0.7-22.8-0.2c-7.8-1-15.6-2.3-23.5-2.6c-1.2,0-2.3,0-3.5,0l8,3.5c0.8,0.3,0.1,1.5-0.7,1.2L0.3,55.5
+		c-0.6-0.3-0.3-1.1,0.2-1.2L9.4,51c0.8-0.3,1.2,1,0.4,1.3L5,54.2c6.5,0,13,0.9,19.4,1.8c7.5,1,15,2,22.6,1.7
+		c6.6-0.3,13.3-1.7,19.1-4.9c5.1-2.8,9.5-7,11.9-12.3c2.8-6.2,2.6-13.4,0.4-19.7C74.6,10.3,69,5.7,64.4,0.9L65.3,0z'
+                />
+              </g>
+            </svg>
+          </div>
         </div>
         <div className='relative'>
           <Image
             priority
             src={heroImage}
             alt='Dave.nl'
-            className={clsx(styles.heroImage, `mt-8 lg:mt-0`)}
+            className={clsx(styles.heroImage, `mt-20 lg:mt-0`)}
           />
           <svg
             className={styles.blobReact}
@@ -381,9 +407,16 @@ export default async function IndexPage({ params }: { params: LocaleParams }) {
             </g>
           </svg>
         </div>
-
         <Logos />
       </div>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+        <path
+          fill='#e8573f'
+          fill-opacity='1'
+          d='M0,64L48,64C96,64,192,64,288,90.7C384,117,480,171,576,176C672,181,768,139,864,149.3C960,160,1056,224,1152,224C1248,224,1344,160,1392,128L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'
+        ></path>
+      </svg>
+      <ScrollDown />
     </>
   );
 }

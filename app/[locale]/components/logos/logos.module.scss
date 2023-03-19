@@ -15,7 +15,7 @@
   margin: 0 auto;
   position: relative;
 
-  @screen xl {
+  @screen 2xl {
     margin: initial;
   }
 }
@@ -113,7 +113,7 @@
   }
 }
 
-@screen xl {
+@screen 2xl {
   .logos {
     align-items: center;
     bottom: 0;

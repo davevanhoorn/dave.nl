@@ -4,18 +4,19 @@
 
 @layer base {
   :root {
-    --menu-height: 107px;
+    --background-color-opacity: 6%;
     --color-primary: 255 255 255;
     --color-secondary: 0 0 0;
     --color-tertiary: 250 252 253;
-    --background-color-opacity: 6%;
+    --color-quaternary: 255 63 52;
+    --menu-height: 107px;
   }
 
   :root.dark {
+    --background-color-opacity: 10%;
     --color-primary: 0 0 0;
     --color-secondary: 255 255 255;
     --color-tertiary: 11 14 12;
-    --background-color-opacity: 10%;
   }
 }
 

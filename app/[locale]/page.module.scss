@@ -1,21 +1,16 @@
-.hero {
-  min-height: calc(100vh - var(--menu-height));
-  padding-bottom: calc(6rem + 120px);
-  position: relative;
-}
-
 .heroImage {
   height: 346px;
   width: 328px;
 }
 
 @mixin fast-animation {
-  animation: fast;
   animation-duration: 1000ms;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
+  animation-name: fast;
   animation-timing-function: cubic-bezier(0.605, 0.005, 0, 1.065);
   display: inline-block;
+  margin-left: -1px;
   transform-origin: center bottom;
 }
 
@@ -45,6 +40,11 @@
   @include fast-animation;
 
   animation-delay: 250ms;
+}
+
+.fast1Margin {
+  left: 5px;
+  position: relative;
 }
 
 .fast2 {
@@ -108,7 +108,7 @@
 
   animation-name: blob-html-fly;
   left: 45px;
-  top: 17px;
+  top: 37px;
   transform-origin: right bottom;
   width: 50px;
 }
@@ -133,7 +133,7 @@
   animation-delay: 1s;
   animation-name: blob-react-fly;
   left: -4px;
-  top: 53px;
+  top: 83px;
   transform: rotate(-14deg);
   transform-origin: right bottom;
   width: 60px;
@@ -158,7 +158,7 @@
 
   animation-delay: 2s;
   animation-name: blob-javascript-fly;
-  bottom: 10px;
+  bottom: 0;
   left: -20px;
   transform: rotate(-19deg);
   transform-origin: right top;
@@ -185,13 +185,27 @@
   animation-delay: 3s;
   animation-name: blob-css-fly;
   right: -4px;
-  top: 80px;
+  top: 90px;
   transform: rotate(14deg);
   transform-origin: left bottom;
   width: 50px;
 }
 
+.arrow {
+  height: auto;
+  left: 110%;
+  position: absolute;
+  top: -32px;
+  width: 90px;
+}
+
 @screen lg {
+  .hero {
+    min-height: calc(100vh - var(--menu-height));
+    padding-bottom: calc(6rem + 120px);
+    position: relative;
+  }
+
   .blobHtml {
     left: 15px;
     top: 10px;
@@ -214,6 +228,10 @@
     right: -32px;
     top: 120px;
     width: 50px;
+  }
+
+  .fast1Margin {
+    left: 7px;
   }
 }
 

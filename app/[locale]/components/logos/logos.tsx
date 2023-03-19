@@ -2,7 +2,7 @@
 
 import 'client-only';
 
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useRef } from 'react';
 
 import clsx from 'clsx';
 
@@ -17,34 +17,15 @@ import LogoNoten from '@/public/images/logos/dave-nl_logo-noten-nl.svg';
 import LogoOrangeTribes from '@/public/images/logos/dave-nl_logo-orange-tribes.svg';
 import LogoSchiphol from '@/public/images/logos/dave-nl_logo-schiphol.svg';
 
+import useWindowScroll from '@/hooks/use-window-scroll';
 import styles from './logos.module.scss';
 
 const Logos: FunctionComponent = () => {
-  const [windowAtTop, setWindowAtTop] = useState<boolean>(true);
-  const [hasScrolledWindow, setHasScrolledWindow] = useState<boolean>(false);
+  const { windowAtTop, hasScrolledWindow } = useWindowScroll();
   const logoRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useOnScreen(logoRef);
 
   const fadeIn = !windowAtTop && isOnScreen && hasScrolledWindow;
-
-  useEffect(() => {
-    const updateScrollPosition = () => {
-      if (window.scrollY > 0 && windowAtTop === true) {
-        setWindowAtTop(false);
-        setHasScrolledWindow(true);
-      }
-
-      if (window.scrollY <= 1 && windowAtTop === false) {
-        setWindowAtTop(true);
-      }
-    };
-
-    window.addEventListener('scroll', updateScrollPosition);
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollPosition);
-    };
-  }, [windowAtTop]);
 
   return (
     <div className={clsx(styles.logos, 'mt-16')}>
